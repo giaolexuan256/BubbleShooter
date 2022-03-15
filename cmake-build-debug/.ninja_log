@@ -1,0 +1,12 @@
+# ninja log v5
+1	1381	6690428228730907	CMakeFiles/TestAgain.dir/main.cpp.obj	79dfd493056b289a
+1	289	6690430331458797	build.ninja	8292103e227dd95b
+1	887	6690430020495104	CMakeFiles/BubbleShooter.dir/main.cpp.obj	b3f6ca2c9dfdd875
+3	1009	6690430566715628	CMakeFiles/BubbleShooter.dir/main.cpp.obj	b3f6ca2c9dfdd875
+1009	1174	6690430568341297	BubbleShooter.exe	8b60d1c7bf10dd40
+4	1510	6690434531379817	CMakeFiles/BubbleShooter.dir/main.cpp.obj	b3f6ca2c9dfdd875
+1510	1712	6690434533410587	BubbleShooter.exe	8b60d1c7bf10dd40
+4	1033	6690436696507156	CMakeFiles/BubbleShooter.dir/main.cpp.obj	b3f6ca2c9dfdd875
+1033	1189	6690436698069560	BubbleShooter.exe	8b60d1c7bf10dd40
+4	1484	6690595412782282	CMakeFiles/BubbleShooter.dir/main.cpp.obj	b3f6ca2c9dfdd875
+1485	1859	6690595416438962	BubbleShooter.exe	8b60d1c7bf10dd40
