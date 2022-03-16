@@ -1,8 +1,25 @@
 # ninja log v5
+18	934	6691525900796402	CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj	3cd782825de1895b
 1	1381	6690428228730907	CMakeFiles/TestAgain.dir/main.cpp.obj	79dfd493056b289a
-1	289	6691508905424734	build.ninja	8292103e227dd95b
+1	289	6691526814097059	build.ninja	8292103e227dd95b
 54	1638	6691373673631081	CMakeFiles/BubbleShooter.dir/TextureAlpha.cpp.obj	4c4bebcbd3bc7a8
 4	1146	6691380745846126	CMakeFiles/BubbleShooter.dir/main.cpp.obj	b3f6ca2c9dfdd875
-1587	2201	6691413405076302	BubbleShooter.exe	b0505698bbacf7e3
+1102	1312	6691525904490938	BubbleShooter.exe	f2487387138a5778
 5	1586	6691413398959144	CMakeFiles/BubbleShooter.dir/Bubble.cpp.obj	db7c78d278da2da
 25	986	6691380744254634	CMakeFiles/BubbleShooter.dir/Game.cpp.obj	8c5dce5f61f96615
+31	142	6691510359322392	CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj	d2b3575fd7c1b7ce
+20	133	6691518849199615	CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj	d04b80ce81129c19
+19	900	6691524573241035	CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj	329b3b9fddab243e
+19	1083	6691510368672176	CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj	3b990e3aa7924a94
+4	1102	6691525902484006	CMakeFiles/BubbleShooter.dir/src/main.cpp.obj	f651bcad0fa7ef91
+30	167	6691528689817943	CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.obj	45367784fc94747c
+28	173	6691528689918069	CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj	d04b80ce81129c19
+25	963	6691528697833774	CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj	3cd782825de1895b
+4	1102	6691528699220054	CMakeFiles/BubbleShooter.dir/src/main.cpp.obj	f651bcad0fa7ef91
+1103	1290	6691528701053000	BubbleShooter.exe	3d6bd7bda079f12c
+23	946	6691529526680403	CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj	3cd782825de1895b
+4	1076	6691529527982321	CMakeFiles/BubbleShooter.dir/src/main.cpp.obj	f651bcad0fa7ef91
+1076	1262	6691529529794121	BubbleShooter.exe	3d6bd7bda079f12c
+24	1062	6691533068564889	CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj	3cd782825de1895b
+5	1154	6691533069477715	CMakeFiles/BubbleShooter.dir/src/main.cpp.obj	f651bcad0fa7ef91
+1154	1378	6691533071668300	BubbleShooter.exe	3d6bd7bda079f12c

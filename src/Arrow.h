@@ -4,17 +4,17 @@
 
 #include "Point.h"
 #include <cmath>
+#include "util/Utility.h"
 
 class Arrow {
 public:
-    Arrow(Point tail, float length, float angle) : tail(tail), length(length), angle(angle) {
-        head.x = tail.x - length * std::cos(angle / 180);
-        head.y = tail.y - length * std::sin(angle / 180);
+    Arrow(Point tail, float length, float angle) : tail(tail), length(length) {
+        setAngle(angle);
     }
 
     Arrow(Point tail, Point head) : tail(tail), head(head) {
         length = (float) sqrt(pow(tail.x - head.x, 2) + pow(tail.y - head.y, 2));
-        angle = std::atan((float) (head.y - tail.y) / (float)(head.x - head.y));
+        angle = std::atan((float) (head.y - tail.y) / (float)(head.x - head.x));
     }
 
     void setPosition(Point tail, Point head) {
@@ -28,6 +28,8 @@ public:
 
     void setAngle(float angle) {
         Arrow::angle = angle;
+        head.x = tail.x - length * std::cos(Utility::toRadians(angle));
+        head.y = tail.y - length * std::sin(Utility::toRadians(angle));
     }
 
     Point getTailPoint() {

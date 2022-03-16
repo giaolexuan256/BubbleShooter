@@ -5,11 +5,10 @@
 #include "TextureAlpha.h"
 #include "Bubble.h"
 #include "Arrow.h"
+#include <cmath>
 
 class Game {
 public:
-
-
     const int SCREEN_WIDTH = 640;
     const int SCREEN_HEIGHT = 640;
 
@@ -23,7 +22,7 @@ private:
     SDL_Window *window;
     SDL_Renderer *renderer;
     Bubble bubble;
-    Arrow* arrow;
+    Arrow *arrow;
     bool running;
 
 
@@ -53,6 +52,18 @@ private:
             if (event.type == SDL_QUIT) {
                 quit();
             }
+            if (event.type == SDL_KEYDOWN) {
+                switch (event.key.keysym.sym) {
+                    case SDLK_a:
+                        arrow->setAngle(arrow->getAngle() - 10);
+                        break;
+                    case SDLK_d:
+                        arrow->setAngle(arrow->getAngle() + 10);
+                        break;
+                    case SDLK_SPACE:
+                        bubble.setMoving(true);
+                }
+            }
         }
     }
 
@@ -63,8 +74,14 @@ private:
     void render() {
         clearScreen();
         bubble.getBubbleTexture().renderCenter(renderer, bubble.getX(), bubble.getY(), nullptr);
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderDrawLine(renderer, )
+        if (bubble.isMoving()) {
+            bubble.setX(bubble.getX() + cos(Utility::toRadians(arrow->getAngle())));
+            bubble.setY(bubble.getY() - sin(Utility::toRadians(arrow->getAngle())));
+        } else {
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+            SDL_RenderDrawLine(renderer, arrow->getTailPoint().x, arrow->getTailPoint().y, arrow->getHeadPoint().x,
+                               arrow->getHeadPoint().y);
+        }
         SDL_RenderPresent(renderer);
     }
 

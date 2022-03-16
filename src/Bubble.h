@@ -7,6 +7,14 @@
 class Bubble {
 public:
 
+    bool isMoving() {
+        return moving;
+    }
+
+    void setMoving(bool moving) {
+        Bubble::moving = moving;
+    }
+
     void setPosition(int x, int y) {
         this->x = x;
         this->y = y;
@@ -43,6 +51,7 @@ public:
 private:
     int x, y;
     TextureAlpha bubbleTexture;
+    bool moving;
 };
 
 
