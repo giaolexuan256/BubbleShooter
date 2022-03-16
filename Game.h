@@ -58,9 +58,7 @@ private:
             if (event.type == SDL_QUIT) {
                 quit();
             }
-
         }
-
     }
 
     void updateObjects() {
