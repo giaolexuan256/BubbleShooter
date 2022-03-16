@@ -82,6 +82,13 @@ build CMakeFiles/BubbleShooter.dir/Bubble.cpp.obj: CXX_COMPILER__BubbleShooter_D
   OBJECT_DIR = CMakeFiles\BubbleShooter.dir
   OBJECT_FILE_DIR = CMakeFiles\BubbleShooter.dir
 
+build CMakeFiles/BubbleShooter.dir/Game.cpp.obj: CXX_COMPILER__BubbleShooter_Debug C$:/Dev/Projects/BubbleShooter/Game.cpp || cmake_object_order_depends_target_BubbleShooter
+  DEP_FILE = CMakeFiles\BubbleShooter.dir\Game.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include -IC:/Dev/Cpp/SDL2_image-2.0.5/include
+  OBJECT_DIR = CMakeFiles\BubbleShooter.dir
+  OBJECT_FILE_DIR = CMakeFiles\BubbleShooter.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BubbleShooter
@@ -90,7 +97,7 @@ build CMakeFiles/BubbleShooter.dir/Bubble.cpp.obj: CXX_COMPILER__BubbleShooter_D
 #############################################
 # Link the executable BubbleShooter.exe
 
-build BubbleShooter.exe: CXX_EXECUTABLE_LINKER__BubbleShooter_Debug CMakeFiles/BubbleShooter.dir/main.cpp.obj CMakeFiles/BubbleShooter.dir/TextureAlpha.cpp.obj CMakeFiles/BubbleShooter.dir/Bubble.cpp.obj
+build BubbleShooter.exe: CXX_EXECUTABLE_LINKER__BubbleShooter_Debug CMakeFiles/BubbleShooter.dir/main.cpp.obj CMakeFiles/BubbleShooter.dir/TextureAlpha.cpp.obj CMakeFiles/BubbleShooter.dir/Bubble.cpp.obj CMakeFiles/BubbleShooter.dir/Game.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lSDL2main  -lSDL2  -lSDL2_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/lib/x64   -LC:/Dev/Cpp/SDL2_image-2.0.5/lib/x64

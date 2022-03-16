@@ -6,6 +6,12 @@
 
 class Bubble {
 public:
+
+    void setPosition(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
+
     int getX() {
         return x;
     }
@@ -14,25 +20,29 @@ public:
         return y;
     }
 
-    const TextureAlpha &getBubbleTexture() const {
+    TextureAlpha getBubbleTexture() {
         return bubbleTexture;
     }
 
     void setX(int x) {
-        Bubble::x = x;
+        this->x = x;
     }
 
     void setY(int y) {
-        Bubble::y = y;
+        this->y = y;
     }
 
-    void setBubbleTexture(const TextureAlpha &bubbleTexture) {
-        Bubble::bubbleTexture = bubbleTexture;
+    void setBubbleTexture(TextureAlpha bubbleTexture) {
+        this->bubbleTexture = bubbleTexture;
     }
+
+    void loadTexture(const std::string& fileName, SDL_Renderer *renderer) {
+        bubbleTexture.loadFromFile(fileName, renderer);
+    }
+
 private:
     int x, y;
     TextureAlpha bubbleTexture;
-
 };
 
 

@@ -11,7 +11,7 @@ link_directories(${SDL_LIB_DIR})
 include_directories(C:/Dev/Cpp/SDL2_image-2.0.5/include)
 link_directories(C:/Dev/Cpp/SDL2_image-2.0.5/lib/x64)
 
-add_executable(${PROJECT_NAME} main.cpp TextureAlpha.cpp TextureAlpha.h Bubble.cpp Bubble.h)
+add_executable(${PROJECT_NAME} main.cpp TextureAlpha.cpp TextureAlpha.h Bubble.cpp Bubble.h Game.cpp Game.h)
 
 target_link_libraries(${PROJECT_NAME} -lSDL2main -lSDL2)
 target_link_libraries(${PROJECT_NAME} -lSDL2_image)

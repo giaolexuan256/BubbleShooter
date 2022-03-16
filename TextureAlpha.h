@@ -23,7 +23,6 @@ public:
 
     void loadFromFile(const std::string &fileName, SDL_Renderer *renderer) {
         free();
-
         SDL_Surface *loadedSurface = IMG_Load(fileName.c_str());
         if (loadedSurface == nullptr) {
             printf("Failed to load image %s!\nSDL_image error: %s", fileName.c_str(), IMG_GetError());

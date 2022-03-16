@@ -13,10 +13,9 @@
 class Game {
 public:
 
+
     const int SCREEN_WIDTH = 640;
     const int SCREEN_HEIGHT = 640;
-
-    Game() = default;
 
     void start() {
         initialize();
@@ -25,12 +24,11 @@ public:
 
 
 private:
-    SDL_Window *window;
-    SDL_Renderer *renderer;
-    TextureAlpha bubbleTexture;
-    Bubble bubble;
-
+    SDL_Window *window{};
+    SDL_Renderer *renderer{};
+    Bubble bubble{};
     bool running{};
+
 
     void gameLoop() {
         running = true;
@@ -41,15 +39,14 @@ private:
         }
     }
 
+
     void initialize() {
         SDL_Init(SDL_INIT_VIDEO);
         window = SDL_CreateWindow("Title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-        bubbleTexture.loadFromFile(R"(C:\Dev\Projects\BubbleShooter\GreenBubble.png)", renderer);
-        bubble.setBubbleTexture(bubbleTexture);
-        bubble.setX(SCREEN_WIDTH / 2);
-        bubble.setY(SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
+        bubble.loadTexture(R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)", renderer);
+        bubble.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
     }
 
     void processInput() {
@@ -67,7 +64,7 @@ private:
 
     void render() {
         clearScreen();
-        bubbleTexture.renderCenter(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubbleTexture.getHeight() / 2, nullptr);
+        bubble.getBubbleTexture().renderCenter(renderer, bubble.getX(), bubble.getY(), nullptr);
         SDL_RenderPresent(renderer);
     }
 
