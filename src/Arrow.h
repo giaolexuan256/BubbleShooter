@@ -14,7 +14,7 @@ public:
 
     Arrow(Point tail, Point head) : tail(tail), head(head) {
         length = (float) sqrt(pow(tail.x - head.x, 2) + pow(tail.y - head.y, 2));
-        angle = std::atan((float) (head.y - tail.y) / (float)(head.x - head.x));
+        angle = std::atan((head.y - tail.y) / (float) (head.x - head.x));
     }
 
     void setPosition(Point tail, Point head) {
@@ -47,7 +47,6 @@ public:
     float getAngle() {
         return angle;
     }
-
 
 
 private:

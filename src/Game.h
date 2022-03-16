@@ -68,20 +68,19 @@ private:
     }
 
     void updateObjects() {
-
+        if (bubble.isMoving()) {
+            bubble.setX(bubble.getX() - std::cos(Utility::toRadians(arrow->getAngle())));
+            bubble.setY(bubble.getY() - std::sin(Utility::toRadians(arrow->getAngle())));
+        }
     }
 
     void render() {
         clearScreen();
+        printf("Angle: %f", arrow->getAngle());
         bubble.getBubbleTexture().renderCenter(renderer, bubble.getX(), bubble.getY(), nullptr);
-        if (bubble.isMoving()) {
-            bubble.setX(bubble.getX() + cos(Utility::toRadians(arrow->getAngle())));
-            bubble.setY(bubble.getY() - sin(Utility::toRadians(arrow->getAngle())));
-        } else {
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-            SDL_RenderDrawLine(renderer, arrow->getTailPoint().x, arrow->getTailPoint().y, arrow->getHeadPoint().x,
-                               arrow->getHeadPoint().y);
-        }
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderDrawLine(renderer, arrow->getTailPoint().x, arrow->getTailPoint().y, arrow->getHeadPoint().x,
+                           arrow->getHeadPoint().y);
         SDL_RenderPresent(renderer);
     }
 

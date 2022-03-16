@@ -1,5 +1,5 @@
-//
-// Created by giaol on 3/16/2022.
-//
-
 #include "Utility.h"
+
+float Utility::toRadians(float angleDegree) {
+    return angleDegree / 180 * PI;
+}

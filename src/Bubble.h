@@ -15,16 +15,16 @@ public:
         Bubble::moving = moving;
     }
 
-    void setPosition(int x, int y) {
+    void setPosition(float x, float y) {
         this->x = x;
         this->y = y;
     }
 
-    int getX() {
+    float getX() {
         return x;
     }
 
-    int getY() {
+    float getY() {
         return y;
     }
 
@@ -32,11 +32,11 @@ public:
         return bubbleTexture;
     }
 
-    void setX(int x) {
+    void setX(float x) {
         this->x = x;
     }
 
-    void setY(int y) {
+    void setY(float y) {
         this->y = y;
     }
 
@@ -49,7 +49,7 @@ public:
     }
 
 private:
-    int x, y;
+    float x, y;
     TextureAlpha bubbleTexture;
     bool moving;
 };
