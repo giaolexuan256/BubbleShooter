@@ -7,12 +7,14 @@
 #define BUBBLESHOOTER_GAME_H
 
 #include <SDL.h>
+#include "TextureAlpha.h"
+#include "Bubble.h"
 
 class Game {
 public:
 
     const int SCREEN_WIDTH = 640;
-    const int SCREEN_HEIGHT = 480;
+    const int SCREEN_HEIGHT = 640;
 
     Game() = default;
 
@@ -25,6 +27,8 @@ public:
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
+    TextureAlpha bubbleTexture;
+    Bubble bubble;
 
     bool running{};
 
@@ -42,14 +46,19 @@ private:
         window = SDL_CreateWindow("Title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+        bubbleTexture.loadFromFile(R"(C:\Dev\Projects\BubbleShooter\GreenBubble.png)", renderer);
+        bubble.setBubbleTexture(bubbleTexture);
+        bubble.setX(SCREEN_WIDTH / 2);
+        bubble.setY(SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
     }
 
     void processInput() {
         SDL_Event event;
-        while(SDL_PollEvent(&event) != 0) {
-            if(event.type == SDL_QUIT) {
+        while (SDL_PollEvent(&event) != 0) {
+            if (event.type == SDL_QUIT) {
                 quit();
             }
+
         }
 
     }
@@ -60,6 +69,7 @@ private:
 
     void render() {
         clearScreen();
+        bubbleTexture.renderCenter(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubbleTexture.getHeight() / 2, nullptr);
         SDL_RenderPresent(renderer);
     }
 
@@ -71,6 +81,7 @@ private:
     void quit() {
         running = false;
         SDL_DestroyRenderer(renderer);
+        renderer = nullptr;
         SDL_DestroyWindow(window);
         window = nullptr;
         SDL_Quit();
