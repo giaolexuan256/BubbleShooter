@@ -36,7 +36,7 @@ public:
         this->bubbleTexture = bubbleTexture;
     }
 
-    void loadTexture(const std::string& fileName, SDL_Renderer *renderer) {
+    void loadTexture(const std::string &fileName, SDL_Renderer *renderer) {
         bubbleTexture.loadFromFile(fileName, renderer);
     }
 

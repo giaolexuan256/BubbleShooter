@@ -1,14 +1,10 @@
-//
-// Created by giaol on 3/15/2022.
-//
-
-
 #ifndef BUBBLESHOOTER_GAME_H
 #define BUBBLESHOOTER_GAME_H
 
 #include <SDL.h>
 #include "TextureAlpha.h"
 #include "Bubble.h"
+#include "Arrow.h"
 
 class Game {
 public:
@@ -24,10 +20,11 @@ public:
 
 
 private:
-    SDL_Window *window{};
-    SDL_Renderer *renderer{};
-    Bubble bubble{};
-    bool running{};
+    SDL_Window *window;
+    SDL_Renderer *renderer;
+    Bubble bubble;
+    Arrow* arrow;
+    bool running;
 
 
     void gameLoop() {
@@ -47,6 +44,7 @@ private:
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
         bubble.loadTexture(R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)", renderer);
         bubble.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
+        arrow = new Arrow(Point(bubble.getX(), bubble.getY()), 50, 90);
     }
 
     void processInput() {
@@ -65,6 +63,8 @@ private:
     void render() {
         clearScreen();
         bubble.getBubbleTexture().renderCenter(renderer, bubble.getX(), bubble.getY(), nullptr);
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderDrawLine(renderer, )
         SDL_RenderPresent(renderer);
     }
 

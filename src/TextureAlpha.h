@@ -8,10 +8,6 @@
 
 class TextureAlpha {
 public:
-    TextureAlpha() = default;
-
-    ~TextureAlpha() = default;
-
     bool free() {
         if (texture != nullptr) {
             SDL_DestroyTexture(texture);
