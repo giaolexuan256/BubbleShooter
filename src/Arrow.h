@@ -2,7 +2,7 @@
 #define BUBBLESHOOTER_ARROW_H
 
 
-#include "Point.h"
+#include "util/Point.h"
 #include <cmath>
 #include "util/Utility.h"
 

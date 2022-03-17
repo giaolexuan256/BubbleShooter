@@ -2,7 +2,8 @@
 #define BUBBLESHOOTER_BUBBLE_H
 
 #include "TextureAlpha.h"
-
+#include "util/Utility.h"
+#include "util/Point.h"
 
 class Bubble {
 public:
@@ -19,6 +20,9 @@ public:
         this->x = x;
         this->y = y;
     }
+
+    void setCenterPosition(float xCenter, float yCenter);
+    Point getCenterPosition();
 
     float getX() {
         return x;

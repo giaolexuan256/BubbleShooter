@@ -41,9 +41,9 @@ private:
         window = SDL_CreateWindow("Title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-        bubble.loadTexture(R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)", renderer);
-        bubble.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
-        arrow = new Arrow(Point(bubble.getX(), bubble.getY()), 50, 90);
+        bubble.loadTexture(R"(C:\Dev\Projects\BubbleShooter\assets\RedBubble.jpg)", renderer);
+        bubble.setCenterPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
+        arrow = new Arrow(Point(bubble.getX(), bubble.getY()), 200, 90);
     }
 
     void processInput() {
@@ -68,15 +68,16 @@ private:
     }
 
     void updateObjects() {
+        arrow->setAngle(Utility::clamp(arrow->getAngle(), 10, 170));
         if (bubble.isMoving()) {
-            bubble.setX(bubble.getX() - std::cos(Utility::toRadians(arrow->getAngle())));
-            bubble.setY(bubble.getY() - std::sin(Utility::toRadians(arrow->getAngle())));
+            bubble.setX(bubble.getX() - 0.1f * std::cos(Utility::toRadians(arrow->getAngle())));
+            bubble.setY(bubble.getY() - 0.1f * std::sin(Utility::toRadians(arrow->getAngle())));
         }
     }
 
     void render() {
         clearScreen();
-        printf("Angle: %f", arrow->getAngle());
+        SDL_Rect renderQuad = {(int) SCREEN_WIDTH / 2 - 50 - 10, SCREEN_HEIGHT - 100, 100, 100};
         bubble.getBubbleTexture().renderCenter(renderer, bubble.getX(), bubble.getY(), nullptr);
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderDrawLine(renderer, arrow->getTailPoint().x, arrow->getTailPoint().y, arrow->getHeadPoint().x,
@@ -97,6 +98,7 @@ private:
         window = nullptr;
         SDL_Quit();
     }
+
 };
 
 

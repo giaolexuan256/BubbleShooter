@@ -47,11 +47,18 @@ public:
         render(renderer, x - getWidth() / 2, y - getHeight() / 2, sourceRectangle);
     }
 
-    int getWidth() const {
+    void renderExtra(SDL_Renderer *renderer, SDL_Rect *clip, SDL_Rect renderQuad, double angle, SDL_Point *center, SDL_RendererFlip flip) {
+        //Set rendering space and render to screen
+        //Set clip rendering dimensions
+        //Render to screen
+        SDL_RenderCopyEx(renderer, texture, clip, &renderQuad, angle, center, flip);
+    }
+
+    float getWidth() const {
         return width;
     }
 
-    int getHeight() const {
+    float getHeight() const {
         return height;
     }
 
