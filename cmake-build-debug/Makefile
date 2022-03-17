@@ -128,149 +128,149 @@ BubbleShooter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/build
 .PHONY : BubbleShooter/fast
 
-src/Arrow.obj: src/Arrow.cpp.obj
-.PHONY : src/Arrow.obj
+src/sources/Arrow.obj: src/sources/Arrow.cpp.obj
+.PHONY : src/sources/Arrow.obj
 
 # target to build an object file
-src/Arrow.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj
-.PHONY : src/Arrow.cpp.obj
+src/sources/Arrow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj
+.PHONY : src/sources/Arrow.cpp.obj
 
-src/Arrow.i: src/Arrow.cpp.i
-.PHONY : src/Arrow.i
+src/sources/Arrow.i: src/sources/Arrow.cpp.i
+.PHONY : src/sources/Arrow.i
 
 # target to preprocess a source file
-src/Arrow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.i
-.PHONY : src/Arrow.cpp.i
+src/sources/Arrow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.i
+.PHONY : src/sources/Arrow.cpp.i
 
-src/Arrow.s: src/Arrow.cpp.s
-.PHONY : src/Arrow.s
+src/sources/Arrow.s: src/sources/Arrow.cpp.s
+.PHONY : src/sources/Arrow.s
 
 # target to generate assembly for a file
-src/Arrow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.s
-.PHONY : src/Arrow.cpp.s
+src/sources/Arrow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.s
+.PHONY : src/sources/Arrow.cpp.s
 
-src/Bubble.obj: src/Bubble.cpp.obj
-.PHONY : src/Bubble.obj
+src/sources/Bubble.obj: src/sources/Bubble.cpp.obj
+.PHONY : src/sources/Bubble.obj
 
 # target to build an object file
-src/Bubble.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj
-.PHONY : src/Bubble.cpp.obj
+src/sources/Bubble.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj
+.PHONY : src/sources/Bubble.cpp.obj
 
-src/Bubble.i: src/Bubble.cpp.i
-.PHONY : src/Bubble.i
+src/sources/Bubble.i: src/sources/Bubble.cpp.i
+.PHONY : src/sources/Bubble.i
 
 # target to preprocess a source file
-src/Bubble.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.i
-.PHONY : src/Bubble.cpp.i
+src/sources/Bubble.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.i
+.PHONY : src/sources/Bubble.cpp.i
 
-src/Bubble.s: src/Bubble.cpp.s
-.PHONY : src/Bubble.s
+src/sources/Bubble.s: src/sources/Bubble.cpp.s
+.PHONY : src/sources/Bubble.s
 
 # target to generate assembly for a file
-src/Bubble.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.s
-.PHONY : src/Bubble.cpp.s
+src/sources/Bubble.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.s
+.PHONY : src/sources/Bubble.cpp.s
 
-src/Cannon.obj: src/Cannon.cpp.obj
-.PHONY : src/Cannon.obj
+src/sources/Cannon.obj: src/sources/Cannon.cpp.obj
+.PHONY : src/sources/Cannon.obj
 
 # target to build an object file
-src/Cannon.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj
-.PHONY : src/Cannon.cpp.obj
+src/sources/Cannon.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj
+.PHONY : src/sources/Cannon.cpp.obj
 
-src/Cannon.i: src/Cannon.cpp.i
-.PHONY : src/Cannon.i
+src/sources/Cannon.i: src/sources/Cannon.cpp.i
+.PHONY : src/sources/Cannon.i
 
 # target to preprocess a source file
-src/Cannon.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.i
-.PHONY : src/Cannon.cpp.i
+src/sources/Cannon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.i
+.PHONY : src/sources/Cannon.cpp.i
 
-src/Cannon.s: src/Cannon.cpp.s
-.PHONY : src/Cannon.s
+src/sources/Cannon.s: src/sources/Cannon.cpp.s
+.PHONY : src/sources/Cannon.s
 
 # target to generate assembly for a file
-src/Cannon.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.s
-.PHONY : src/Cannon.cpp.s
+src/sources/Cannon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.s
+.PHONY : src/sources/Cannon.cpp.s
 
-src/Game.obj: src/Game.cpp.obj
-.PHONY : src/Game.obj
+src/sources/Game.obj: src/sources/Game.cpp.obj
+.PHONY : src/sources/Game.obj
 
 # target to build an object file
-src/Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj
-.PHONY : src/Game.cpp.obj
+src/sources/Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj
+.PHONY : src/sources/Game.cpp.obj
 
-src/Game.i: src/Game.cpp.i
-.PHONY : src/Game.i
+src/sources/Game.i: src/sources/Game.cpp.i
+.PHONY : src/sources/Game.i
 
 # target to preprocess a source file
-src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Game.cpp.i
-.PHONY : src/Game.cpp.i
+src/sources/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.i
+.PHONY : src/sources/Game.cpp.i
 
-src/Game.s: src/Game.cpp.s
-.PHONY : src/Game.s
+src/sources/Game.s: src/sources/Game.cpp.s
+.PHONY : src/sources/Game.s
 
 # target to generate assembly for a file
-src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Game.cpp.s
-.PHONY : src/Game.cpp.s
+src/sources/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.s
+.PHONY : src/sources/Game.cpp.s
 
-src/TextureAlpha.obj: src/TextureAlpha.cpp.obj
-.PHONY : src/TextureAlpha.obj
+src/sources/TextureAlpha.obj: src/sources/TextureAlpha.cpp.obj
+.PHONY : src/sources/TextureAlpha.obj
 
 # target to build an object file
-src/TextureAlpha.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj
-.PHONY : src/TextureAlpha.cpp.obj
+src/sources/TextureAlpha.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj
+.PHONY : src/sources/TextureAlpha.cpp.obj
 
-src/TextureAlpha.i: src/TextureAlpha.cpp.i
-.PHONY : src/TextureAlpha.i
+src/sources/TextureAlpha.i: src/sources/TextureAlpha.cpp.i
+.PHONY : src/sources/TextureAlpha.i
 
 # target to preprocess a source file
-src/TextureAlpha.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.i
-.PHONY : src/TextureAlpha.cpp.i
+src/sources/TextureAlpha.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.i
+.PHONY : src/sources/TextureAlpha.cpp.i
 
-src/TextureAlpha.s: src/TextureAlpha.cpp.s
-.PHONY : src/TextureAlpha.s
+src/sources/TextureAlpha.s: src/sources/TextureAlpha.cpp.s
+.PHONY : src/sources/TextureAlpha.s
 
 # target to generate assembly for a file
-src/TextureAlpha.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.s
-.PHONY : src/TextureAlpha.cpp.s
+src/sources/TextureAlpha.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.s
+.PHONY : src/sources/TextureAlpha.cpp.s
 
-src/main.obj: src/main.cpp.obj
-.PHONY : src/main.obj
+src/sources/main.obj: src/sources/main.cpp.obj
+.PHONY : src/sources/main.obj
 
 # target to build an object file
-src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/main.cpp.obj
-.PHONY : src/main.cpp.obj
+src/sources/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj
+.PHONY : src/sources/main.cpp.obj
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/sources/main.i: src/sources/main.cpp.i
+.PHONY : src/sources/main.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/sources/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.i
+.PHONY : src/sources/main.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/sources/main.s: src/sources/main.cpp.s
+.PHONY : src/sources/main.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/sources/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.s
+.PHONY : src/sources/main.cpp.s
 
 src/util/Point.obj: src/util/Point.cpp.obj
 .PHONY : src/util/Point.obj
@@ -329,24 +329,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... BubbleShooter
-	@echo ... src/Arrow.obj
-	@echo ... src/Arrow.i
-	@echo ... src/Arrow.s
-	@echo ... src/Bubble.obj
-	@echo ... src/Bubble.i
-	@echo ... src/Bubble.s
-	@echo ... src/Cannon.obj
-	@echo ... src/Cannon.i
-	@echo ... src/Cannon.s
-	@echo ... src/Game.obj
-	@echo ... src/Game.i
-	@echo ... src/Game.s
-	@echo ... src/TextureAlpha.obj
-	@echo ... src/TextureAlpha.i
-	@echo ... src/TextureAlpha.s
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
+	@echo ... src/sources/Arrow.obj
+	@echo ... src/sources/Arrow.i
+	@echo ... src/sources/Arrow.s
+	@echo ... src/sources/Bubble.obj
+	@echo ... src/sources/Bubble.i
+	@echo ... src/sources/Bubble.s
+	@echo ... src/sources/Cannon.obj
+	@echo ... src/sources/Cannon.i
+	@echo ... src/sources/Cannon.s
+	@echo ... src/sources/Game.obj
+	@echo ... src/sources/Game.i
+	@echo ... src/sources/Game.s
+	@echo ... src/sources/TextureAlpha.obj
+	@echo ... src/sources/TextureAlpha.i
+	@echo ... src/sources/TextureAlpha.s
+	@echo ... src/sources/main.obj
+	@echo ... src/sources/main.i
+	@echo ... src/sources/main.s
 	@echo ... src/util/Point.obj
 	@echo ... src/util/Point.i
 	@echo ... src/util/Point.s

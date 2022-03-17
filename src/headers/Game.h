@@ -2,16 +2,15 @@
 #define BUBBLESHOOTER_GAME_H
 
 #include <SDL.h>
-#include "TextureAlpha.h"
 #include "Bubble.h"
 #include "Arrow.h"
+#include "TextureAlpha.h"
+#include "Cannon.h"
+#include "ConstantCarrier.h"
 #include <cmath>
 
 class Game {
 public:
-    const static int SCREEN_WIDTH = 640;
-    const static int SCREEN_HEIGHT = 640;
-
     void start() {
         initialize();
         gameLoop();
@@ -23,6 +22,7 @@ private:
     SDL_Renderer *renderer;
     Bubble bubble;
     Arrow *arrow;
+    Cannon cannon;
     bool running;
     SDL_Point mousePosition;
     float bubbleSpeedX, bubbleSpeedY;
@@ -44,6 +44,7 @@ private:
                                   SDL_WINDOW_SHOWN);
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
         arrow = new Arrow(Point(bubble.getX(), bubble.getY()), 200, 90);
+
     }
 
     void processInput() {

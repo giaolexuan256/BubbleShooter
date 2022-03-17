@@ -1,4 +1,4 @@
-#include "Bubble.h"
+#include "../headers/Bubble.h"
 
 void Bubble::setCenterPosition(float xCenter, float yCenter) {
     x = xCenter - bubbleTexture.getWidth() / 2;

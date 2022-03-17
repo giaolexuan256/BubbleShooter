@@ -2,9 +2,9 @@
 #define BUBBLESHOOTER_ARROW_H
 
 
-#include "util/Point.h"
+#include "../util/Point.h"
 #include <cmath>
-#include "util/Utility.h"
+#include "../util/Utility.h"
 
 class Arrow {
 public:

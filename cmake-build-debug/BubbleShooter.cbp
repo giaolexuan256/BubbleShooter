@@ -86,37 +86,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Arrow.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Arrow.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Arrow.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Bubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Bubble.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Cannon.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Bubble.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/ConstantCarrier.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Cannon.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Game.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Cannon.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/TextureAlpha.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Game.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Arrow.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/Game.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Bubble.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/TextureAlpha.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Cannon.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/TextureAlpha.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Game.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/main.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/TextureAlpha.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/main.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/util/Point.cpp">

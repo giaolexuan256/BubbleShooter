@@ -68,80 +68,80 @@ include CMakeFiles/BubbleShooter.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/BubbleShooter.dir/flags.make
 
-CMakeFiles/BubbleShooter.dir/src/main.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/main.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/main.cpp.obj: ../src/main.cpp
-CMakeFiles/BubbleShooter.dir/src/main.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BubbleShooter.dir/src/main.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/main.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\main.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\main.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\main.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj: ../src/sources/main.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\main.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\main.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\main.cpp
 
-CMakeFiles/BubbleShooter.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/main.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\main.cpp > CMakeFiles\BubbleShooter.dir\src\main.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\main.cpp > CMakeFiles\BubbleShooter.dir\src\sources\main.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/main.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\main.cpp -o CMakeFiles\BubbleShooter.dir\src\main.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\main.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\main.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj: ../src/TextureAlpha.cpp
-CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\TextureAlpha.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\TextureAlpha.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\TextureAlpha.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj: ../src/sources/TextureAlpha.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\TextureAlpha.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\TextureAlpha.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\TextureAlpha.cpp
 
-CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\TextureAlpha.cpp > CMakeFiles\BubbleShooter.dir\src\TextureAlpha.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\TextureAlpha.cpp > CMakeFiles\BubbleShooter.dir\src\sources\TextureAlpha.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\TextureAlpha.cpp -o CMakeFiles\BubbleShooter.dir\src\TextureAlpha.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\TextureAlpha.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\TextureAlpha.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj: ../src/Bubble.cpp
-CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\Bubble.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\Bubble.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\Bubble.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj: ../src/sources/Bubble.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\Bubble.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\Bubble.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\Bubble.cpp
 
-CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\Bubble.cpp > CMakeFiles\BubbleShooter.dir\src\Bubble.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\Bubble.cpp > CMakeFiles\BubbleShooter.dir\src\sources\Bubble.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\Bubble.cpp -o CMakeFiles\BubbleShooter.dir\src\Bubble.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\Bubble.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\Bubble.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj: ../src/Game.cpp
-CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\Game.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\Game.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\Game.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj: ../src/sources/Game.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\Game.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\Game.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\Game.cpp
 
-CMakeFiles/BubbleShooter.dir/src/Game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/Game.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\Game.cpp > CMakeFiles\BubbleShooter.dir\src\Game.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\Game.cpp > CMakeFiles\BubbleShooter.dir\src\sources\Game.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/Game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/Game.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\Game.cpp -o CMakeFiles\BubbleShooter.dir\src\Game.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\Game.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\Game.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj: ../src/Arrow.cpp
-CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\Arrow.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\Arrow.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\Arrow.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj: ../src/sources/Arrow.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\Arrow.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\Arrow.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\Arrow.cpp
 
-CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\Arrow.cpp > CMakeFiles\BubbleShooter.dir\src\Arrow.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\Arrow.cpp > CMakeFiles\BubbleShooter.dir\src\sources\Arrow.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\Arrow.cpp -o CMakeFiles\BubbleShooter.dir\src\Arrow.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\Arrow.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\Arrow.cpp.s
 
 CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
 CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
@@ -173,43 +173,43 @@ CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.s"
 	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\util\Utility.cpp -o CMakeFiles\BubbleShooter.dir\src\util\Utility.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj: ../src/Cannon.cpp
-CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\Cannon.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\Cannon.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\Cannon.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj: ../src/sources/Cannon.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\Cannon.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\Cannon.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\Cannon.cpp
 
-CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\Cannon.cpp > CMakeFiles\BubbleShooter.dir\src\Cannon.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\Cannon.cpp > CMakeFiles\BubbleShooter.dir\src\sources\Cannon.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\Cannon.cpp -o CMakeFiles\BubbleShooter.dir\src\Cannon.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\Cannon.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\Cannon.cpp.s
 
 # Object files for target BubbleShooter
 BubbleShooter_OBJECTS = \
-"CMakeFiles/BubbleShooter.dir/src/main.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj"
+"CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj"
 
 # External object files for target BubbleShooter
 BubbleShooter_EXTERNAL_OBJECTS =
 
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/main.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/build.make
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/linklibs.rsp
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/objects1.rsp
