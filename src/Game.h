@@ -24,6 +24,7 @@ private:
     Bubble bubble;
     Arrow *arrow;
     bool running;
+    SDL_Point mousePosition;
 
 
     void gameLoop() {
@@ -64,14 +65,23 @@ private:
                         bubble.setMoving(true);
                 }
             }
+            if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
+                SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
+            }
         }
     }
 
     void updateObjects() {
-        arrow->setAngle(Utility::clamp(arrow->getAngle(), 10, 170));
+        float dx = (float) mousePosition.x - arrow->getTailPoint().x;
+        float dy = (float) mousePosition.y - arrow->getTailPoint().y;
+        float angle = std::atan(dy / dx);
+        angle = Utility::toDegrees(angle);
+        if(angle < 0) angle += 180;
+        printf("%f\n", angle);
+        arrow->setAngle(Utility::clamp(angle, 10, 170));
         if (bubble.isMoving()) {
-            bubble.setX(bubble.getX() - 0.1f * std::cos(Utility::toRadians(arrow->getAngle())));
-            bubble.setY(bubble.getY() - 0.1f * std::sin(Utility::toRadians(arrow->getAngle())));
+            bubble.setX(bubble.getX() - std::cos(Utility::toRadians(arrow->getAngle())));
+            bubble.setY(bubble.getY() - std::sin(Utility::toRadians(arrow->getAngle())));
         }
     }
 
