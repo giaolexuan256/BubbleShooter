@@ -23,6 +23,8 @@ public:
 
     void setCenterPosition(float xCenter, float yCenter);
     Point getCenterPosition();
+    float getWidth();
+    float getHeight();
 
     float getX() {
         return x;

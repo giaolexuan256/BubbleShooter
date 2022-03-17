@@ -8,3 +8,11 @@ void Bubble::setCenterPosition(float xCenter, float yCenter) {
 Point Bubble::getCenterPosition() {
     return {x + bubbleTexture.getWidth() / 2, y + bubbleTexture.getHeight() / 2};
 }
+
+float Bubble::getWidth() {
+    return Bubble::getBubbleTexture().getWidth();
+}
+
+float Bubble::getHeight() {
+    return Bubble::getBubbleTexture().getHeight();
+}

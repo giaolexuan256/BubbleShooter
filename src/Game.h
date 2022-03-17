@@ -25,6 +25,7 @@ private:
     Arrow *arrow;
     bool running;
     SDL_Point mousePosition;
+    float bubbleSpeedX, bubbleSpeedY;
 
 
     void gameLoop() {
@@ -63,6 +64,8 @@ private:
                         break;
                     case SDLK_SPACE:
                         bubble.setMoving(true);
+                        bubbleSpeedX = 0.1f * std::cos(Utility::toRadians(arrow->getAngle()));
+                        bubbleSpeedY = 0.1f * std::sin(Utility::toRadians(arrow->getAngle()));
                 }
             }
             if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
@@ -76,18 +79,21 @@ private:
         float dy = (float) mousePosition.y - arrow->getTailPoint().y;
         float angle = std::atan(dy / dx);
         angle = Utility::toDegrees(angle);
-        if(angle < 0) angle += 180;
-        printf("%f\n", angle);
+        if (angle < 0) angle += 180;
         arrow->setAngle(Utility::clamp(angle, 10, 170));
+
+        if (bubble.getX() < 20 || bubble.getX() > (float) SCREEN_WIDTH - bubble.getWidth() / 2) bubbleSpeedX = -bubbleSpeedX;
+        if (bubble.getY() < 20) {
+            bubble.setMoving(false);
+        }
         if (bubble.isMoving()) {
-            bubble.setX(bubble.getX() - std::cos(Utility::toRadians(arrow->getAngle())));
-            bubble.setY(bubble.getY() - std::sin(Utility::toRadians(arrow->getAngle())));
+            bubble.setX(bubble.getX() - bubbleSpeedX);
+            bubble.setY(bubble.getY() - bubbleSpeedY);
         }
     }
 
     void render() {
         clearScreen();
-        SDL_Rect renderQuad = {(int) SCREEN_WIDTH / 2 - 50 - 10, SCREEN_HEIGHT - 100, 100, 100};
         bubble.getBubbleTexture().renderCenter(renderer, bubble.getX(), bubble.getY(), nullptr);
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderDrawLine(renderer, arrow->getTailPoint().x, arrow->getTailPoint().y, arrow->getHeadPoint().x,
@@ -96,7 +102,7 @@ private:
     }
 
     void clearScreen() {
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0,    255);
         SDL_RenderClear(renderer);
     }
 
