@@ -9,8 +9,8 @@
 
 class Game {
 public:
-    const int SCREEN_WIDTH = 640;
-    const int SCREEN_HEIGHT = 640;
+    const static int SCREEN_WIDTH = 640;
+    const static int SCREEN_HEIGHT = 640;
 
     void start() {
         initialize();
@@ -43,8 +43,6 @@ private:
         window = SDL_CreateWindow("Title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-        bubble.loadTexture(R"(C:\Dev\Projects\BubbleShooter\assets\RedBubble.jpg)", renderer);
-        bubble.setCenterPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT - bubble.getBubbleTexture().getHeight() / 2);
         arrow = new Arrow(Point(bubble.getX(), bubble.getY()), 200, 90);
     }
 
