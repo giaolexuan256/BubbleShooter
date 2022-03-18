@@ -21,7 +21,6 @@ public:
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
-    std::list<Bubble *> listOfBubbles;
     Cannon *cannon;
     bool running;
     SDL_Point mousePosition;

@@ -28,9 +28,11 @@ void Game::processInput() {
         if (event.type == SDL_KEYDOWN) {
             switch (event.key.keysym.sym) {
                 case SDLK_SPACE:
-                    cannon->getLoadedBubble()->setMoving(true);
-                    cannon->getLoadedBubble()->setSpeed(-0.1f * std::cos(Utility::toRadians(cannon->getAngle())),
-                                                        0.1f * std::sin(Utility::toRadians(cannon->getAngle())));
+                    if (!cannon->getLoadedBubble()->isMoving()) {
+                        cannon->getLoadedBubble()->setMoving(true);
+                        cannon->getLoadedBubble()->setSpeed(-0.1f * std::cos(Utility::toRadians(cannon->getAngle())),
+                                                            0.1f * std::sin(Utility::toRadians(cannon->getAngle())));
+                    }
             }
         }
         if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
@@ -48,7 +50,6 @@ void Game::updateObjects() {
     }
     if (bubble->getY() < bubble->getHeight() / 2) {
         bubble->setMoving(false);
-        listOfBubbles.push_back(bubble);
         cannon->loadBubble(renderer);
     }
     if (bubble->isMoving()) {
@@ -60,9 +61,6 @@ void Game::updateObjects() {
 void Game::render() {
     clearScreen();
     cannon->render(renderer);
-    for(auto bubble : listOfBubbles) {
-        bubble->render(renderer);
-    }
     SDL_RenderPresent(renderer);
 }
 
@@ -78,10 +76,6 @@ void Game::quit() {
     SDL_DestroyWindow(window);
     window = nullptr;
     SDL_Quit();
-    for(auto bubble : listOfBubbles) {
-        delete[] bubble;
-    }
-    listOfBubbles.clear();
 }
 
 
