@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../headers/Game.h"
 
 void Game::gameLoop() {
@@ -42,11 +43,17 @@ void Game::updateObjects() {
     Arrow *arrow = cannon->getArrow();
     Bubble *bubble = cannon->getLoadedBubble();
     float dx = (float) mousePosition.x - arrow->getTailPoint().x;
-    float dy = (float) mousePosition.y - arrow->getTailPoint().y;
-    float angle = std::atan(dy / dx);
+    float dy = arrow->getTailPoint().y - (float) mousePosition.y;
+    float angle = std::atan2(dy, dx);
     angle = Utility::toDegrees(angle);
-    if (angle < 0) angle += 180;
+    if (angle < 0) angle += 360;
+    if(angle > 90 && angle < 270) {
+        if(angle > angleUpperBound) angle = angleUpperBound;
+    } else {
+        if(angle < angleLowerBound || angle >= 270) angle = angleLowerBound;
+    }
     cannon->setAngle(Utility::clamp(angle, 10, 170));
+    std::cout << angle << std::endl;
 
 
     if (bubble->getX() < bubble->getWidth() / 2 ||
@@ -67,11 +74,9 @@ void Game::updateObjects() {
 void Game::render() {
     clearScreen();
     cannon->render(renderer);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderDrawLine(renderer, (int) cannon->getArrow()->getTailPoint().x,
-                       (int) cannon->getArrow()->getTailPoint().y,
-                       (int) cannon->getArrow()->getHeadPoint().x,
-                       (int) cannon->getArrow()->getHeadPoint().y);
+    for(auto bubble : listOfBubbles) {
+        bubble->render(renderer, (int) bubble->getX(), (int) bubble->getY(), nullptr);
+    }
     SDL_RenderPresent(renderer);
 }
 
@@ -87,7 +92,6 @@ void Game::quit() {
     SDL_DestroyWindow(window);
     window = nullptr;
     SDL_Quit();
-
 }
 
 

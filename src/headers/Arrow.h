@@ -4,6 +4,7 @@
 
 #include "../util/Point.h"
 #include <cmath>
+#include <SDL.h>
 #include "../util/Utility.h"
 
 class Arrow {
@@ -17,6 +18,14 @@ public:
         angle = std::atan((head.y - tail.y) / (float) (head.x - head.x));
     }
 
+    void render(SDL_Renderer* renderer) {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderDrawLine(renderer, (int) getTailPoint().x,
+                           (int) getTailPoint().y,
+                           (int) getHeadPoint().x,
+                           (int) getHeadPoint().y);
+    }
+
     void setPosition(Point tail, Point head) {
         Arrow::tail = tail;
         Arrow::head = head;
@@ -28,7 +37,7 @@ public:
 
     void setAngle(float angle) {
         Arrow::angle = angle;
-        head.x = tail.x - length * std::cos(Utility::toRadians(angle));
+        head.x = tail.x + length * std::cos(Utility::toRadians(angle));
         head.y = tail.y - length * std::sin(Utility::toRadians(angle));
     }
 

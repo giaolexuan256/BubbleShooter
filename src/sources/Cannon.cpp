@@ -17,6 +17,7 @@ void Cannon::loadBubble(SDL_Renderer *renderer) {
 
 void Cannon::render(SDL_Renderer *renderer) {
     loadedBubble->getBubbleTexture().renderCenter(renderer, (int) loadedBubble->getX(), (int) loadedBubble->getY());
+    arrow->render(renderer);
 }
 
 

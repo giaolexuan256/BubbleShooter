@@ -8,9 +8,9 @@
 class Bubble {
 public:
 
-    Bubble(SDL_Renderer* renderer);
+    Bubble(SDL_Renderer *renderer);
 
-    void loadTexture(SDL_Renderer* renderer, std::string fileName) {
+    void loadTexture(SDL_Renderer *renderer, std::string fileName) {
         bubbleTexture.loadFromFile(renderer, fileName);
     }
 
@@ -27,14 +27,24 @@ public:
         this->y = y;
     }
 
+    void render(SDL_Renderer *renderer, int x, int y, SDL_Rect *renderRect);
+
     void setCenterPosition(float xCenter, float yCenter);
+
     Point getCenterPosition();
+
     float getWidth();
+
     float getHeight();
+
     float getSpeedX();
+
     float getSpeedY();
+
     void setSpeedX(float speedX);
+
     void setSpeedY(float speedY);
+
     void setSpeed(float speedX, float speedY);
 
     float getX() {

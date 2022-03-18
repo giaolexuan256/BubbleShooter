@@ -44,7 +44,7 @@ public:
     }
 
     void renderCenter(SDL_Renderer *renderer, int x, int y, SDL_Rect *sourceRectangle = nullptr) {
-        render(renderer, x - getWidth() / 2, y - getHeight() / 2, sourceRectangle);
+        render(renderer, x - (int) getWidth() / 2, y - (int) getHeight() / 2, sourceRectangle);
     }
 
     void renderExtra(SDL_Renderer *renderer, SDL_Rect *clip, SDL_Rect renderQuad, double angle, SDL_Point *center, SDL_RendererFlip flip) {

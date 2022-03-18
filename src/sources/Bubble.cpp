@@ -4,6 +4,10 @@ Bubble::Bubble(SDL_Renderer *renderer) {
     loadTexture(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)");
 }
 
+void Bubble::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *renderRect) {
+    bubbleTexture.render(renderer, x, y, renderRect);
+}
+
 
 void Bubble::setCenterPosition(float xCenter, float yCenter) {
     x = xCenter - bubbleTexture.getWidth() / 2;
