@@ -128,6 +128,30 @@ BubbleShooter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/build
 .PHONY : BubbleShooter/fast
 
+src/headers/BubbleManager.obj: src/headers/BubbleManager.cpp.obj
+.PHONY : src/headers/BubbleManager.obj
+
+# target to build an object file
+src/headers/BubbleManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj
+.PHONY : src/headers/BubbleManager.cpp.obj
+
+src/headers/BubbleManager.i: src/headers/BubbleManager.cpp.i
+.PHONY : src/headers/BubbleManager.i
+
+# target to preprocess a source file
+src/headers/BubbleManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.i
+.PHONY : src/headers/BubbleManager.cpp.i
+
+src/headers/BubbleManager.s: src/headers/BubbleManager.cpp.s
+.PHONY : src/headers/BubbleManager.s
+
+# target to generate assembly for a file
+src/headers/BubbleManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.s
+.PHONY : src/headers/BubbleManager.cpp.s
+
 src/sources/Arrow.obj: src/sources/Arrow.cpp.obj
 .PHONY : src/sources/Arrow.obj
 
@@ -329,6 +353,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... BubbleShooter
+	@echo ... src/headers/BubbleManager.obj
+	@echo ... src/headers/BubbleManager.i
+	@echo ... src/headers/BubbleManager.s
 	@echo ... src/sources/Arrow.obj
 	@echo ... src/sources/Arrow.i
 	@echo ... src/sources/Arrow.s

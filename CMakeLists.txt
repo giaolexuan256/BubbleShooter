@@ -11,7 +11,7 @@ link_directories(${SDL_LIB_DIR})
 include_directories(C:/Dev/Cpp/SDL2_image-2.0.5/include)
 link_directories(C:/Dev/Cpp/SDL2_image-2.0.5/lib/x64)
 
-add_executable(${PROJECT_NAME} src/sources/main.cpp src/sources/TextureAlpha.cpp src/headers/TextureAlpha.h src/sources/Bubble.cpp src/headers/Bubble.h src/sources/Game.cpp src/headers/Game.h src/sources/Arrow.cpp src/headers/Arrow.h src/util/Point.cpp src/util/Point.h src/util/Utility.cpp src/util/Utility.h src/sources/Cannon.cpp src/headers/Cannon.h src/headers/ScreenSizeCarrier.h)
+add_executable(${PROJECT_NAME} src/sources/main.cpp src/sources/TextureAlpha.cpp src/headers/TextureAlpha.h src/sources/Bubble.cpp src/headers/Bubble.h src/sources/Game.cpp src/headers/Game.h src/sources/Arrow.cpp src/headers/Arrow.h src/util/Point.cpp src/util/Point.h src/util/Utility.cpp src/util/Utility.h src/sources/Cannon.cpp src/headers/Cannon.h src/headers/ScreenSizeCarrier.h src/headers/BubbleManager.cpp src/headers/BubbleManager.h)
 
 target_link_libraries(${PROJECT_NAME} -lSDL2main -lSDL2)
 target_link_libraries(${PROJECT_NAME} -lSDL2_image)

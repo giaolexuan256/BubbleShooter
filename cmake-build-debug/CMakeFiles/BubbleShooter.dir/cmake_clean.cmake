@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "BubbleShooter.exe"
   "BubbleShooter.exe.manifest"
   "BubbleShooter.pdb"
+  "CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj"
+  "CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj"

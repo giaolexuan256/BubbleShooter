@@ -92,6 +92,12 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Bubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleManager.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleManager.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Cannon.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
