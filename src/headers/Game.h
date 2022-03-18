@@ -25,8 +25,7 @@ private:
     Cannon *cannon;
     bool running;
     SDL_Point mousePosition;
-    const float angleUpperBound = 170;
-    const float angleLowerBound = 10;
+
 
 
     void gameLoop();

@@ -26,10 +26,13 @@ public:
 
     void render(SDL_Renderer *renderer);
 
-private:
+    void setAngleToMousePosition(Point mousePosition);
 
+private:
     Arrow *arrow;
     Bubble *loadedBubble;
+    const float ANGLE_UPPER_BOUND = 170;
+    const float ANGLE_LOWER_BOUND = 10;
 };
 
 

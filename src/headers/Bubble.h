@@ -27,7 +27,7 @@ public:
         this->y = y;
     }
 
-    void render(SDL_Renderer *renderer, int x, int y, SDL_Rect *renderRect);
+    void render(SDL_Renderer *renderer);
 
     void setCenterPosition(float xCenter, float yCenter);
 
@@ -65,10 +65,6 @@ public:
 
     void setY(float y) {
         this->y = y;
-    }
-
-    void setBubbleTexture(TextureAlpha bubbleTexture) {
-        this->bubbleTexture = bubbleTexture;
     }
 
 private:

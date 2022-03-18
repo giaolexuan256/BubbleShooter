@@ -29,7 +29,7 @@ void Game::processInput() {
             switch (event.key.keysym.sym) {
                 case SDLK_SPACE:
                     cannon->getLoadedBubble()->setMoving(true);
-                    cannon->getLoadedBubble()->setSpeed(0.1f * std::cos(Utility::toRadians(cannon->getAngle())),
+                    cannon->getLoadedBubble()->setSpeed(-0.1f * std::cos(Utility::toRadians(cannon->getAngle())),
                                                         0.1f * std::sin(Utility::toRadians(cannon->getAngle())));
             }
         }
@@ -40,22 +40,8 @@ void Game::processInput() {
 }
 
 void Game::updateObjects() {
-    Arrow *arrow = cannon->getArrow();
     Bubble *bubble = cannon->getLoadedBubble();
-    float dx = (float) mousePosition.x - arrow->getTailPoint().x;
-    float dy = arrow->getTailPoint().y - (float) mousePosition.y;
-    float angle = std::atan2(dy, dx);
-    angle = Utility::toDegrees(angle);
-    if (angle < 0) angle += 360;
-    if(angle > 90 && angle < 270) {
-        if(angle > angleUpperBound) angle = angleUpperBound;
-    } else {
-        if(angle < angleLowerBound || angle >= 270) angle = angleLowerBound;
-    }
-    cannon->setAngle(Utility::clamp(angle, 10, 170));
-    std::cout << angle << std::endl;
-
-
+    cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     if (bubble->getX() < bubble->getWidth() / 2 ||
         bubble->getX() > (float) SCREEN_WIDTH - bubble->getWidth() / 2) {
         bubble->setSpeedX(-bubble->getSpeedX());
@@ -75,7 +61,7 @@ void Game::render() {
     clearScreen();
     cannon->render(renderer);
     for(auto bubble : listOfBubbles) {
-        bubble->render(renderer, (int) bubble->getX(), (int) bubble->getY(), nullptr);
+        bubble->render(renderer);
     }
     SDL_RenderPresent(renderer);
 }
@@ -92,6 +78,10 @@ void Game::quit() {
     SDL_DestroyWindow(window);
     window = nullptr;
     SDL_Quit();
+    for(auto bubble : listOfBubbles) {
+        delete[] bubble;
+    }
+    listOfBubbles.clear();
 }
 
 
