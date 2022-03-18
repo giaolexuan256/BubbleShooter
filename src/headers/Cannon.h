@@ -8,15 +8,22 @@
 
 #include "Arrow.h"
 #include "Bubble.h"
-#include "ConstantCarrier.h"
+#include "ScreenSizeCarrier.h"
+
 class Cannon {
 public:
-    Cannon() : arrow(Point(SCREEN_WIDTH / 2,SCREEN_HEIGHT - 40), 200, 90) {
+    Cannon(SDL_Renderer *renderer);
 
-    }
+    Arrow* getArrow();
+    Bubble* getLoadedBubble();
+    void setAngle(float angleDegree);
+    float getAngle();
+    void loadBubble(SDL_Renderer* renderer);
 
-    Arrow arrow;
-    Bubble loadedBubble;
+private:
+
+    Arrow* arrow;
+    Bubble* loadedBubble;
 };
 
 

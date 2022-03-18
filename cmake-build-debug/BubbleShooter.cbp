@@ -95,10 +95,10 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Cannon.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/ConstantCarrier.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Game.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Game.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/ScreenSizeCarrier.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/TextureAlpha.h">

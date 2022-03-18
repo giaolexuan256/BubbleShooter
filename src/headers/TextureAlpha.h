@@ -8,7 +8,7 @@
 
 class TextureAlpha {
 public:
-    bool free() {
+    void free() {
         if (texture != nullptr) {
             SDL_DestroyTexture(texture);
             texture = nullptr;

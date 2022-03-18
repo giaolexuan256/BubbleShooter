@@ -286,7 +286,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/headers/ConstantCarrier.h",
+			"path" : "src/headers/ScreenSizeCarrier.h",
 			"sourceGroupIndex" : 1
 		}
 	],
