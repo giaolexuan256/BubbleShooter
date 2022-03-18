@@ -1,0 +1,1 @@
+  -LC:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/lib/x64  -LC:/Dev/Cpp/SDL2_image-2.0.5/lib/x64  -lSDL2main -lSDL2 -lSDL2_image -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
