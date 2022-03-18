@@ -1,13 +1,16 @@
-//
-// Created by giaol on 3/18/2022.
-//
-
 #ifndef BUBBLESHOOTER_BUBBLEMANAGER_H
 #define BUBBLESHOOTER_BUBBLEMANAGER_H
 
 
-class BubbleManager {
+#include <list>
+#include "Bubble.h"
 
+class BubbleManager {
+public:
+    void loadBubbleToCannon(SDL_Renderer* renderer);
+    void renderAllBubbles(SDL_Renderer* renderer);
+private:
+    std::list<Bubble*> listOfBubbles;
 };
 
 

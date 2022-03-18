@@ -17,6 +17,7 @@ void Game::initialize() {
                               SDL_WINDOW_SHOWN);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     cannon = new Cannon(renderer);
+    bubbleManager = std::make_unique<BubbleManager>();
 }
 
 void Game::processInput() {

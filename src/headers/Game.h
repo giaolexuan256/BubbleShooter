@@ -7,8 +7,10 @@
 #include "TextureAlpha.h"
 #include "Cannon.h"
 #include "ScreenSizeCarrier.h"
+#include "BubbleManager.h"
 #include <list>
 #include <cmath>
+#include <memory>
 
 class Game {
 public:
@@ -24,6 +26,7 @@ private:
     Cannon *cannon;
     bool running;
     SDL_Point mousePosition;
+    std::unique_ptr<BubbleManager> bubbleManager;
 
 
 

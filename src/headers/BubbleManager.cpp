@@ -3,3 +3,11 @@
 //
 
 #include "BubbleManager.h"
+
+void BubbleManager::loadBubbleToCannon(SDL_Renderer *renderer) {
+
+}
+
+void BubbleManager::renderAllBubbles(SDL_Renderer *renderer) {
+
+}
