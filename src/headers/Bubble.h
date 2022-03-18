@@ -25,6 +25,11 @@ public:
     Point getCenterPosition();
     float getWidth();
     float getHeight();
+    float getSpeedX();
+    float getSpeedY();
+    void setSpeedX(float speedX);
+    void setSpeedY(float speedY);
+    void setSpeed(float speedX, float speedY);
 
     float getX() {
         return x;
@@ -58,6 +63,7 @@ private:
     float x, y;
     TextureAlpha bubbleTexture;
     bool moving;
+    float speedX, speedY;
 };
 
 

@@ -16,3 +16,24 @@ float Bubble::getWidth() {
 float Bubble::getHeight() {
     return Bubble::getBubbleTexture().getHeight();
 }
+
+float Bubble::getSpeedX() {
+    return speedX;
+}
+
+float Bubble::getSpeedY() {
+    return speedY;
+}
+
+void Bubble::setSpeedX(float speedX) {
+    Bubble::speedX = speedX;
+}
+
+void Bubble::setSpeedY(float speedY) {
+    Bubble::speedY = speedY;
+}
+
+void Bubble::setSpeed(float speedX, float speedY) {
+    setSpeedX(speedX);
+    setSpeedY(speedY);
+}

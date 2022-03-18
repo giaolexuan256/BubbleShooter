@@ -23,7 +23,6 @@ private:
     Cannon *cannon;
     bool running;
     SDL_Point mousePosition;
-    float bubbleSpeedX, bubbleSpeedY;
 
 
     void gameLoop() {
@@ -38,7 +37,8 @@ private:
 
     void initialize() {
         SDL_Init(SDL_INIT_VIDEO);
-        window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT,
+        window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
+                                  SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
         cannon = new Cannon(renderer);
@@ -54,8 +54,9 @@ private:
                 switch (event.key.keysym.sym) {
                     case SDLK_SPACE:
                         cannon->getLoadedBubble()->setMoving(true);
-                        bubbleSpeedX = 0.1f * std::cos(Utility::toRadians(cannon->getAngle()));
-                        bubbleSpeedY = 0.1f * std::sin(Utility::toRadians(cannon->getAngle()));
+                        cannon->getLoadedBubble()->setSpeed(0.1f * std::cos(Utility::toRadians(cannon->getAngle())),
+                                                            0.1f * std::sin(Utility::toRadians(cannon->getAngle())));
+
                 }
             }
             if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
@@ -76,14 +77,15 @@ private:
 
 
         if (bubble->getX() < 20 ||
-            bubble->getX() > (float) SCREEN_WIDTH - bubble->getWidth() / 2)
-            bubbleSpeedX = -bubbleSpeedX;
+            bubble->getX() > (float) SCREEN_WIDTH - bubble->getWidth() / 2) {
+            bubble->setSpeedX(-bubble->getSpeedX());
+        }
         if (bubble->getY() < 20) {
             bubble->setMoving(false);
         }
         if (bubble->isMoving()) {
-            bubble->setX(bubble->getX() - bubbleSpeedX);
-            bubble->setY(bubble->getY() - bubbleSpeedY);
+            bubble->setX(bubble->getX() - bubble->getSpeedX());
+            bubble->setY(bubble->getY() - bubble->getSpeedY());
         }
     }
 
