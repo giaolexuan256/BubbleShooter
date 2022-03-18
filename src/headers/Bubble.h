@@ -8,6 +8,12 @@
 class Bubble {
 public:
 
+    Bubble(SDL_Renderer* renderer);
+
+    void loadTexture(SDL_Renderer* renderer, std::string fileName) {
+        bubbleTexture.loadFromFile(renderer, fileName);
+    }
+
     bool isMoving() {
         return moving;
     }
@@ -53,10 +59,6 @@ public:
 
     void setBubbleTexture(TextureAlpha bubbleTexture) {
         this->bubbleTexture = bubbleTexture;
-    }
-
-    void loadTexture(const std::string &fileName, SDL_Renderer *renderer) {
-        bubbleTexture.loadFromFile(fileName, renderer);
     }
 
 private:

@@ -816,7 +816,12 @@ CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj: ../src/sources/Game.cpp \
   ../src/util/Point.h \
   ../src/headers/Arrow.h \
   ../src/headers/Cannon.h \
-  ../src/headers/ScreenSizeCarrier.h
+  ../src/headers/ScreenSizeCarrier.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_list.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/allocated_ptr.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/aligned_buffer.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc
 
 CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj: ../src/sources/TextureAlpha.cpp \
   ../src/headers/TextureAlpha.h \
@@ -1363,7 +1368,12 @@ CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj: ../src/sources/main.cpp \
   ../src/util/Point.h \
   ../src/headers/Arrow.h \
   ../src/headers/Cannon.h \
-  ../src/headers/ScreenSizeCarrier.h
+  ../src/headers/ScreenSizeCarrier.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_list.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/allocated_ptr.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/aligned_buffer.h \
+  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc
 
 CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj: ../src/util/Point.cpp \
   ../src/util/Point.h
@@ -1554,6 +1564,8 @@ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/m
 C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/memoryfwd.h:
 
 C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_cpuinfo.h:
+
+C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/allocated_ptr.h:
 
 C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_thread.h:
 
@@ -1956,6 +1968,14 @@ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/m
 ../src/headers/Cannon.h:
 
 ../src/sources/Game.cpp:
+
+C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list:
+
+C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_list.h:
+
+C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/aligned_buffer.h:
+
+C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc:
 
 ../src/sources/main.cpp:
 

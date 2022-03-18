@@ -1,5 +1,10 @@
 #include "../headers/Bubble.h"
 
+Bubble::Bubble(SDL_Renderer *renderer) {
+    loadTexture(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)");
+}
+
+
 void Bubble::setCenterPosition(float xCenter, float yCenter) {
     x = xCenter - bubbleTexture.getWidth() / 2;
     y = yCenter - bubbleTexture.getHeight() / 2;

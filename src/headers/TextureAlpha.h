@@ -17,7 +17,7 @@ public:
         }
     }
 
-    void loadFromFile(const std::string &fileName, SDL_Renderer *renderer) {
+    void loadFromFile(SDL_Renderer *renderer, const std::string &fileName) {
         free();
         SDL_Surface *loadedSurface = IMG_Load(fileName.c_str());
         if (loadedSurface == nullptr) {

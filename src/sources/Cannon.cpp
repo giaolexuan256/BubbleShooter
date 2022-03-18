@@ -9,11 +9,14 @@ Cannon::Cannon(SDL_Renderer *renderer) {
     loadBubble(renderer);
 }
 
-void Cannon::loadBubble(SDL_Renderer* renderer) {
-    loadedBubble = new Bubble();
-    loadedBubble->loadTexture(R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)", renderer);
+void Cannon::loadBubble(SDL_Renderer *renderer) {
+    loadedBubble = new Bubble(renderer);
     loadedBubble->setCenterPosition((float) SCREEN_WIDTH / 2 + loadedBubble->getBubbleTexture().getWidth() / 2,
                                     SCREEN_HEIGHT - loadedBubble->getBubbleTexture().getHeight() / 2);
+}
+
+void Cannon::render(SDL_Renderer *renderer) {
+    loadedBubble->getBubbleTexture().renderCenter(renderer, (int) loadedBubble->getX(), (int) loadedBubble->getY());
 }
 
 

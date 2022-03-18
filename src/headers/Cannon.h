@@ -14,16 +14,22 @@ class Cannon {
 public:
     Cannon(SDL_Renderer *renderer);
 
-    Arrow* getArrow();
-    Bubble* getLoadedBubble();
+    Arrow *getArrow();
+
+    Bubble *getLoadedBubble();
+
     void setAngle(float angleDegree);
+
     float getAngle();
-    void loadBubble(SDL_Renderer* renderer);
+
+    void loadBubble(SDL_Renderer *renderer);
+
+    void render(SDL_Renderer *renderer);
 
 private:
 
-    Arrow* arrow;
-    Bubble* loadedBubble;
+    Arrow *arrow;
+    Bubble *loadedBubble;
 };
 
 
