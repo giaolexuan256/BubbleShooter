@@ -92,9 +92,6 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Bubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleManager.cpp">
-			<Option target="BubbleShooter"/>
-		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleManager.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
@@ -114,6 +111,9 @@
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Bubble.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/BubbleManager.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Cannon.cpp">

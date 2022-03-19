@@ -14,9 +14,36 @@
 
 class Game {
 public:
-    void start() {
-        initialize();
-        gameLoop();
+
+    void start();
+
+    const static int tileWidth = 40;
+    const static int tileHeight = 40;
+    const static int columns = 10;
+    const static int rows = 5;
+    int bubbleArray[columns][rows];
+
+    Point getBubbleCoordinate(int column, int row) {
+        int xCoordinate = column * tileWidth;
+        if (row % 2 == 1) {
+            xCoordinate += tileWidth / 2;
+        }
+        int yCoordinate = row * tileHeight;
+        return Point((float) xCoordinate, (float) yCoordinate);
+    }
+
+    void renderBubbles() {
+        for (int j = 0; j < rows; j++) {
+            for (int i = 0; i < columns; i++) {
+                int bubbleType = bubbleArray[i][j];
+                Point bubbleCoordinate = getBubbleCoordinate(i, j);
+                drawBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleType);
+            }
+        }
+    }
+
+    void drawBubble(float x, float y, int type) {
+
     }
 
 
@@ -26,13 +53,11 @@ private:
     Cannon *cannon;
     bool running;
     SDL_Point mousePosition;
-    std::unique_ptr<BubbleManager> bubbleManager;
 
-
-
-    void gameLoop();
 
     void initialize();
+
+    void gameLoop();
 
     void processInput();
 

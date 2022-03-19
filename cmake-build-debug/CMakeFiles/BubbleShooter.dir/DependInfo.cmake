@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Dev/Projects/BubbleShooter/src/headers/BubbleManager.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Arrow.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Bubble.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj.d"
+  "C:/Dev/Projects/BubbleShooter/src/sources/BubbleManager.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Cannon.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Game.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/TextureAlpha.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj.d"

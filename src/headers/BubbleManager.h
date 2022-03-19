@@ -9,6 +9,9 @@ class BubbleManager {
 public:
     void loadBubbleToCannon(SDL_Renderer* renderer);
     void renderAllBubbles(SDL_Renderer* renderer);
+
+    const std::list<Bubble *> &getListOfBubbles() const;
+
 private:
     std::list<Bubble*> listOfBubbles;
 };

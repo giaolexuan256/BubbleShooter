@@ -29,6 +29,8 @@ public:
 
     void render(SDL_Renderer *renderer);
 
+    void renderCenter(SDL_Renderer *renderer);
+
     void setCenterPosition(float xCenter, float yCenter);
 
     Point getCenterPosition();
@@ -69,6 +71,7 @@ public:
 
 private:
     float x, y;
+    int type;
     TextureAlpha bubbleTexture;
     bool moving;
     float speedX, speedY;

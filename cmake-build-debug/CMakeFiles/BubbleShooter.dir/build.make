@@ -188,20 +188,20 @@ CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.s"
 	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\Cannon.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\Cannon.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj: ../src/headers/BubbleManager.cpp
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\headers\BubbleManager.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleManager.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\headers\BubbleManager.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj: ../src/sources/BubbleManager.cpp
+CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\sources\BubbleManager.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\sources\BubbleManager.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\sources\BubbleManager.cpp
 
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\headers\BubbleManager.cpp > CMakeFiles\BubbleShooter.dir\src\headers\BubbleManager.cpp.i
+CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\sources\BubbleManager.cpp > CMakeFiles\BubbleShooter.dir\src\sources\BubbleManager.cpp.i
 
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\headers\BubbleManager.cpp -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleManager.cpp.s
+CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\sources\BubbleManager.cpp -o CMakeFiles\BubbleShooter.dir\src\sources\BubbleManager.cpp.s
 
 # Object files for target BubbleShooter
 BubbleShooter_OBJECTS = \
@@ -213,7 +213,7 @@ BubbleShooter_OBJECTS = \
 "CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj"
+"CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj"
 
 # External object files for target BubbleShooter
 BubbleShooter_EXTERNAL_OBJECTS =
@@ -226,7 +226,7 @@ BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/util/Point.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/util/Utility.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/headers/BubbleManager.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/build.make
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/linklibs.rsp
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/objects1.rsp

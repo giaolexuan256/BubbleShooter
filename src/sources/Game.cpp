@@ -1,6 +1,12 @@
 #include <iostream>
 #include "../headers/Game.h"
 
+
+void Game::start() {
+    initialize();
+    gameLoop();
+}
+
 void Game::gameLoop() {
     running = true;
     while (running) {
@@ -11,13 +17,17 @@ void Game::gameLoop() {
 }
 
 void Game::initialize() {
-    SDL_Init(SDL_INIT_VIDEO);
-    window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
-                              SCREEN_HEIGHT,
-                              SDL_WINDOW_SHOWN);
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    cannon = new Cannon(renderer);
-    bubbleManager = std::make_unique<BubbleManager>();
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        printf("Error Init Video\n");
+    } else {
+        window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
+                                  SCREEN_HEIGHT,
+                                  SDL_WINDOW_SHOWN);
+        if (window != nullptr) {
+            renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+            cannon = new Cannon(renderer);
+        }
+    }
 }
 
 void Game::processInput() {
@@ -43,19 +53,19 @@ void Game::processInput() {
 }
 
 void Game::updateObjects() {
-    Bubble *bubble = cannon->getLoadedBubble();
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
-    if (bubble->getX() < bubble->getWidth() / 2 ||
-        bubble->getX() > (float) SCREEN_WIDTH - bubble->getWidth() / 2) {
-        bubble->setSpeedX(-bubble->getSpeedX());
+    Bubble *cannonBubble = cannon->getLoadedBubble();
+    if (cannonBubble->getX() < 0 ||
+        cannonBubble->getX() > (float) SCREEN_WIDTH - cannonBubble->getWidth()) {
+        cannonBubble->setSpeedX(-cannonBubble->getSpeedX());
     }
-    if (bubble->getY() < bubble->getHeight() / 2) {
-        bubble->setMoving(false);
+    if (cannonBubble->getY() < 0) {
+        cannonBubble->setMoving(false);
         cannon->loadBubble(renderer);
     }
-    if (bubble->isMoving()) {
-        bubble->setX(bubble->getX() - bubble->getSpeedX());
-        bubble->setY(bubble->getY() - bubble->getSpeedY());
+    if (cannonBubble->isMoving()) {
+        cannonBubble->setX(cannonBubble->getX() - cannonBubble->getSpeedX());
+        cannonBubble->setY(cannonBubble->getY() - cannonBubble->getSpeedY());
     }
 }
 

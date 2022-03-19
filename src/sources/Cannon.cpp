@@ -5,21 +5,26 @@
 #include "../headers/Cannon.h"
 
 Cannon::Cannon(SDL_Renderer *renderer) {
-    arrow = new Arrow(Point((float) SCREEN_WIDTH / 2, SCREEN_HEIGHT - 40), 200, 90);
+    arrow = new Arrow(Point((float) SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20), 200, 90);
     loadBubble(renderer);
 }
 
 void Cannon::loadBubble(SDL_Renderer *renderer) {
+    freeBubble();
     loadedBubble = new Bubble(renderer);
-    loadedBubble->setCenterPosition((float) SCREEN_WIDTH / 2 + loadedBubble->getBubbleTexture().getWidth() / 2,
+    loadedBubble->setCenterPosition((float) SCREEN_WIDTH / 2,
                                     SCREEN_HEIGHT - loadedBubble->getBubbleTexture().getHeight() / 2);
 }
 
-void Cannon::render(SDL_Renderer *renderer) {
-    loadedBubble->getBubbleTexture().renderCenter(renderer, (int) loadedBubble->getX(), (int) loadedBubble->getY());
-    arrow->render(renderer);
+void Cannon::freeBubble() {
+    delete loadedBubble;
 }
 
+void Cannon::render(SDL_Renderer *renderer) {
+    loadedBubble->render(renderer);
+    arrow->render(renderer);
+
+}
 
 Arrow *Cannon::getArrow() {
     return arrow;
@@ -49,5 +54,9 @@ void Cannon::setAngleToMousePosition(Point mousePosition) {
         if (angle < ANGLE_LOWER_BOUND || angle >= 270) angle = ANGLE_LOWER_BOUND;
     }
     setAngle(Utility::clamp(angle, 10, 170));
+}
+
+void Cannon::setLoadedBubble(Bubble *loadedBubble) {
+    Cannon::loadedBubble = loadedBubble;
 }
 
