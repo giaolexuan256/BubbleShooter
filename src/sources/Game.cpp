@@ -24,7 +24,7 @@ void Game::initialize() {
                                   SCREEN_HEIGHT,
                                   SDL_WINDOW_SHOWN);
         if (window != nullptr) {
-            renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+            renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
             cannon = new Cannon(renderer);
             for (int i = 0; i < columns; i++) {
                 for(int j = 0; j < rows; j++) {
@@ -59,7 +59,7 @@ void Game::processInput() {
 
 void Game::updateObjects() {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
-    Bubble *cannonBubble = cannon->getLoadedBubble();
+    std::shared_ptr<Bubble> cannonBubble = cannon->getLoadedBubble();
     if (cannonBubble->getX() < 0 ||
         cannonBubble->getX() > (float) SCREEN_WIDTH - cannonBubble->getWidth()) {
         cannonBubble->setSpeedX(-cannonBubble->getSpeedX());

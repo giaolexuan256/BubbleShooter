@@ -10,14 +10,9 @@ Cannon::Cannon(SDL_Renderer *renderer) {
 }
 
 void Cannon::loadBubble(SDL_Renderer *renderer) {
-    freeBubble();
-    loadedBubble = new Bubble(renderer);
+    loadedBubble = std::make_shared<Bubble>(renderer);
     loadedBubble->setCenterPosition((float) SCREEN_WIDTH / 2,
                                     SCREEN_HEIGHT - loadedBubble->getBubbleTexture().getHeight() / 2);
-}
-
-void Cannon::freeBubble() {
-    delete loadedBubble;
 }
 
 void Cannon::render(SDL_Renderer *renderer) {
@@ -30,7 +25,7 @@ Arrow *Cannon::getArrow() {
     return arrow;
 }
 
-Bubble *Cannon::getLoadedBubble() {
+std::shared_ptr<Bubble> Cannon::getLoadedBubble() {
     return loadedBubble;
 }
 
@@ -55,8 +50,3 @@ void Cannon::setAngleToMousePosition(Point mousePosition) {
     }
     setAngle(Utility::clamp(angle, 10, 170));
 }
-
-void Cannon::setLoadedBubble(Bubble *loadedBubble) {
-    Cannon::loadedBubble = loadedBubble;
-}
-

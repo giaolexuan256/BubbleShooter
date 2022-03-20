@@ -128,6 +128,30 @@ BubbleShooter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/build
 .PHONY : BubbleShooter/fast
 
+src/headers/Timer.obj: src/headers/Timer.cpp.obj
+.PHONY : src/headers/Timer.obj
+
+# target to build an object file
+src/headers/Timer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj
+.PHONY : src/headers/Timer.cpp.obj
+
+src/headers/Timer.i: src/headers/Timer.cpp.i
+.PHONY : src/headers/Timer.i
+
+# target to preprocess a source file
+src/headers/Timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.i
+.PHONY : src/headers/Timer.cpp.i
+
+src/headers/Timer.s: src/headers/Timer.cpp.s
+.PHONY : src/headers/Timer.s
+
+# target to generate assembly for a file
+src/headers/Timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.s
+.PHONY : src/headers/Timer.cpp.s
+
 src/sources/Arrow.obj: src/sources/Arrow.cpp.obj
 .PHONY : src/sources/Arrow.obj
 
@@ -353,6 +377,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... BubbleShooter
+	@echo ... src/headers/Timer.obj
+	@echo ... src/headers/Timer.i
+	@echo ... src/headers/Timer.s
 	@echo ... src/sources/Arrow.obj
 	@echo ... src/sources/Arrow.i
 	@echo ... src/sources/Arrow.s

@@ -18,7 +18,7 @@ public:
 
     const static int tileWidth = 40;
     const static int tileHeight = 40;
-    const static int columns = 10;
+    const static int columns = 15;
     const static int rows = 5;
     int bubbleArray[columns][rows];
 

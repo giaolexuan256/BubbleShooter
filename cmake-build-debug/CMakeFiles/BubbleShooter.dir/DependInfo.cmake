@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Dev/Projects/BubbleShooter/src/headers/Timer.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Arrow.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Bubble.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/BubbleManager.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/BubbleManager.cpp.obj.d"

@@ -107,6 +107,12 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/TextureAlpha.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Timer.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Timer.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Arrow.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
