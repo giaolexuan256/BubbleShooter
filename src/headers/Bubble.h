@@ -14,7 +14,7 @@ public:
         bubbleTexture.loadFromFile(renderer, fileName);
     }
 
-    bool isMoving() {
+    bool isMoving() const {
         return moving;
     }
 

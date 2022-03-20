@@ -4,15 +4,6 @@
 
 #include "../headers/TextureAlpha.h"
 
-void TextureAlpha::free() {
-    if (texture != nullptr) {
-        SDL_DestroyTexture(texture);
-        texture = nullptr;
-        width = 0;
-        height = 0;
-    }
-}
-
 void TextureAlpha::loadFromFile(SDL_Renderer *renderer, const std::string &fileName) {
     free();
     SDL_Surface *loadedSurface = IMG_Load(fileName.c_str());
@@ -29,7 +20,7 @@ void TextureAlpha::loadFromFile(SDL_Renderer *renderer, const std::string &fileN
 
 }
 
-void TextureAlpha::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *sourceRectangle = nullptr) {
+void TextureAlpha::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *sourceRectangle) {
     SDL_Rect destinationRectangle = {x, y, width, height};
     if (sourceRectangle != nullptr) {
         destinationRectangle.w = sourceRectangle->w;
@@ -39,15 +30,25 @@ void TextureAlpha::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *source
     SDL_RenderCopy(renderer, texture, sourceRectangle, &destinationRectangle);
 }
 
-void TextureAlpha::renderCenter(SDL_Renderer *renderer, int x, int y, SDL_Rect *sourceRectangle = nullptr) {
+void TextureAlpha::renderCenter(SDL_Renderer *renderer, int x, int y, SDL_Rect *sourceRectangle) {
     render(renderer, x - (int) getWidth() / 2, y - (int) getHeight() / 2, sourceRectangle);
 }
 
-void TextureAlpha::renderExtra(SDL_Renderer *renderer, SDL_Rect *clip, SDL_Rect renderQuad, double angle, SDL_Point *center, SDL_RendererFlip flip) {
+void TextureAlpha::renderExtra(SDL_Renderer *renderer, SDL_Rect *clip, SDL_Rect renderQuad, double angle, SDL_Point *center,
+                          SDL_RendererFlip flip) {
     //Set rendering space and render to screen
     //Set clip rendering dimensions
     //Render to screen
     SDL_RenderCopyEx(renderer, texture, clip, &renderQuad, angle, center, flip);
+}
+
+void TextureAlpha::free() {
+    if (texture != nullptr) {
+        SDL_DestroyTexture(texture);
+        texture = nullptr;
+        width = 0;
+        height = 0;
+    }
 }
 
 float TextureAlpha::getWidth() const {

@@ -1,7 +1,7 @@
 #include "../headers/Bubble.h"
 
 Bubble::Bubble(SDL_Renderer *renderer) {
-    loadTexture(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\GreenBubble.png)");
+    loadTexture(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\BlueBubble.jpg)");
 }
 
 void Bubble::render(SDL_Renderer *renderer) {

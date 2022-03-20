@@ -8,7 +8,6 @@
 
 class TextureAlpha {
 public:
-    void free();
 
     void loadFromFile(SDL_Renderer *renderer, const std::string &fileName);
 
@@ -18,6 +17,8 @@ public:
 
     void renderExtra(SDL_Renderer *renderer, SDL_Rect *clip, SDL_Rect renderQuad, double angle, SDL_Point *center,
                      SDL_RendererFlip flip);
+
+    void free();
 
     float getWidth() const;
 

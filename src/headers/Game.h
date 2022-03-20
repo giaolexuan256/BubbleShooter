@@ -15,7 +15,6 @@
 class Game {
 public:
 
-    void start();
 
     const static int tileWidth = 40;
     const static int tileHeight = 40;
@@ -23,26 +22,31 @@ public:
     const static int rows = 5;
     int bubbleArray[columns][rows];
 
+    void start();
+
     Point getBubbleCoordinate(int column, int row) {
-        int xCoordinate = column * tileWidth;
+        int x = column * tileWidth;
         if (row % 2 == 1) {
-            xCoordinate += tileWidth / 2;
+            x += tileWidth / 2;
         }
-        int yCoordinate = row * tileHeight;
-        return Point((float) xCoordinate, (float) yCoordinate);
+        int y = row * tileHeight;
+        return Point((float) x, (float) y);
     }
 
-    void renderBubbles() {
+    void renderAllBubbles() {
         for (int j = 0; j < rows; j++) {
             for (int i = 0; i < columns; i++) {
-                int bubbleType = bubbleArray[i][j];
                 Point bubbleCoordinate = getBubbleCoordinate(i, j);
-                drawBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleType);
+                renderBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleArray[i][j]);
             }
         }
     }
 
-    void drawBubble(float x, float y, int type) {
+    void renderBubble(float x, float y, int type) {
+        TextureAlpha bubbleTexture;
+
+        bubbleTexture.loadFromFile(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\BlueBubble.jpg)");
+        bubbleTexture.render(renderer, (int) x, (int) y);
 
     }
 

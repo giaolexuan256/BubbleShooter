@@ -28,9 +28,10 @@ public:
 
     void setAngleToMousePosition(Point mousePosition);
 
-    void setLoadedBubble(Bubble* loadedBubble);
+    void setLoadedBubble(Bubble *loadedBubble);
 
     void freeBubble();
+
 private:
     Arrow *arrow;
     Bubble *loadedBubble;

@@ -26,6 +26,11 @@ void Game::initialize() {
         if (window != nullptr) {
             renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
             cannon = new Cannon(renderer);
+            for (int i = 0; i < columns; i++) {
+                for(int j = 0; j < rows; j++) {
+                    bubbleArray[i][j] = 1;
+                }
+            }
         }
     }
 }
@@ -72,6 +77,7 @@ void Game::updateObjects() {
 void Game::render() {
     clearScreen();
     cannon->render(renderer);
+    renderAllBubbles();
     SDL_RenderPresent(renderer);
 }
 
