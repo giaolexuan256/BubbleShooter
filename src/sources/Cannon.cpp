@@ -21,10 +21,6 @@ void Cannon::render(SDL_Renderer *renderer) {
 
 }
 
-Arrow *Cannon::getArrow() {
-    return arrow;
-}
-
 std::shared_ptr<Bubble> Cannon::getLoadedBubble() {
     return loadedBubble;
 }

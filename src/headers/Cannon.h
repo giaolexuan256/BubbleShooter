@@ -15,8 +15,6 @@ class Cannon {
 public:
     Cannon(SDL_Renderer *renderer);
 
-    Arrow *getArrow();
-
     std::shared_ptr<Bubble> getLoadedBubble();
 
     void setAngle(float angleDegree);

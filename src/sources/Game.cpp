@@ -4,14 +4,12 @@
 
 void Game::start() {
     running = true;
-    Timer timer;
     initialize();
-    timer.start();
-    Uint32 currentTime = timer.getTicks();
+    Uint32 currentTime = SDL_GetTicks();
     Uint32 lastTime = currentTime;
     Uint32 millisecondsPerFrame;
     while (running) {
-        currentTime = timer.getTicks();
+        currentTime = SDL_GetTicks();
         millisecondsPerFrame = currentTime - lastTime;
         gameLoop(millisecondsPerFrame / 1.0E3);
         lastTime = currentTime;

@@ -7,7 +7,6 @@
 #include "TextureAlpha.h"
 #include "Cannon.h"
 #include "ScreenSizeCarrier.h"
-#include "BubbleManager.h"
 #include <list>
 #include <cmath>
 #include <memory>
