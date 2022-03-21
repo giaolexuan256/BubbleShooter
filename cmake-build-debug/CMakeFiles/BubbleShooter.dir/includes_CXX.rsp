@@ -1,1 +1,1 @@
--IC:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include -IC:/Dev/Cpp/SDL2_image-2.0.5/include
+-IC:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include -IC:/Dev/Cpp/SDL2_image-2.0.5/include -IC:/Dev/Projects/BubbleShooter/BubbleShooter/src/headers

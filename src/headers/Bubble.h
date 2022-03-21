@@ -2,8 +2,8 @@
 #define BUBBLESHOOTER_BUBBLE_H
 
 #include "TextureAlpha.h"
-#include "../util/Utility.h"
-#include "../util/Point.h"
+#include "Utility.h"
+#include "Point.h"
 
 class Bubble {
 public:
