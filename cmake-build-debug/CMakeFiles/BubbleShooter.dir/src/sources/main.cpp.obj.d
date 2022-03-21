@@ -318,4 +318,9 @@ CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj: \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
  C:/Dev/Projects/BubbleShooter/src/headers/Timer.h \
  C:/Dev/Projects/BubbleShooter/src/headers/BubbleColor.h \
- C:/Dev/Projects/BubbleShooter/src/headers/BubbleNameConverter.h
+ C:/Dev/Projects/BubbleShooter/src/headers/BubbleNameConverter.h \
+ C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_vector.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_bvector.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc

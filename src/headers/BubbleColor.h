@@ -3,7 +3,7 @@
 
 
 enum BubbleColor {
-    RED, YELLOW, BLUE, GREEN, PINK, PURPLE
+    RED, YELLOW, BLUE, GREEN, PINK, PURPLE, BUBBLE_COLOR_SIZE
 };
 
 

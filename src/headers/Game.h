@@ -14,6 +14,9 @@
 #include "Timer.h"
 #include "BubbleColor.h"
 #include "BubbleNameConverter.h"
+#include "BubbleGridManager.h"
+#include <vector>
+
 
 class Game {
 public:
@@ -22,7 +25,7 @@ public:
     const static int columns = 15;
     const static int rows = 5;
     BubbleColor bubbleArray[columns][rows];
-    std::shared_ptr<TextureAlpha> bubbleTexture[6];
+    std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
 
     void start();
 
@@ -45,7 +48,7 @@ public:
     }
 
     void renderBubble(float x, float y, BubbleColor color) {
-        bubbleTexture[color]->render(renderer, (int) x, (int) y);
+        bubbleTextures[color]->render(renderer, (int) x, (int) y);
     }
 
     SDL_Point getGridPosition(float x, float y) {
@@ -61,16 +64,19 @@ public:
 
 
 private:
+    bool running;
     SDL_Window *window;
     SDL_Renderer *renderer;
     Cannon *cannon;
-    bool running;
     SDL_Point mousePosition;
-    const double FPS = 60;
-    const double SCREEN_TICKS_PER_FRAME = 1000 / FPS;
+    std::shared_ptr<BubbleGridManager> bubbleGridManager;
 
 
     void initialize();
+
+    void initializeBubbleTextures(SDL_Renderer *renderer);
+
+    static std::string getBubbleTexturePath(BubbleColor color);
 
     void gameLoop(double delta);
 

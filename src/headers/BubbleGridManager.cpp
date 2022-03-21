@@ -10,12 +10,7 @@ Point BubbleGridManager::getBubbleCoordinate(int column, int row) {
 }
 
 void BubbleGridManager::renderAllBubbles() {
-    for (int j = 0; j < rows; j++) {
-        for (int i = 0; i < columns; i++) {
-            Point bubbleCoordinate = getBubbleCoordinate(i, j);
-            renderBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleArray[i][j]);
-        }
-    }
+
 }
 
 void BubbleGridManager::renderBubble(float x, float y, int type) {
