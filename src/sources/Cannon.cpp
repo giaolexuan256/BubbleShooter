@@ -41,7 +41,7 @@ void Cannon::setAngleToMousePosition(Point mousePosition) {
     float dx = mousePosition.x - arrow->getTailPoint().x;
     float dy = arrow->getTailPoint().y - (float) mousePosition.y;
     float angle = std::atan2(dy, dx);
-    angle = Utility::toDegrees(angle);
+    angle = Utility::radiansToDegrees(angle);
     if (angle < 0) angle += 360;
     if (angle > 90 && angle < 270) {
         if (angle > ANGLE_UPPER_BOUND) angle = ANGLE_UPPER_BOUND;

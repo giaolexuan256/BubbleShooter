@@ -1,10 +1,10 @@
 #include "Utility.h"
 
-float Utility::toRadians(float angleDegree) {
+float Utility::degreesToRadians(float angleDegree) {
     return angleDegree / 180 * PI;
 }
 
-float Utility::toDegrees(float angleRadian) {
+float Utility::radiansToDegrees(float angleRadian) {
     return angleRadian / PI * 180;
 }
 

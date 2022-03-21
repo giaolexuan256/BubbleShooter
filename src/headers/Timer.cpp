@@ -23,7 +23,7 @@ void Timer::stop() {
 void Timer::pause() {
     if (started && !paused) {
         paused = true;
-        pausedTime = getTime();
+        pausedTime = getTicks();
 
     }
 }
@@ -36,7 +36,7 @@ void Timer::unpause() {
     }
 }
 
-Uint32 Timer::getTime() {
+Uint32 Timer::getTicks() {
     Uint32 time;
     if (isStarted()) {
         if (isPaused()) {

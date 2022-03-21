@@ -11,6 +11,7 @@
 #include <list>
 #include <cmath>
 #include <memory>
+#include "Timer.h"
 
 class Game {
 public:
@@ -21,6 +22,7 @@ public:
     const static int columns = 15;
     const static int rows = 5;
     int bubbleArray[columns][rows];
+    std::shared_ptr<TextureAlpha> bubbleTexture;
 
     void start();
 
@@ -43,11 +45,18 @@ public:
     }
 
     void renderBubble(float x, float y, int type) {
-        TextureAlpha bubbleTexture;
+        bubbleTexture->render(renderer, (int) x, (int) y);
+    }
 
-        bubbleTexture.loadFromFile(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\BlueBubble.jpg)");
-        bubbleTexture.render(renderer, (int) x, (int) y);
+    SDL_Point getGridPosition(float x, float y) {
+        int yGrid = std::floor((y / tileHeight));
+        int xOffset = 0;
+        if (yGrid % 2 == 1) {
+            xOffset = tileWidth / 2;
+        }
+        int xGrid = std::floor((x - (float) xOffset) / tileWidth);
 
+        return {xGrid, yGrid};
     }
 
 
@@ -57,17 +66,21 @@ private:
     Cannon *cannon;
     bool running;
     SDL_Point mousePosition;
+    const double FPS = 60;
+    const double SCREEN_TICKS_PER_FRAME = 1000 / FPS;
 
 
     void initialize();
 
-    void gameLoop();
+    void gameLoop(double delta);
 
-    void processInput();
+    void processInput(double delta);
 
-    void updateObjects();
+    void updateObjects(double delta);
 
     void render();
+
+    void sleep(double sleepTime);
 
     void clearScreen();
 

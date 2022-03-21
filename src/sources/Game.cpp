@@ -3,21 +3,23 @@
 
 
 void Game::start() {
-    initialize();
-    gameLoop();
-}
-
-void Game::gameLoop() {
     running = true;
+    Timer timer;
+    initialize();
+    timer.start();
+    Uint32 currentTime = timer.getTicks();
+    Uint32 lastTime = currentTime;
+    Uint32 millisecondsPerFrame;
     while (running) {
-        processInput();
-        updateObjects();
-        render();
+        currentTime = timer.getTicks();
+        millisecondsPerFrame = currentTime - lastTime;
+        gameLoop(millisecondsPerFrame / 1.0E3);
+        lastTime = currentTime;
     }
 }
 
 void Game::initialize() {
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
         printf("Error Init Video\n");
     } else {
         window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
@@ -27,15 +29,23 @@ void Game::initialize() {
             renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
             cannon = new Cannon(renderer);
             for (int i = 0; i < columns; i++) {
-                for(int j = 0; j < rows; j++) {
+                for (int j = 0; j < rows; j++) {
                     bubbleArray[i][j] = 1;
                 }
             }
+            bubbleTexture = std::make_shared<TextureAlpha>();
+            bubbleTexture->loadFromFile(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\BlueBubble.jpg)");
         }
     }
 }
 
-void Game::processInput() {
+void Game::gameLoop(double delta) {
+    processInput(delta);
+    updateObjects(delta);
+    render();
+}
+
+void Game::processInput(double delta) {
     SDL_Event event;
     while (SDL_PollEvent(&event) != 0) {
         if (event.type == SDL_QUIT) {
@@ -46,8 +56,9 @@ void Game::processInput() {
                 case SDLK_SPACE:
                     if (!cannon->getLoadedBubble()->isMoving()) {
                         cannon->getLoadedBubble()->setMoving(true);
-                        cannon->getLoadedBubble()->setSpeed(-0.1f * std::cos(Utility::toRadians(cannon->getAngle())),
-                                                            0.1f * std::sin(Utility::toRadians(cannon->getAngle())));
+                        cannon->getLoadedBubble()->setSpeed(
+                                -400 * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
+                                400 * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
                     }
             }
         }
@@ -57,7 +68,7 @@ void Game::processInput() {
     }
 }
 
-void Game::updateObjects() {
+void Game::updateObjects(double delta) {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<Bubble> cannonBubble = cannon->getLoadedBubble();
     if (cannonBubble->getX() < 0 ||
@@ -84,6 +95,10 @@ void Game::render() {
 void Game::clearScreen() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+}
+
+void Game::sleep(double sleepTime) {
+
 }
 
 void Game::quit() {

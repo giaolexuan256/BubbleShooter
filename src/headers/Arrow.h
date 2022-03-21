@@ -37,8 +37,8 @@ public:
 
     void setAngle(float angle) {
         Arrow::angle = angle;
-        head.x = tail.x + length * std::cos(Utility::toRadians(angle));
-        head.y = tail.y - length * std::sin(Utility::toRadians(angle));
+        head.x = tail.x + length * std::cos(Utility::degreesToRadians(angle));
+        head.y = tail.y - length * std::sin(Utility::degreesToRadians(angle));
     }
 
     Point getTailPoint() {

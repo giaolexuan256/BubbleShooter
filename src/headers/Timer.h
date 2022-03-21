@@ -11,7 +11,7 @@ public:
     void stop();
     void pause();
     void unpause();
-    Uint32 getTime();
+    Uint32 getTicks();
     bool isPaused();
     bool isStarted();
 

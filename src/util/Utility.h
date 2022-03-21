@@ -5,8 +5,8 @@
 
 class Utility {
 public:
-    static float toRadians(float angleDegree);
-    static float toDegrees(float angleRadian);
+    static float degreesToRadians(float angleDegree);
+    static float radiansToDegrees(float angleRadian);
     static float clamp(float var, float minValue, float maxValue);
 };
 
