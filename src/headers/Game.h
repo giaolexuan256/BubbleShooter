@@ -2,6 +2,7 @@
 #define BUBBLESHOOTER_GAME_H
 
 #include <SDL.h>
+#include <iostream>
 #include "Bubble.h"
 #include "Arrow.h"
 #include "TextureAlpha.h"
@@ -11,17 +12,17 @@
 #include <cmath>
 #include <memory>
 #include "Timer.h"
+#include "BubbleColor.h"
+#include "BubbleNameConverter.h"
 
 class Game {
 public:
-
-
     const static int tileWidth = 40;
     const static int tileHeight = 40;
     const static int columns = 15;
     const static int rows = 5;
-    int bubbleArray[columns][rows];
-    std::shared_ptr<TextureAlpha> bubbleTexture;
+    BubbleColor bubbleArray[columns][rows];
+    std::shared_ptr<TextureAlpha> bubbleTexture[6];
 
     void start();
 
@@ -31,7 +32,7 @@ public:
             x += tileWidth / 2;
         }
         int y = row * tileHeight;
-        return Point((float) x, (float) y);
+        return {(float) x, (float) y};
     }
 
     void renderAllBubbles() {
@@ -43,8 +44,8 @@ public:
         }
     }
 
-    void renderBubble(float x, float y, int type) {
-        bubbleTexture->render(renderer, (int) x, (int) y);
+    void renderBubble(float x, float y, BubbleColor color) {
+        bubbleTexture[color]->render(renderer, (int) x, (int) y);
     }
 
     SDL_Point getGridPosition(float x, float y) {

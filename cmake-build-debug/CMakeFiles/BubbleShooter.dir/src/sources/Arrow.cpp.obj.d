@@ -1,7 +1,7 @@
 CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj: \
  C:\Dev\Projects\BubbleShooter\src\sources\Arrow.cpp \
  C:/Dev/Projects/BubbleShooter/src/headers/Arrow.h \
- C:/Dev/Projects/BubbleShooter/src/util/Point.h \
+ C:/Dev/Projects/BubbleShooter/src/headers/Point.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -180,4 +180,4 @@ CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj: \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_version.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_locale.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_misc.h \
- C:/Dev/Projects/BubbleShooter/src/util/Utility.h
+ C:/Dev/Projects/BubbleShooter/src/headers/Utility.h

@@ -152,6 +152,30 @@ src/headers/BubbleGridManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.s
 .PHONY : src/headers/BubbleGridManager.cpp.s
 
+src/headers/BubbleNameConverter.obj: src/headers/BubbleNameConverter.cpp.obj
+.PHONY : src/headers/BubbleNameConverter.obj
+
+# target to build an object file
+src/headers/BubbleNameConverter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj
+.PHONY : src/headers/BubbleNameConverter.cpp.obj
+
+src/headers/BubbleNameConverter.i: src/headers/BubbleNameConverter.cpp.i
+.PHONY : src/headers/BubbleNameConverter.i
+
+# target to preprocess a source file
+src/headers/BubbleNameConverter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.i
+.PHONY : src/headers/BubbleNameConverter.cpp.i
+
+src/headers/BubbleNameConverter.s: src/headers/BubbleNameConverter.cpp.s
+.PHONY : src/headers/BubbleNameConverter.s
+
+# target to generate assembly for a file
+src/headers/BubbleNameConverter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.s
+.PHONY : src/headers/BubbleNameConverter.cpp.s
+
 src/headers/Timer.obj: src/headers/Timer.cpp.obj
 .PHONY : src/headers/Timer.obj
 
@@ -380,6 +404,9 @@ help:
 	@echo ... src/headers/BubbleGridManager.obj
 	@echo ... src/headers/BubbleGridManager.i
 	@echo ... src/headers/BubbleGridManager.s
+	@echo ... src/headers/BubbleNameConverter.obj
+	@echo ... src/headers/BubbleNameConverter.i
+	@echo ... src/headers/BubbleNameConverter.s
 	@echo ... src/headers/Timer.obj
 	@echo ... src/headers/Timer.i
 	@echo ... src/headers/Timer.s

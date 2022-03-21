@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "BubbleShooter.pdb"
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj.d"
+  "CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj"
+  "CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj"

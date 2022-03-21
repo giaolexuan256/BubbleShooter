@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../headers/Game.h"
 
 
@@ -28,11 +27,15 @@ void Game::initialize() {
             cannon = new Cannon(renderer);
             for (int i = 0; i < columns; i++) {
                 for (int j = 0; j < rows; j++) {
-                    bubbleArray[i][j] = 1;
+                    bubbleArray[i][j] = RED;
                 }
             }
-            bubbleTexture = std::make_shared<TextureAlpha>();
-            bubbleTexture->loadFromFile(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\BlueBubble.jpg)");
+            for(int i = 0; i < 6; i++) {
+                bubbleTexture[i] = std::make_shared<TextureAlpha>();
+                bubbleTexture[i]->loadFromFile(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\)" + BubbleNameConverter::toString(
+                        static_cast<BubbleColor>(i)) + "Bubble.jpg");
+            }
+
         }
     }
 }

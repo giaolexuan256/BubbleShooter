@@ -2,7 +2,6 @@
 #define BUBBLESHOOTER_BUBBLEGRIDMANAGER_H
 
 
-#include
 #include "Point.h"
 
 
@@ -14,6 +13,10 @@ class BubbleGridManager {
     int bubbleArray[columns][rows];
 
     Point getBubbleCoordinate(int column, int row);
+
+    void renderAllBubbles();
+
+    void renderBubble(float x, float y, int type);
 };
 
 
