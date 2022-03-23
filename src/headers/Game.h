@@ -13,9 +13,9 @@
 #include <memory>
 #include "Timer.h"
 #include "BubbleColor.h"
-#include "BubbleNameConverter.h"
 #include "BubbleGridManager.h"
 #include "RandomBubbleColorGenerator.h"
+#include "BubbleTextureHandler.h"
 #include <vector>
 
 

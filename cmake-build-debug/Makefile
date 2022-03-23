@@ -152,29 +152,29 @@ src/headers/BubbleGridManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.s
 .PHONY : src/headers/BubbleGridManager.cpp.s
 
-src/headers/BubbleNameConverter.obj: src/headers/BubbleNameConverter.cpp.obj
-.PHONY : src/headers/BubbleNameConverter.obj
+src/headers/BubbleTextureHandler.obj: src/headers/BubbleTextureHandler.cpp.obj
+.PHONY : src/headers/BubbleTextureHandler.obj
 
 # target to build an object file
-src/headers/BubbleNameConverter.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj
-.PHONY : src/headers/BubbleNameConverter.cpp.obj
+src/headers/BubbleTextureHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj
+.PHONY : src/headers/BubbleTextureHandler.cpp.obj
 
-src/headers/BubbleNameConverter.i: src/headers/BubbleNameConverter.cpp.i
-.PHONY : src/headers/BubbleNameConverter.i
+src/headers/BubbleTextureHandler.i: src/headers/BubbleTextureHandler.cpp.i
+.PHONY : src/headers/BubbleTextureHandler.i
 
 # target to preprocess a source file
-src/headers/BubbleNameConverter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.i
-.PHONY : src/headers/BubbleNameConverter.cpp.i
+src/headers/BubbleTextureHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.i
+.PHONY : src/headers/BubbleTextureHandler.cpp.i
 
-src/headers/BubbleNameConverter.s: src/headers/BubbleNameConverter.cpp.s
-.PHONY : src/headers/BubbleNameConverter.s
+src/headers/BubbleTextureHandler.s: src/headers/BubbleTextureHandler.cpp.s
+.PHONY : src/headers/BubbleTextureHandler.s
 
 # target to generate assembly for a file
-src/headers/BubbleNameConverter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.s
-.PHONY : src/headers/BubbleNameConverter.cpp.s
+src/headers/BubbleTextureHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.s
+.PHONY : src/headers/BubbleTextureHandler.cpp.s
 
 src/headers/RandomBubbleColorGenerator.obj: src/headers/RandomBubbleColorGenerator.cpp.obj
 .PHONY : src/headers/RandomBubbleColorGenerator.obj
@@ -428,9 +428,9 @@ help:
 	@echo ... src/headers/BubbleGridManager.obj
 	@echo ... src/headers/BubbleGridManager.i
 	@echo ... src/headers/BubbleGridManager.s
-	@echo ... src/headers/BubbleNameConverter.obj
-	@echo ... src/headers/BubbleNameConverter.i
-	@echo ... src/headers/BubbleNameConverter.s
+	@echo ... src/headers/BubbleTextureHandler.obj
+	@echo ... src/headers/BubbleTextureHandler.i
+	@echo ... src/headers/BubbleTextureHandler.s
 	@echo ... src/headers/RandomBubbleColorGenerator.obj
 	@echo ... src/headers/RandomBubbleColorGenerator.i
 	@echo ... src/headers/RandomBubbleColorGenerator.s

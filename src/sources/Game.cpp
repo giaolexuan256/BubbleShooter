@@ -39,12 +39,8 @@ void Game::initialize() {
 void Game::initializeBubbleTextures() {
     for (int i = 0; i < BubbleColor::BUBBLE_COLOR_SIZE; i++) {
         bubbleTextures.push_back(std::make_shared<TextureAlpha>());
-        bubbleTextures.back()->loadFromFile(renderer, getBubbleTexturePath(static_cast<BubbleColor>(i)));
+        bubbleTextures.back()->loadFromFile(renderer, BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
     }
-}
-
-std::string Game::getBubbleTexturePath(BubbleColor color) {
-    return R"(C:\Dev\Projects\BubbleShooter\assets\)" + BubbleNameConverter::toString(color) + "Bubble.jpg";
 }
 
 void Game::gameLoop(double delta) {

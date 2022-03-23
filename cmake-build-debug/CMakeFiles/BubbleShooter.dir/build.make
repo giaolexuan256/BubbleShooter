@@ -218,26 +218,11 @@ CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.s"
 	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\headers\BubbleGridManager.cpp -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleGridManager.cpp.s
 
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj: ../src/headers/BubbleNameConverter.cpp
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\headers\BubbleNameConverter.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleNameConverter.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\headers\BubbleNameConverter.cpp
-
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.i"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\headers\BubbleNameConverter.cpp > CMakeFiles\BubbleShooter.dir\src\headers\BubbleNameConverter.cpp.i
-
-CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.s"
-	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\headers\BubbleNameConverter.cpp -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleNameConverter.cpp.s
-
 CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
 CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
 CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj: ../src/headers/RandomBubbleColorGenerator.cpp
 CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj"
 	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\headers\RandomBubbleColorGenerator.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\headers\RandomBubbleColorGenerator.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\headers\RandomBubbleColorGenerator.cpp
 
 CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.i: cmake_force
@@ -247,6 +232,21 @@ CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.i: cmake
 CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.s"
 	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\headers\RandomBubbleColorGenerator.cpp -o CMakeFiles\BubbleShooter.dir\src\headers\RandomBubbleColorGenerator.cpp.s
+
+CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj: ../src/headers/BubbleTextureHandler.cpp
+CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\headers\BubbleTextureHandler.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleTextureHandler.cpp.obj -c C:\Dev\Projects\BubbleShooter\src\headers\BubbleTextureHandler.cpp
+
+CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\BubbleShooter\src\headers\BubbleTextureHandler.cpp > CMakeFiles\BubbleShooter.dir\src\headers\BubbleTextureHandler.cpp.i
+
+CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\BubbleShooter\src\headers\BubbleTextureHandler.cpp -o CMakeFiles\BubbleShooter.dir\src\headers\BubbleTextureHandler.cpp.s
 
 # Object files for target BubbleShooter
 BubbleShooter_OBJECTS = \
@@ -260,8 +260,8 @@ BubbleShooter_OBJECTS = \
 "CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj"
+"CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj"
 
 # External object files for target BubbleShooter
 BubbleShooter_EXTERNAL_OBJECTS =
@@ -276,8 +276,8 @@ BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Utility.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj
-BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/build.make
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/linklibs.rsp
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/objects1.rsp

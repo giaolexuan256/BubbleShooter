@@ -1,6 +1,10 @@
-#include "BubbleNameConverter.h"
+#include "BubbleTextureHandler.h"
 
-std::string BubbleNameConverter::toString(BubbleColor color) {
+std::string BubbleTextureHandler::getBubbleTexturePath(BubbleColor bubbleColor) {
+    return R"(C:\Dev\Projects\BubbleShooter\assets\)" + toString(bubbleColor) + "Bubble.jpg";
+}
+
+std::string BubbleTextureHandler::toString(BubbleColor color) {
     std::string result;
     switch (color) {
         case RED:
