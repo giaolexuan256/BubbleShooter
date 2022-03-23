@@ -27,15 +27,16 @@ void Game::initialize() {
             cannon = new Cannon(renderer);
             for (int i = 0; i < columns; i++) {
                 for (int j = 0; j < rows; j++) {
-                    bubbleArray[i][j] = RED;
+                    if(j >= 4) bubbleArray[i][j] = BLANK;
+                    else bubbleArray[i][j] = RED;
                 }
             }
-            initializeBubbleTextures(renderer);
+            initializeBubbleTextures();
         }
     }
 }
 
-void Game::initializeBubbleTextures(SDL_Renderer *renderer) {
+void Game::initializeBubbleTextures() {
     for (int i = 0; i < BubbleColor::BUBBLE_COLOR_SIZE; i++) {
         bubbleTextures.push_back(std::make_shared<TextureAlpha>());
         bubbleTextures.back()->loadFromFile(renderer, getBubbleTexturePath(static_cast<BubbleColor>(i)));
@@ -84,12 +85,32 @@ void Game::updateObjects(double delta) {
     }
     if (cannonBubble->getY() < 0) {
         cannonBubble->setMoving(false);
-        cannon->loadBubble(renderer);
+        snapBubble();
+        return;
     }
     if (cannonBubble->isMoving()) {
         cannonBubble->setX(cannonBubble->getX() - cannonBubble->getSpeedX());
         cannonBubble->setY(cannonBubble->getY() - cannonBubble->getSpeedY());
     }
+
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            if (bubbleArray[i][j] == BLANK) continue;
+            Point bubbleCoordinate = getBubbleCoordinate(i, j);
+            if (Utility::circleIntersection({bubbleCoordinate.x + tileWidth / 2, bubbleCoordinate.y + tileHeight / 2},
+                                            radius, cannonBubble->getCenterPosition(), radius)) {
+                cannonBubble->setMoving(false);
+                snapBubble();
+                return;
+            }
+        }
+    }
+}
+
+void Game::snapBubble() {
+    SDL_Point gridPosition = getGridPosition(cannon->getLoadedBubble()->getX(), cannon->getLoadedBubble()->getY());
+    bubbleArray[gridPosition.x][gridPosition.y] = BubbleColor::BLUE;
+    cannon->loadBubble(renderer);
 }
 
 void Game::render() {
@@ -102,10 +123,6 @@ void Game::render() {
 void Game::clearScreen() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-}
-
-void Game::sleep(double sleepTime) {
-
 }
 
 void Game::quit() {

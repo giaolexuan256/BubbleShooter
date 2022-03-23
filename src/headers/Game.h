@@ -23,7 +23,8 @@ public:
     const static int tileWidth = 40;
     const static int tileHeight = 40;
     const static int columns = 15;
-    const static int rows = 5;
+    const static int rows = 8;
+    const double radius = 40.0 / std::sqrt(2);
     BubbleColor bubbleArray[columns][rows];
     std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
 
@@ -48,6 +49,7 @@ public:
     }
 
     void renderBubble(float x, float y, BubbleColor color) {
+        if(color == BLANK) return;
         bubbleTextures[color]->render(renderer, (int) x, (int) y);
     }
 
@@ -74,7 +76,7 @@ private:
 
     void initialize();
 
-    void initializeBubbleTextures(SDL_Renderer *renderer);
+    void initializeBubbleTextures();
 
     static std::string getBubbleTexturePath(BubbleColor color);
 
@@ -84,9 +86,9 @@ private:
 
     void updateObjects(double delta);
 
-    void render();
+    void snapBubble();
 
-    void sleep(double sleepTime);
+    void render();
 
     void clearScreen();
 

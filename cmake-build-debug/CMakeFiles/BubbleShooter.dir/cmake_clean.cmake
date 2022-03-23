@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj.d"
+  "CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.obj"
+  "CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj"

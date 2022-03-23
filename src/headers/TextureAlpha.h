@@ -28,7 +28,7 @@ public:
 private:
     int width;
     int height;
-    SDL_Texture *texture;
+    SDL_Texture* texture;
 
 };
 
