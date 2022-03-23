@@ -176,29 +176,29 @@ src/headers/BubbleNameConverter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.s
 .PHONY : src/headers/BubbleNameConverter.cpp.s
 
-src/headers/RandomColorGenerator.obj: src/headers/RandomColorGenerator.cpp.obj
-.PHONY : src/headers/RandomColorGenerator.obj
+src/headers/RandomBubbleColorGenerator.obj: src/headers/RandomBubbleColorGenerator.cpp.obj
+.PHONY : src/headers/RandomBubbleColorGenerator.obj
 
 # target to build an object file
-src/headers/RandomColorGenerator.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.obj
-.PHONY : src/headers/RandomColorGenerator.cpp.obj
+src/headers/RandomBubbleColorGenerator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj
+.PHONY : src/headers/RandomBubbleColorGenerator.cpp.obj
 
-src/headers/RandomColorGenerator.i: src/headers/RandomColorGenerator.cpp.i
-.PHONY : src/headers/RandomColorGenerator.i
+src/headers/RandomBubbleColorGenerator.i: src/headers/RandomBubbleColorGenerator.cpp.i
+.PHONY : src/headers/RandomBubbleColorGenerator.i
 
 # target to preprocess a source file
-src/headers/RandomColorGenerator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.i
-.PHONY : src/headers/RandomColorGenerator.cpp.i
+src/headers/RandomBubbleColorGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.i
+.PHONY : src/headers/RandomBubbleColorGenerator.cpp.i
 
-src/headers/RandomColorGenerator.s: src/headers/RandomColorGenerator.cpp.s
-.PHONY : src/headers/RandomColorGenerator.s
+src/headers/RandomBubbleColorGenerator.s: src/headers/RandomBubbleColorGenerator.cpp.s
+.PHONY : src/headers/RandomBubbleColorGenerator.s
 
 # target to generate assembly for a file
-src/headers/RandomColorGenerator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.s
-.PHONY : src/headers/RandomColorGenerator.cpp.s
+src/headers/RandomBubbleColorGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.s
+.PHONY : src/headers/RandomBubbleColorGenerator.cpp.s
 
 src/headers/Timer.obj: src/headers/Timer.cpp.obj
 .PHONY : src/headers/Timer.obj
@@ -431,9 +431,9 @@ help:
 	@echo ... src/headers/BubbleNameConverter.obj
 	@echo ... src/headers/BubbleNameConverter.i
 	@echo ... src/headers/BubbleNameConverter.s
-	@echo ... src/headers/RandomColorGenerator.obj
-	@echo ... src/headers/RandomColorGenerator.i
-	@echo ... src/headers/RandomColorGenerator.s
+	@echo ... src/headers/RandomBubbleColorGenerator.obj
+	@echo ... src/headers/RandomBubbleColorGenerator.i
+	@echo ... src/headers/RandomBubbleColorGenerator.s
 	@echo ... src/headers/Timer.obj
 	@echo ... src/headers/Timer.i
 	@echo ... src/headers/Timer.s

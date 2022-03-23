@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/headers/BubbleNameConverter.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleNameConverter.cpp.obj.d"
-  "C:/Dev/Projects/BubbleShooter/src/headers/RandomColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/RandomColorGenerator.cpp.obj.d"
+  "C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/headers/Timer.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Arrow.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/sources/Bubble.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj.d"

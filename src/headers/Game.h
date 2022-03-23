@@ -15,6 +15,7 @@
 #include "BubbleColor.h"
 #include "BubbleNameConverter.h"
 #include "BubbleGridManager.h"
+#include "RandomBubbleColorGenerator.h"
 #include <vector>
 
 

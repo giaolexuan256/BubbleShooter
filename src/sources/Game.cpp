@@ -28,7 +28,7 @@ void Game::initialize() {
             for (int i = 0; i < columns; i++) {
                 for (int j = 0; j < rows; j++) {
                     if(j >= 4) bubbleArray[i][j] = BLANK;
-                    else bubbleArray[i][j] = RED;
+                    else bubbleArray[i][j] = RandomBubbleColorGenerator::generateRandomBubbleColor();
                 }
             }
             initializeBubbleTextures();

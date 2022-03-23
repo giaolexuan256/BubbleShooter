@@ -118,10 +118,10 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Point.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomColorGenerator.cpp">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomColorGenerator.h">
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/ScreenSizeCarrier.h">
