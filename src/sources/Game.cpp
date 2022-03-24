@@ -1,5 +1,13 @@
 #include "../headers/Game.h"
 
+const int PROCESSED = 1;
+const int NOT_PROCESSED = 0;
+std::vector<std::vector<int>> toProcess(Game::rows, std::vector<int>(Game::columns, NOT_PROCESSED));
+std::vector<SDL_Point> foundCluster;
+SDL_Point neighborsOffsets[2][6] = {
+        {{1, 0}, {0, 1}, {-1, 1}, {-1, -1}, {0, -1}, {-1, 0}},
+        {{1, 0}, {1, 1}, {0,  1}, {-1, 0},  {0, -1}, {1,  -1}}
+};
 
 void Game::start() {
     running = true;
@@ -27,7 +35,7 @@ void Game::initialize() {
             cannon = new Cannon(renderer);
             for (int i = 0; i < columns; i++) {
                 for (int j = 0; j < rows; j++) {
-                    if(j >= 4) bubbleArray[i][j] = BLANK;
+                    if (j >= 4) bubbleArray[i][j] = BLANK;
                     else bubbleArray[i][j] = RandomBubbleColorGenerator::generateRandomBubbleColor();
                 }
             }
@@ -39,7 +47,8 @@ void Game::initialize() {
 void Game::initializeBubbleTextures() {
     for (int i = 0; i < BubbleColor::BUBBLE_COLOR_SIZE; i++) {
         bubbleTextures.push_back(std::make_shared<TextureAlpha>());
-        bubbleTextures.back()->loadFromFile(renderer, BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
+        bubbleTextures.back()->loadFromFile(renderer,
+                                            BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
     }
 }
 
@@ -61,8 +70,8 @@ void Game::processInput(double delta) {
                     if (!cannon->getLoadedBubble()->isMoving()) {
                         cannon->getLoadedBubble()->setMoving(true);
                         cannon->getLoadedBubble()->setSpeed(
-                                -400 * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
-                                400 * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
+                                -500 * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
+                                500 * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
                     }
             }
         }
@@ -93,7 +102,7 @@ void Game::updateObjects(double delta) {
         for (int j = 0; j < rows; j++) {
             if (bubbleArray[i][j] == BLANK) continue;
             Point bubbleCoordinate = getBubbleCoordinate(i, j);
-            if (Utility::circleIntersection({bubbleCoordinate.x + tileWidth / 2, bubbleCoordinate.y + tileHeight / 2},
+            if (Utility::circleIntersection({bubbleCoordinate.x + tileWidth / 2.0f, bubbleCoordinate.y + tileHeight / 2.0f},
                                             radius, cannonBubble->getCenterPosition(), radius)) {
                 cannonBubble->setMoving(false);
                 snapBubble();
@@ -106,8 +115,50 @@ void Game::updateObjects(double delta) {
 void Game::snapBubble() {
     SDL_Point gridPosition = getGridPosition(cannon->getLoadedBubble()->getX(), cannon->getLoadedBubble()->getY());
     bubbleArray[gridPosition.x][gridPosition.y] = BubbleColor::BLUE;
+    recursiveFindCluster(gridPosition.x, gridPosition.y, BubbleColor::BLUE);
+    printf("%d\n", foundCluster.size());
+    for (auto &i: foundCluster) {
+        bubbleArray[i.x][i.y] = BLANK;
+    }
+    resetProcess();
     cannon->loadBubble(renderer);
 }
+
+SDL_Point Game::getGridPosition(float x, float y) {
+    int yGrid = round((y / tileHeight));
+    int xOffset = 0;
+    if (yGrid % 2 == 1) {
+        xOffset = tileWidth / 2;
+    }
+    int xGrid = round((x - (float) xOffset) / tileWidth);
+
+    return {xGrid, yGrid};
+}
+
+void Game::recursiveFindCluster(int xGrid, int yGrid, int type) {
+    if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
+    int targetBubble = bubbleArray[yGrid][xGrid];
+    if (toProcess[yGrid][xGrid] == PROCESSED || targetBubble != type || targetBubble == -1) {
+        return;
+    } else {
+        foundCluster.push_back({yGrid, xGrid});
+        toProcess[yGrid][xGrid] = PROCESSED;
+        int tileRow = yGrid % 2;
+        for (int i = 0; i < 6; i++) {
+            recursiveFindCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y, type);
+        }
+    }
+}
+
+void Game::resetProcess() {
+    for(int i = 0; i < toProcess.size(); i++) {
+        for(int j = 0; j < toProcess[0].size(); j++) {
+            toProcess[i][j] = NOT_PROCESSED;
+        }
+    }
+    foundCluster.clear();
+}
+
 
 void Game::render() {
     clearScreen();

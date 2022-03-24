@@ -25,9 +25,10 @@ public:
     const static int tileHeight = 40;
     const static int columns = 15;
     const static int rows = 8;
-    const double radius = 40.0 / std::sqrt(2);
+    const float radius = 40.0f * std::sqrt(5.0f) / 4.0f;
     BubbleColor bubbleArray[columns][rows];
     std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
+
 
     void start();
 
@@ -50,20 +51,11 @@ public:
     }
 
     void renderBubble(float x, float y, BubbleColor color) {
-        if(color == BLANK) return;
+        if (color == BLANK) return;
         bubbleTextures[color]->render(renderer, (int) x, (int) y);
     }
 
-    SDL_Point getGridPosition(float x, float y) {
-        int yGrid = std::floor((y / tileHeight));
-        int xOffset = 0;
-        if (yGrid % 2 == 1) {
-            xOffset = tileWidth / 2;
-        }
-        int xGrid = std::floor((x - (float) xOffset) / tileWidth);
-
-        return {xGrid, yGrid};
-    }
+    static SDL_Point getGridPosition(float x, float y);
 
 
 private:
@@ -79,8 +71,6 @@ private:
 
     void initializeBubbleTextures();
 
-    static std::string getBubbleTexturePath(BubbleColor color);
-
     void gameLoop(double delta);
 
     void processInput(double delta);
@@ -88,6 +78,10 @@ private:
     void updateObjects(double delta);
 
     void snapBubble();
+
+    void recursiveFindCluster(int xGrid, int yGrid, int type);
+
+    void resetProcess();
 
     void render();
 
