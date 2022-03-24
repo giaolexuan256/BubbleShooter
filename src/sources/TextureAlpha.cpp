@@ -10,7 +10,6 @@ void TextureAlpha::loadFromFile(SDL_Renderer *renderer, const std::string &fileN
     if (loadedSurface == nullptr) {
         printf("Failed to load image %s!\nSDL_image error: %s", fileName.c_str(), IMG_GetError());
     } else {
-        SDL_SetColorKey(loadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 255, 255, 255));
         SDL_Texture *newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
         width = loadedSurface->w;
         height = loadedSurface->h;

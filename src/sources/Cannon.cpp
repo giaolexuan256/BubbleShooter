@@ -1,7 +1,3 @@
-//
-// Created by giaol on 3/17/2022.
-//
-
 #include "../headers/Cannon.h"
 
 Cannon::Cannon(SDL_Renderer *renderer) {
@@ -12,7 +8,7 @@ Cannon::Cannon(SDL_Renderer *renderer) {
 void Cannon::loadBubble(SDL_Renderer *renderer) {
     loadedBubble = std::make_shared<Bubble>(renderer);
     loadedBubble->setCenterPosition((float) SCREEN_WIDTH / 2,
-                                    SCREEN_HEIGHT - loadedBubble->getBubbleTexture().getHeight() / 2);
+                                    SCREEN_HEIGHT - loadedBubble->getBubbleTexture()->getHeight() / 2);
 }
 
 void Cannon::render(SDL_Renderer *renderer) {

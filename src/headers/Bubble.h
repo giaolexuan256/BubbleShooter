@@ -4,14 +4,18 @@
 #include "TextureAlpha.h"
 #include "Utility.h"
 #include "Point.h"
+#include "BubbleColor.h"
+#include "RandomBubbleColorGenerator.h"
+#include "BubbleTextureHandler.h"
+#include <memory>
 
 class Bubble {
 public:
 
     Bubble(SDL_Renderer *renderer);
 
-    void loadTexture(SDL_Renderer *renderer, std::string fileName) {
-        bubbleTexture.loadFromFile(renderer, fileName);
+    void loadTexture(SDL_Renderer *renderer, const std::string& fileName) {
+        bubbleTexture->loadFromFile(renderer, fileName);
     }
 
     bool isMoving() const {
@@ -35,6 +39,8 @@ public:
 
     Point getCenterPosition();
 
+    BubbleColor getType() const;
+
     float getWidth();
 
     float getHeight();
@@ -57,7 +63,7 @@ public:
         return y;
     }
 
-    TextureAlpha getBubbleTexture() {
+    std::shared_ptr<TextureAlpha> getBubbleTexture() {
         return bubbleTexture;
     }
 
@@ -71,8 +77,8 @@ public:
 
 private:
     float x, y;
-    int type;
-    TextureAlpha bubbleTexture;
+    BubbleColor type;
+    std::shared_ptr<TextureAlpha> bubbleTexture;
     bool moving;
     float speedX, speedY;
 };

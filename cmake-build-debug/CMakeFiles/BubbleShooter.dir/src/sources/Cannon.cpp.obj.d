@@ -260,13 +260,27 @@ CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj: \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_version.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/begin_code.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/close_code.h \
- C:/Dev/Projects/BubbleShooter/src/headers/ScreenSizeCarrier.h \
- C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/memory \
+ C:/Dev/Projects/BubbleShooter/src/headers/BubbleColor.h \
+ C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/random \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/random.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_uninitialized.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_vector.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_bvector.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uniform_int_dist.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/random.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/numeric \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_numeric.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bit \
+ C:/Dev/Projects/BubbleShooter/src/headers/BubbleTextureHandler.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/memory \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_tempbuf.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_raw_storage_iter.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/align.h \
- C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bit \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uses_allocator.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/unique_ptr.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/utility \
@@ -288,4 +302,5 @@ CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj: \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/shared_ptr_atomic.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/atomic_base.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/atomic_lockfree_defines.h \
- C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward/auto_ptr.h
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward/auto_ptr.h \
+ C:/Dev/Projects/BubbleShooter/src/headers/ScreenSizeCarrier.h

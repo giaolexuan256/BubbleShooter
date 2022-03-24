@@ -2,7 +2,7 @@
 
 const int PROCESSED = 1;
 const int NOT_PROCESSED = 0;
-std::vector<std::vector<int>> toProcess(Game::rows, std::vector<int>(Game::columns, NOT_PROCESSED));
+std::vector<std::vector<int>> toProcess(Game::columns, std::vector<int>(Game::rows, NOT_PROCESSED));
 std::vector<SDL_Point> foundCluster;
 SDL_Point neighborsOffsets[2][6] = {
         {{1, 0}, {0, 1}, {-1, 1}, {-1, -1}, {0, -1}, {-1, 0}},
@@ -114,12 +114,14 @@ void Game::updateObjects(double delta) {
 
 void Game::snapBubble() {
     SDL_Point gridPosition = getGridPosition(cannon->getLoadedBubble()->getX(), cannon->getLoadedBubble()->getY());
-    bubbleArray[gridPosition.x][gridPosition.y] = BubbleColor::BLUE;
-    recursiveFindCluster(gridPosition.x, gridPosition.y, BubbleColor::BLUE);
-    printf("%d\n", foundCluster.size());
-    for (auto &i: foundCluster) {
-        bubbleArray[i.x][i.y] = BLANK;
+    bubbleArray[gridPosition.x][gridPosition.y] = cannon->getLoadedBubble()->getType();
+    recursiveFindCluster(gridPosition.x, gridPosition.y, cannon->getLoadedBubble()->getType());
+    if(foundCluster.size() >= 3) {
+        for (auto &i: foundCluster) {
+            bubbleArray[i.x][i.y] = BLANK;
+        }
     }
+
     resetProcess();
     cannon->loadBubble(renderer);
 }
@@ -135,14 +137,14 @@ SDL_Point Game::getGridPosition(float x, float y) {
     return {xGrid, yGrid};
 }
 
-void Game::recursiveFindCluster(int xGrid, int yGrid, int type) {
+void Game::recursiveFindCluster(int xGrid, int yGrid, BubbleColor type) {
     if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
-    int targetBubble = bubbleArray[yGrid][xGrid];
-    if (toProcess[yGrid][xGrid] == PROCESSED || targetBubble != type || targetBubble == -1) {
+    BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
+    if (toProcess[xGrid][yGrid] == PROCESSED || targetBubble != type || targetBubble == BLANK) {
         return;
     } else {
-        foundCluster.push_back({yGrid, xGrid});
-        toProcess[yGrid][xGrid] = PROCESSED;
+        foundCluster.push_back({xGrid, yGrid});
+        toProcess[xGrid][yGrid] = PROCESSED;
         int tileRow = yGrid % 2;
         for (int i = 0; i < 6; i++) {
             recursiveFindCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y, type);

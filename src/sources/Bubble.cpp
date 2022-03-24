@@ -1,35 +1,37 @@
 #include "../headers/Bubble.h"
 
 Bubble::Bubble(SDL_Renderer *renderer) {
-    loadTexture(renderer, R"(C:\Dev\Projects\BubbleShooter\assets\BlueBubble.jpg)");
+    type = RandomBubbleColorGenerator::generateRandomBubbleColor();
+    bubbleTexture = std::make_shared<TextureAlpha>();
+    loadTexture(renderer, BubbleTextureHandler::getBubbleTexturePath(type));
 }
 
 void Bubble::render(SDL_Renderer *renderer) {
-    bubbleTexture.render(renderer, (int) x, (int) y, nullptr);
+    bubbleTexture->render(renderer, (int) x, (int) y, nullptr);
 }
 
 void Bubble::renderCenter(SDL_Renderer *renderer) {
-    bubbleTexture.render(renderer, (int) (x - bubbleTexture.getWidth() / 2), (int) (y - bubbleTexture.getHeight() / 2),
+    bubbleTexture->render(renderer, (int) (x - bubbleTexture->getWidth() / 2), (int) (y - bubbleTexture->getHeight() / 2),
                          nullptr);
 
 }
 
 
 void Bubble::setCenterPosition(float xCenter, float yCenter) {
-    x = xCenter - bubbleTexture.getWidth() / 2;
-    y = yCenter - bubbleTexture.getHeight() / 2;
+    x = xCenter - bubbleTexture->getWidth() / 2;
+    y = yCenter - bubbleTexture->getHeight() / 2;
 }
 
 Point Bubble::getCenterPosition() {
-    return {x + bubbleTexture.getWidth() / 2, y + bubbleTexture.getHeight() / 2};
+    return {x + bubbleTexture->getWidth() / 2, y + bubbleTexture->getHeight() / 2};
 }
 
 float Bubble::getWidth() {
-    return Bubble::getBubbleTexture().getWidth();
+    return Bubble::getBubbleTexture()->getWidth();
 }
 
 float Bubble::getHeight() {
-    return Bubble::getBubbleTexture().getHeight();
+    return Bubble::getBubbleTexture()->getHeight();
 }
 
 float Bubble::getSpeedX() {
@@ -51,4 +53,8 @@ void Bubble::setSpeedY(float speedY) {
 void Bubble::setSpeed(float speedX, float speedY) {
     setSpeedX(speedX);
     setSpeedY(speedY);
+}
+
+BubbleColor Bubble::getType() const {
+    return type;
 }
