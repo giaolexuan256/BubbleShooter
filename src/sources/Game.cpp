@@ -102,8 +102,9 @@ void Game::updateObjects(double delta) {
         for (int j = 0; j < rows; j++) {
             if (bubbleArray[i][j] == BLANK) continue;
             Point bubbleCoordinate = getBubbleCoordinate(i, j);
-            if (Utility::circleIntersection({bubbleCoordinate.x + tileWidth / 2.0f, bubbleCoordinate.y + tileHeight / 2.0f},
-                                            radius, cannonBubble->getCenterPosition(), radius)) {
+            if (Utility::circleIntersection(
+                    {bubbleCoordinate.x + tileWidth / 2.0f, bubbleCoordinate.y + tileHeight / 2.0f},
+                    radius, cannonBubble->getCenterPosition(), radius)) {
                 cannonBubble->setMoving(false);
                 snapBubble();
                 return;
@@ -116,14 +117,21 @@ void Game::snapBubble() {
     SDL_Point gridPosition = getGridPosition(cannon->getLoadedBubble()->getX(), cannon->getLoadedBubble()->getY());
     bubbleArray[gridPosition.x][gridPosition.y] = cannon->getLoadedBubble()->getType();
     recursiveFindCluster(gridPosition.x, gridPosition.y, cannon->getLoadedBubble()->getType());
-    if(foundCluster.size() >= 3) {
+    if (foundCluster.size() >= 3) {
         for (auto &i: foundCluster) {
             bubbleArray[i.x][i.y] = BLANK;
         }
     }
-
+    if (isGameOver()) { quit(); }
     resetProcess();
     cannon->loadBubble(renderer);
+}
+
+bool Game::isGameOver() {
+    for (int i = 0; i < columns; i++) {
+        if (bubbleArray[i][0] != BLANK) return false;
+    }
+    return true;
 }
 
 SDL_Point Game::getGridPosition(float x, float y) {
@@ -153,8 +161,8 @@ void Game::recursiveFindCluster(int xGrid, int yGrid, BubbleColor type) {
 }
 
 void Game::resetProcess() {
-    for(int i = 0; i < toProcess.size(); i++) {
-        for(int j = 0; j < toProcess[0].size(); j++) {
+    for (int i = 0; i < toProcess.size(); i++) {
+        for (int j = 0; j < toProcess[0].size(); j++) {
             toProcess[i][j] = NOT_PROCESSED;
         }
     }

@@ -24,6 +24,9 @@ public:
 
     void setMoving(bool moving) {
         Bubble::moving = moving;
+        if(!moving) {
+            speedX = speedY = 0;
+        }
     }
 
     void setPosition(float x, float y) {

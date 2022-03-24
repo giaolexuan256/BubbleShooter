@@ -1,9 +1,13 @@
 #include "../headers/Bubble.h"
+#include "../headers/ScreenSizeCarrier.h"
 
 Bubble::Bubble(SDL_Renderer *renderer) {
     type = RandomBubbleColorGenerator::generateRandomBubbleColor();
     bubbleTexture = std::make_shared<TextureAlpha>();
     loadTexture(renderer, BubbleTextureHandler::getBubbleTexturePath(type));
+    setCenterPosition((float) SCREEN_WIDTH / 2,
+                      SCREEN_HEIGHT - bubbleTexture->getHeight() / 2);
+    setMoving(false);
 }
 
 void Bubble::render(SDL_Renderer *renderer) {

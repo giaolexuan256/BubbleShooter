@@ -25,7 +25,7 @@ public:
     const static int tileHeight = 40;
     const static int columns = 15;
     const static int rows = 8;
-    const float radius = 40.0f * std::sqrt(5.0f) / 4.0f;
+    const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
     std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
 
@@ -77,6 +77,8 @@ private:
     void processInput(double delta);
 
     void updateObjects(double delta);
+
+    bool isGameOver();
 
     void snapBubble();
 
