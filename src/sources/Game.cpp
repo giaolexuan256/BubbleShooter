@@ -35,7 +35,7 @@ void Game::initialize() {
             cannon = new Cannon(renderer);
             for (int i = 0; i < columns; i++) {
                 for (int j = 0; j < rows; j++) {
-                    if (j >= 4) bubbleArray[i][j] = BLANK;
+                    if (j >= 2) bubbleArray[i][j] = BLANK;
                     else bubbleArray[i][j] = RandomBubbleColorGenerator::generateRandomBubbleColor();
                 }
             }
@@ -123,6 +123,7 @@ void Game::snapBubble() {
         }
     }
     if (isGameOver()) { quit(); }
+    findFloatingCluster();
     resetProcess();
     cannon->loadBubble(renderer);
 }
@@ -156,6 +157,45 @@ void Game::recursiveFindCluster(int xGrid, int yGrid, BubbleColor type) {
         int tileRow = yGrid % 2;
         for (int i = 0; i < 6; i++) {
             recursiveFindCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y, type);
+        }
+    }
+}
+
+void Game::findFloatingCluster() {
+    resetProcess();
+    for (int i = 0; i < columns; i++) {
+        recursivelyFindFloatingCluster(i, 0);
+    }
+    bool isFloating[columns][rows];
+    for(int i = 0; i < columns; i++) {
+        for(int j = 0; j < rows; j++) {
+            isFloating[i][j] = true;
+        }
+    }
+    for (auto &i: foundCluster) {
+        isFloating[i.x][i.y] = false;
+    }
+    printf("%d\n", foundCluster.size());
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            if (bubbleArray[i][j] == BLANK) continue;
+            else if (isFloating[i][j]) bubbleArray[i][j] = BLANK;
+        }
+    }
+}
+
+void Game::recursivelyFindFloatingCluster(int xGrid, int yGrid) {
+    if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
+    BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
+    if (toProcess[xGrid][yGrid] == PROCESSED || targetBubble == BLANK) {
+        return;
+    } else {
+        foundCluster.push_back({xGrid, yGrid});
+        toProcess[xGrid][yGrid] = PROCESSED;
+        int tileRow = yGrid % 2;
+        for (int i = 0; i < 6; i++) {
+            recursivelyFindFloatingCluster(xGrid + neighborsOffsets[tileRow][i].x,
+                                           yGrid + neighborsOffsets[tileRow][i].y);
         }
     }
 }

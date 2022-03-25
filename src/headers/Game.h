@@ -17,6 +17,7 @@
 #include "RandomBubbleColorGenerator.h"
 #include "BubbleTextureHandler.h"
 #include <vector>
+#include <algorithm>
 
 
 class Game {
@@ -44,7 +45,6 @@ public:
     void renderAllBubbles() {
         for (int j = 0; j < rows; j++) {
             for (int i = 0; i < columns; i++) {
-
                 Point bubbleCoordinate = getBubbleCoordinate(i, j);
                 renderBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleArray[i][j]);
             }
@@ -83,6 +83,10 @@ private:
     void snapBubble();
 
     void recursiveFindCluster(int xGrid, int yGrid, BubbleColor type);
+
+    void findFloatingCluster();
+
+    void recursivelyFindFloatingCluster(int xGrid, int yGrid);
 
     void resetProcess();
 
