@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "BubbleShooter.exe"
   "BubbleShooter.exe.manifest"
   "BubbleShooter.pdb"
-  "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj"
-  "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj"

@@ -13,7 +13,6 @@
 #include <memory>
 #include "Timer.h"
 #include "BubbleColor.h"
-#include "BubbleGridManager.h"
 #include "RandomBubbleColorGenerator.h"
 #include "BubbleTextureHandler.h"
 #include <vector>
@@ -65,7 +64,6 @@ private:
     SDL_Renderer *renderer;
     Cannon *cannon;
     SDL_Point mousePosition;
-    std::shared_ptr<BubbleGridManager> bubbleGridManager;
 
 
     void initialize();

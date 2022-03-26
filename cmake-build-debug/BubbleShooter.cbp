@@ -97,12 +97,6 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleColor.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.cpp">
-			<Option target="BubbleShooter"/>
-		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.h">
-			<Option target="BubbleShooter"/>
-		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleTextureHandler.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
