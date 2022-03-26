@@ -128,6 +128,30 @@ BubbleShooter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/build
 .PHONY : BubbleShooter/fast
 
+src/headers/BubbleGridManager.obj: src/headers/BubbleGridManager.cpp.obj
+.PHONY : src/headers/BubbleGridManager.obj
+
+# target to build an object file
+src/headers/BubbleGridManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj
+.PHONY : src/headers/BubbleGridManager.cpp.obj
+
+src/headers/BubbleGridManager.i: src/headers/BubbleGridManager.cpp.i
+.PHONY : src/headers/BubbleGridManager.i
+
+# target to preprocess a source file
+src/headers/BubbleGridManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.i
+.PHONY : src/headers/BubbleGridManager.cpp.i
+
+src/headers/BubbleGridManager.s: src/headers/BubbleGridManager.cpp.s
+.PHONY : src/headers/BubbleGridManager.s
+
+# target to generate assembly for a file
+src/headers/BubbleGridManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.s
+.PHONY : src/headers/BubbleGridManager.cpp.s
+
 src/headers/BubbleTextureHandler.obj: src/headers/BubbleTextureHandler.cpp.obj
 .PHONY : src/headers/BubbleTextureHandler.obj
 
@@ -401,6 +425,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... BubbleShooter
+	@echo ... src/headers/BubbleGridManager.obj
+	@echo ... src/headers/BubbleGridManager.i
+	@echo ... src/headers/BubbleGridManager.s
 	@echo ... src/headers/BubbleTextureHandler.obj
 	@echo ... src/headers/BubbleTextureHandler.i
 	@echo ... src/headers/BubbleTextureHandler.s

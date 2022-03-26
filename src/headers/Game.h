@@ -29,7 +29,6 @@ public:
     BubbleColor bubbleArray[columns][rows];
     std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
 
-
     void start();
 
     Point getBubbleCoordinate(int column, int row) {

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/headers/BubbleTextureHandler.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleTextureHandler.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj.d"
   "C:/Dev/Projects/BubbleShooter/src/headers/Timer.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/Timer.cpp.obj.d"

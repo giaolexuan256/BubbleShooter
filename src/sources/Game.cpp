@@ -115,6 +115,9 @@ void Game::updateObjects(double delta) {
 
 void Game::snapBubble() {
     SDL_Point gridPosition = getGridPosition(cannon->getLoadedBubble()->getX(), cannon->getLoadedBubble()->getY());
+    if(gridPosition.y >= rows) {
+        quit();
+    }
     bubbleArray[gridPosition.x][gridPosition.y] = cannon->getLoadedBubble()->getType();
     recursiveFindCluster(gridPosition.x, gridPosition.y, cannon->getLoadedBubble()->getType());
     if (foundCluster.size() >= 3) {
