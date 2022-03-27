@@ -82,13 +82,59 @@ public:
     }
 
     void findFloatingCluster() {
-
+        resetProcess();
+        for (int i = 0; i < columns; i++) {
+            recursivelyFindFloatingCluster(i, 0);
+        }
+        bool isFloating[columns][rows];
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                isFloating[i][j] = true;
+            }
+        }
+        for (auto &i: foundCluster) {
+            isFloating[i.x][i.y] = false;
+        }
+        printf("%d\n", foundCluster.size());
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                if (bubbleArray[i][j] == BLANK) continue;
+                else if (isFloating[i][j]) bubbleArray[i][j] = BLANK;
+            }
+        }
     }
 
     void recursivelyFindFloatingCluster(int xGrid, int yGrid) {
-
+        resetProcess();
+        for (int i = 0; i < columns; i++) {
+            recursivelyFindFloatingCluster(i, 0);
+        }
+        bool isFloating[columns][rows];
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                isFloating[i][j] = true;
+            }
+        }
+        for (auto &i: foundCluster) {
+            isFloating[i.x][i.y] = false;
+        }
+        printf("%d\n", foundCluster.size());
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                if (bubbleArray[i][j] == BLANK) continue;
+                else if (isFloating[i][j]) bubbleArray[i][j] = BLANK;
+            }
+        }
     }
 
+    void resetProcess() {
+        for (int i = 0; i < toProcess.size(); i++) {
+            for (int j = 0; j < toProcess[0].size(); j++) {
+                toProcess[i][j] = NOT_PROCESSED;
+            }
+        }
+        foundCluster.clear();
+    }
 };
 
 
