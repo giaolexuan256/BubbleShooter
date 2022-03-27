@@ -103,7 +103,7 @@ void Game::snapBubble() {
     }
     if (isGameOver()) { quit(); }
     bubbleGridManager->findFloatingCluster();
-    bubbleGridManager->resetProcess();
+    bubbleGridManager->resetSnappingBubbleContainers();
     cannon->loadBubble(renderer);
 }
 
