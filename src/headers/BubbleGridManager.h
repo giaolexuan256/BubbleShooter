@@ -4,9 +4,14 @@
 #include "BubbleColor.h"
 #include "TextureAlpha.h"
 #include "Point.h"
+#include "RandomBubbleColorGenerator.h"
+#include "Utility.h"
+#include "Bubble.h"
+#include <cstdio>
 #include <vector>
 #include <memory>
 #include <cmath>
+#include <iostream>
 
 class BubbleGridManager {
 public:
@@ -16,22 +21,18 @@ public:
     const static int rows = 8;
     const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
-    std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
-    SDL_Renderer *renderer;
-
-    const int PROCESSED = 1;
-    const int NOT_PROCESSED = 0;
-    std::vector<std::vector<int>> toProcess = std::vector<std::vector<int>>(columns,
-                                                                            std::vector<int>(rows, NOT_PROCESSED));
+    bool toProcess[columns][rows];
     std::vector<SDL_Point> foundCluster;
     SDL_Point neighborsOffsets[2][6] = {
             {{1, 0}, {0, 1}, {-1, 1}, {-1, -1}, {0, -1}, {-1, 0}},
             {{1, 0}, {1, 1}, {0,  1}, {-1, 0},  {0, -1}, {1,  -1}}
     };
 
-    BubbleGridManager(SDL_Renderer *renderer);
+    explicit BubbleGridManager();
 
-    Point getBubbleCoordinate(int column, int row) {
+    void initializeBubbleArray();
+
+    static Point getBubbleCoordinate(int column, int row) {
         int x = column * tileWidth;
         if (row % 2 == 1) {
             x += tileWidth / 2;
@@ -40,21 +41,56 @@ public:
         return {(float) x, (float) y};
     }
 
-    void renderAllBubbles() {
+    void renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures) {
         for (int j = 0; j < rows; j++) {
             for (int i = 0; i < columns; i++) {
                 Point bubbleCoordinate = getBubbleCoordinate(i, j);
-                renderBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleArray[i][j]);
+                renderBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleArray[i][j],
+                             bubbleTextures, renderer);
             }
         }
     }
 
-    void renderBubble(float x, float y, BubbleColor color) {
-        if (color == BLANK) return;
-        bubbleTextures[color]->render(renderer, (int) x, (int) y);
+    bool isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble) {
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                if (bubbleArray[i][j] == BLANK) continue;
+                Point bubbleCoordinate = getBubbleCoordinate(i, j);
+                if (Utility::circleIntersection(
+                        {bubbleCoordinate.x + tileWidth / 2.0f, bubbleCoordinate.y + tileHeight / 2.0f},
+                        radius, cannonBubble->getCenterPosition(), radius)) {
+                    cannonBubble->setMoving(false);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
-    static SDL_Point getGridPosition(float x, float y) {
+    bool isBubbleArrayCleared() {
+        for (auto &i: bubbleArray) {
+            if (i[0] != BLANK) return false;
+        }
+        return true;
+    }
+
+    void resetProcess() {
+        clearToProcessArray();
+        foundCluster.clear();
+    }
+
+    void clearToProcessArray() {
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                toProcess[i][j] = true;
+            }
+        }
+    }
+
+
+    static SDL_Point getGridPosition(const std::shared_ptr<Bubble> &bubble) {
+        float x = bubble->getX();
+        float y = bubble->getY();
         int yGrid = round((y / tileHeight));
         int xOffset = 0;
         if (yGrid % 2 == 1) {
@@ -65,18 +101,18 @@ public:
         return {xGrid, yGrid};
     }
 
-    void recursiveFindCluster(int xGrid, int yGrid, BubbleColor type) {
+    void findCluster(int xGrid, int yGrid, BubbleColor type) {
         if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
         BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
-        if (toProcess[xGrid][yGrid] == PROCESSED || targetBubble != type || targetBubble == BLANK) {
+        if (!toProcess[xGrid][yGrid] || targetBubble != type || targetBubble == BLANK) {
             return;
         } else {
             foundCluster.push_back({xGrid, yGrid});
-            toProcess[xGrid][yGrid] = PROCESSED;
+            toProcess[xGrid][yGrid] = false;
             int tileRow = yGrid % 2;
             for (int i = 0; i < 6; i++) {
-                recursiveFindCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y,
-                                     type);
+                findCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y,
+                            type);
             }
         }
     }
@@ -95,7 +131,6 @@ public:
         for (auto &i: foundCluster) {
             isFloating[i.x][i.y] = false;
         }
-        printf("%d\n", foundCluster.size());
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
                 if (bubbleArray[i][j] == BLANK) continue;
@@ -105,35 +140,32 @@ public:
     }
 
     void recursivelyFindFloatingCluster(int xGrid, int yGrid) {
-        resetProcess();
-        for (int i = 0; i < columns; i++) {
-            recursivelyFindFloatingCluster(i, 0);
-        }
-        bool isFloating[columns][rows];
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                isFloating[i][j] = true;
-            }
-        }
-        for (auto &i: foundCluster) {
-            isFloating[i.x][i.y] = false;
-        }
-        printf("%d\n", foundCluster.size());
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                if (bubbleArray[i][j] == BLANK) continue;
-                else if (isFloating[i][j]) bubbleArray[i][j] = BLANK;
+        if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
+        BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
+
+        if (!toProcess[xGrid][yGrid] || targetBubble == BLANK) {
+            return;
+        } else {
+            foundCluster.push_back({xGrid, yGrid});
+            toProcess[xGrid][yGrid] = false;
+            int tileRow = yGrid % 2;
+            for (int i = 0; i < 6; i++) {
+                recursivelyFindFloatingCluster(xGrid + neighborsOffsets[tileRow][i].x,
+                                               yGrid + neighborsOffsets[tileRow][i].y);
             }
         }
     }
 
-    void resetProcess() {
-        for (int i = 0; i < toProcess.size(); i++) {
-            for (int j = 0; j < toProcess[0].size(); j++) {
-                toProcess[i][j] = NOT_PROCESSED;
-            }
-        }
-        foundCluster.clear();
+
+private:
+
+    const int startingRows = 4;
+
+    static void
+    renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
+                 SDL_Renderer *renderer) {
+        if (color == BLANK) return;
+        bubbleTextures[color]->render(renderer, (int) x, (int) y);
     }
 };
 

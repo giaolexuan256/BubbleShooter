@@ -15,54 +15,22 @@
 #include "BubbleColor.h"
 #include "RandomBubbleColorGenerator.h"
 #include "BubbleTextureHandler.h"
+#include "BubbleGridManager.h"
 #include <vector>
 #include <algorithm>
 
 
 class Game {
 public:
-    const static int tileWidth = 40;
-    const static int tileHeight = 40;
-    const static int columns = 15;
-    const static int rows = 8;
-    const float radius = 20.0f;
-    BubbleColor bubbleArray[columns][rows];
     std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
-
     void start();
-
-    Point getBubbleCoordinate(int column, int row) {
-        int x = column * tileWidth;
-        if (row % 2 == 1) {
-            x += tileWidth / 2;
-        }
-        int y = row * tileHeight;
-        return {(float) x, (float) y};
-    }
-
-    void renderAllBubbles() {
-        for (int j = 0; j < rows; j++) {
-            for (int i = 0; i < columns; i++) {
-                Point bubbleCoordinate = getBubbleCoordinate(i, j);
-                renderBubble(bubbleCoordinate.x, bubbleCoordinate.y, bubbleArray[i][j]);
-            }
-        }
-    }
-
-    void renderBubble(float x, float y, BubbleColor color) {
-        if (color == BLANK) return;
-        bubbleTextures[color]->render(renderer, (int) x, (int) y);
-    }
-
-    static SDL_Point getGridPosition(float x, float y);
-
-
 private:
     bool running;
     SDL_Window *window;
     SDL_Renderer *renderer;
     Cannon *cannon;
     SDL_Point mousePosition;
+    std::shared_ptr<BubbleGridManager> bubbleGridManager;
 
 
     void initialize();
@@ -73,19 +41,11 @@ private:
 
     void processInput(double delta);
 
-    void updateObjects(double delta);
+    void updateObjects();
 
     bool isGameOver();
 
     void snapBubble();
-
-    void recursiveFindCluster(int xGrid, int yGrid, BubbleColor type);
-
-    void findFloatingCluster();
-
-    void recursivelyFindFloatingCluster(int xGrid, int yGrid);
-
-    void resetProcess();
 
     void render();
 

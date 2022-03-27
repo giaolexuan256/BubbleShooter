@@ -1,7 +1,3 @@
-//
-// Created by giaol on 3/17/2022.
-//
-
 #ifndef BUBBLESHOOTER_CANNON_H
 #define BUBBLESHOOTER_CANNON_H
 

@@ -256,16 +256,30 @@ CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj: \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/begin_code.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/close_code.h \
  C:\Dev\Projects\BubbleShooter\src\headers\Point.h \
+ C:\Dev\Projects\BubbleShooter\src\headers\RandomBubbleColorGenerator.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/random \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/x86_64-w64-mingw32/include/math.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/random.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_uninitialized.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_vector.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_bvector.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uniform_int_dist.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/random.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/numeric \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_numeric.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bit \
+ C:\Dev\Projects\BubbleShooter\src\headers\Utility.h \
+ C:\Dev\Projects\BubbleShooter\src\headers\Bubble.h \
+ C:\Dev\Projects\BubbleShooter\src\headers\BubbleTextureHandler.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/memory \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_tempbuf.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_raw_storage_iter.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/align.h \
- C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bit \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uses_allocator.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/unique_ptr.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/utility \
@@ -288,5 +302,26 @@ CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj: \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/atomic_base.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/atomic_lockfree_defines.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward/auto_ptr.h \
- C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
- C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/x86_64-w64-mingw32/include/math.h
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdexcept \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
+ C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc

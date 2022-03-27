@@ -1,14 +1,5 @@
 #include "../headers/Game.h"
 
-const int PROCESSED = 1;
-const int NOT_PROCESSED = 0;
-std::vector<std::vector<int>> toProcess(Game::columns, std::vector<int>(Game::rows, NOT_PROCESSED));
-std::vector<SDL_Point> foundCluster;
-SDL_Point neighborsOffsets[2][6] = {
-        {{1, 0}, {0, 1}, {-1, 1}, {-1, -1}, {0, -1}, {-1, 0}},
-        {{1, 0}, {1, 1}, {0,  1}, {-1, 0},  {0, -1}, {1,  -1}}
-};
-
 void Game::start() {
     running = true;
     initialize();
@@ -33,13 +24,8 @@ void Game::initialize() {
         if (window != nullptr) {
             renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
             cannon = new Cannon(renderer);
-            for (int i = 0; i < columns; i++) {
-                for (int j = 0; j < rows; j++) {
-                    if (j >= 2) bubbleArray[i][j] = BLANK;
-                    else bubbleArray[i][j] = RandomBubbleColorGenerator::generateRandomBubbleColor();
-                }
-            }
             initializeBubbleTextures();
+            bubbleGridManager = std::make_shared<BubbleGridManager>();
         }
     }
 }
@@ -54,7 +40,7 @@ void Game::initializeBubbleTextures() {
 
 void Game::gameLoop(double delta) {
     processInput(delta);
-    updateObjects(delta);
+    updateObjects();
     render();
 }
 
@@ -81,7 +67,7 @@ void Game::processInput(double delta) {
     }
 }
 
-void Game::updateObjects(double delta) {
+void Game::updateObjects() {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<Bubble> cannonBubble = cannon->getLoadedBubble();
     if (cannonBubble->getX() < 0 ||
@@ -98,130 +84,44 @@ void Game::updateObjects(double delta) {
         cannonBubble->setY(cannonBubble->getY() - cannonBubble->getSpeedY());
     }
 
-    for (int i = 0; i < columns; i++) {
-        for (int j = 0; j < rows; j++) {
-            if (bubbleArray[i][j] == BLANK) continue;
-            Point bubbleCoordinate = getBubbleCoordinate(i, j);
-            if (Utility::circleIntersection(
-                    {bubbleCoordinate.x + tileWidth / 2.0f, bubbleCoordinate.y + tileHeight / 2.0f},
-                    radius, cannonBubble->getCenterPosition(), radius)) {
-                cannonBubble->setMoving(false);
-                snapBubble();
-                return;
-            }
-        }
+    if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
+        snapBubble();
     }
 }
 
 void Game::snapBubble() {
-    SDL_Point gridPosition = getGridPosition(cannon->getLoadedBubble()->getX(), cannon->getLoadedBubble()->getY());
-    if(gridPosition.y >= rows) {
+    SDL_Point gridPosition = bubbleGridManager->getGridPosition(cannon->getLoadedBubble());
+    if (gridPosition.y >= BubbleGridManager::rows) {
         quit();
     }
-    bubbleArray[gridPosition.x][gridPosition.y] = cannon->getLoadedBubble()->getType();
-    recursiveFindCluster(gridPosition.x, gridPosition.y, cannon->getLoadedBubble()->getType());
-    if (foundCluster.size() >= 3) {
-        for (auto &i: foundCluster) {
-            bubbleArray[i.x][i.y] = BLANK;
+    bubbleGridManager->bubbleArray[gridPosition.x][gridPosition.y] = cannon->getLoadedBubble()->getType();
+    bubbleGridManager->findCluster(gridPosition.x, gridPosition.y, cannon->getLoadedBubble()->getType());
+    if (bubbleGridManager->foundCluster.size() >= 3) {
+        for (auto &i: bubbleGridManager->foundCluster) {
+            bubbleGridManager->bubbleArray[i.x][i.y] = BLANK;
         }
     }
     if (isGameOver()) { quit(); }
-    findFloatingCluster();
-    resetProcess();
+    bubbleGridManager->findFloatingCluster();
+    bubbleGridManager->resetProcess();
     cannon->loadBubble(renderer);
 }
 
 bool Game::isGameOver() {
-    for (int i = 0; i < columns; i++) {
-        if (bubbleArray[i][0] != BLANK) return false;
-    }
-    return true;
-}
-
-SDL_Point Game::getGridPosition(float x, float y) {
-    int yGrid = round((y / tileHeight));
-    int xOffset = 0;
-    if (yGrid % 2 == 1) {
-        xOffset = tileWidth / 2;
-    }
-    int xGrid = round((x - (float) xOffset) / tileWidth);
-
-    return {xGrid, yGrid};
-}
-
-void Game::recursiveFindCluster(int xGrid, int yGrid, BubbleColor type) {
-    if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
-    BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
-    if (toProcess[xGrid][yGrid] == PROCESSED || targetBubble != type || targetBubble == BLANK) {
-        return;
-    } else {
-        foundCluster.push_back({xGrid, yGrid});
-        toProcess[xGrid][yGrid] = PROCESSED;
-        int tileRow = yGrid % 2;
-        for (int i = 0; i < 6; i++) {
-            recursiveFindCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y, type);
-        }
-    }
-}
-
-void Game::findFloatingCluster() {
-    resetProcess();
-    for (int i = 0; i < columns; i++) {
-        recursivelyFindFloatingCluster(i, 0);
-    }
-    bool isFloating[columns][rows];
-    for(int i = 0; i < columns; i++) {
-        for(int j = 0; j < rows; j++) {
-            isFloating[i][j] = true;
-        }
-    }
-    for (auto &i: foundCluster) {
-        isFloating[i.x][i.y] = false;
-    }
-    printf("%d\n", foundCluster.size());
-    for (int i = 0; i < columns; i++) {
-        for (int j = 0; j < rows; j++) {
-            if (bubbleArray[i][j] == BLANK) continue;
-            else if (isFloating[i][j]) bubbleArray[i][j] = BLANK;
-        }
-    }
-}
-
-void Game::recursivelyFindFloatingCluster(int xGrid, int yGrid) {
-    if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
-    BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
-    if (toProcess[xGrid][yGrid] == PROCESSED || targetBubble == BLANK) {
-        return;
-    } else {
-        foundCluster.push_back({xGrid, yGrid});
-        toProcess[xGrid][yGrid] = PROCESSED;
-        int tileRow = yGrid % 2;
-        for (int i = 0; i < 6; i++) {
-            recursivelyFindFloatingCluster(xGrid + neighborsOffsets[tileRow][i].x,
-                                           yGrid + neighborsOffsets[tileRow][i].y);
-        }
-    }
-}
-
-void Game::resetProcess() {
-    for (int i = 0; i < toProcess.size(); i++) {
-        for (int j = 0; j < toProcess[0].size(); j++) {
-            toProcess[i][j] = NOT_PROCESSED;
-        }
-    }
-    foundCluster.clear();
+    if (bubbleGridManager->isBubbleArrayCleared()) return true;
+    else return false;
 }
 
 
 void Game::render() {
     clearScreen();
     cannon->render(renderer);
-    renderAllBubbles();
+    bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
     SDL_RenderPresent(renderer);
 }
 
 void Game::clearScreen() {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
 }
 

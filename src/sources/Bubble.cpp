@@ -14,12 +14,6 @@ void Bubble::render(SDL_Renderer *renderer) {
     bubbleTexture->render(renderer, (int) x, (int) y, nullptr);
 }
 
-void Bubble::renderCenter(SDL_Renderer *renderer) {
-    bubbleTexture->render(renderer, (int) (x - bubbleTexture->getWidth() / 2), (int) (y - bubbleTexture->getHeight() / 2),
-                         nullptr);
-
-}
-
 
 void Bubble::setCenterPosition(float xCenter, float yCenter) {
     x = xCenter - bubbleTexture->getWidth() / 2;

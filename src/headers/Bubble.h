@@ -12,7 +12,7 @@
 class Bubble {
 public:
 
-    Bubble(SDL_Renderer *renderer);
+    explicit Bubble(SDL_Renderer *renderer);
 
     void loadTexture(SDL_Renderer *renderer, const std::string& fileName) {
         bubbleTexture->loadFromFile(renderer, fileName);
@@ -35,8 +35,6 @@ public:
     }
 
     void render(SDL_Renderer *renderer);
-
-    void renderCenter(SDL_Renderer *renderer);
 
     void setCenterPosition(float xCenter, float yCenter);
 
