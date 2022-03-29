@@ -142,3 +142,26 @@ void BubbleGridManager::renderBubble(float x, float y, BubbleColor color, std::v
     if (color == BLANK) return;
     bubbleTextures[color]->render(renderer, (int) x, (int) y);
 }
+
+void BubbleGridManager::addBubbles() {
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            bubbleArray[i][rows - 1 - j] = bubbleArray[i][rows - 1 - j - 1];
+        }
+    }
+
+    for(int i = 0; i < columns; i++) {
+        bubbleArray[i][0] = RandomBubbleColorGenerator::generateRandomBubbleColor();
+    }
+}
+
+BubbleColor BubbleGridManager::getExistingColors() {
+    BubbleColor color;
+    std::vector<BubbleColor> existingColors = findExistingColors();
+    //color = existingColor.at(Math.random(existingColor.length());
+    return color;
+}
+
+std::vector<BubbleColor> BubbleGridManager::findExistingColors() {
+
+}

@@ -54,6 +54,12 @@ public:
 
     void recursivelyFindFloatingCluster(int xGrid, int yGrid);
 
+    void addBubbles();
+
+    BubbleColor getExistingColors();
+
+    std::vector<BubbleColor> findExistingColors();
+
 
 private:
 

@@ -18,6 +18,7 @@
 #include "BubbleGridManager.h"
 #include <vector>
 #include <algorithm>
+#include <SDL_ttf.h>
 
 
 class Game {
@@ -31,11 +32,19 @@ private:
     Cannon *cannon;
     SDL_Point mousePosition;
     std::shared_ptr<BubbleGridManager> bubbleGridManager;
+    TTF_Font *font;
+    std::shared_ptr<TextureAlpha> youWinMessage;
+    int turnCounter;
 
+    bool win = false;
 
     void initialize();
 
     void initializeBubbleTextures();
+
+    void initializeYouWinMessage();
+
+    void initializeTTFFont();
 
     void gameLoop(double delta);
 
@@ -44,6 +53,8 @@ private:
     void updateObjects();
 
     bool isGameOver();
+
+    void displayYouWinMessage();
 
     void snapBubble();
 

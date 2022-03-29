@@ -255,6 +255,7 @@ CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj: \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_version.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/begin_code.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/close_code.h \
+ C:/Dev/Cpp/SDL2_ttf-devel-2.0.12-VC/SDL2_ttf-2.0.12/include/SDL_ttf.h \
  C:\Dev\Projects\BubbleShooter\src\headers\Point.h \
  C:\Dev\Projects\BubbleShooter\src\headers\RandomBubbleColorGenerator.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/random \

@@ -26,6 +26,17 @@ void Game::initialize() {
             cannon = new Cannon(renderer);
             initializeBubbleTextures();
             bubbleGridManager = std::make_shared<BubbleGridManager>();
+            if (TTF_Init() == -1) {
+                printf("SDL_ttf couldn't initialize: TTF_GetError: %s\n", TTF_GetError());
+            } else {
+                font = TTF_OpenFont(R"(C:\Dev\Projects\BubbleShooter\assets\lazy.ttf)", 28);
+                if (font == nullptr) {
+                    printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
+                }
+            }
+            youWinMessage = std::make_shared<TextureAlpha>();
+            youWinMessage->loadFromRenderedText(renderer, font, "You Win!", SDL_Color{255, 255, 255});
+            turnCounter = 0;
         }
     }
 }
@@ -36,6 +47,13 @@ void Game::initializeBubbleTextures() {
         bubbleTextures.back()->loadFromFile(renderer,
                                             BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
     }
+}
+
+void Game::initializeYouWinMessage() {
+}
+
+void Game::initializeTTFFont() {
+
 }
 
 void Game::gameLoop(double delta) {
@@ -101,15 +119,25 @@ void Game::snapBubble() {
             bubbleGridManager->bubbleArray[i.x][i.y] = BLANK;
         }
     }
-    if (isGameOver()) { quit(); }
     bubbleGridManager->findFloatingCluster();
     bubbleGridManager->resetSnappingBubbleContainers();
     cannon->loadBubble(renderer);
+    turnCounter++;
+    if (turnCounter >= 3) {
+        bubbleGridManager->addBubbles();
+        turnCounter = 0;
+    }
 }
 
 bool Game::isGameOver() {
-    if (bubbleGridManager->isBubbleArrayCleared()) return true;
-    else return false;
+    if (bubbleGridManager->isBubbleArrayCleared()) {
+        win = true;
+        return true;
+    } else return false;
+}
+
+void Game::displayYouWinMessage() {
+    youWinMessage->renderCenter(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 }
 
 
@@ -117,11 +145,14 @@ void Game::render() {
     clearScreen();
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
+    if (win) {
+        youWinMessage->renderCenter(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+    }
     SDL_RenderPresent(renderer);
 }
 
 void Game::clearScreen() {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 }
 
