@@ -152,6 +152,7 @@ void BubbleGridManager::recursivelyFindFloatingCluster(int xGrid, int yGrid) {
 }
 
 void BubbleGridManager::addBubbles() {
+    rowOffSet = (rowOffSet + 1) % 2;
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
             bubbleArray[i][rows - 1 - j] = bubbleArray[i][rows - 1 - j - 1];

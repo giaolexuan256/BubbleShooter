@@ -20,7 +20,7 @@ public:
     const static int tileWidth = 40;
     const static int tileHeight = 40;
     const static int columns = 15;
-    const static int rows = 8;
+    const static int rows = 10 ;
     const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
     bool toProcess[columns][rows];
