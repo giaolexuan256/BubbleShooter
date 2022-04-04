@@ -36,7 +36,7 @@ public:
 
     void renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures);
 
-    static Point getBubbleCoordinate(int column, int row);
+    Point getBubbleCoordinate(int column, int row);
 
     bool isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble);
 
@@ -46,7 +46,7 @@ public:
 
     void clearToProcessArray();
 
-    static SDL_Point getGridPosition(const std::shared_ptr<Bubble> &bubble);
+    SDL_Point getGridPosition(const std::shared_ptr<Bubble> &bubble);
 
     void findCluster(int xGrid, int yGrid, BubbleColor type);
 
@@ -64,6 +64,7 @@ public:
 private:
 
     const int startingRows = 4;
+    int rowOffSet;
 
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
                              SDL_Renderer *renderer);
