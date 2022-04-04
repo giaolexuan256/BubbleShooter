@@ -54,6 +54,13 @@ bool BubbleGridManager::isBubbleArrayCleared() {
     return true;
 }
 
+bool BubbleGridManager::isBubblesReachBottom() {
+    for (int i = 0; i < columns; i++) {
+        if (bubbleArray[i][rows - 1] != BLANK) return true;
+    }
+    return false;
+}
+
 void BubbleGridManager::resetSnappingBubbleContainers() {
     clearToProcessArray();
     foundCluster.clear();

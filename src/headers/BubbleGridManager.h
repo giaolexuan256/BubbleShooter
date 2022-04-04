@@ -42,6 +42,8 @@ public:
 
     bool isBubbleArrayCleared();
 
+    bool isBubblesReachBottom();
+
     void resetSnappingBubbleContainers();
 
     void clearToProcessArray();
@@ -63,7 +65,7 @@ public:
 
 private:
 
-    const int startingRows = 4;
+    const int startingRows = 0;
     int rowOffSet;
 
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,

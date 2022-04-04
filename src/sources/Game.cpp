@@ -121,23 +121,29 @@ void Game::snapBubble() {
     }
     bubbleGridManager->findFloatingCluster();
     bubbleGridManager->resetSnappingBubbleContainers();
+    checkGameOver();
     cannon->loadBubble(renderer);
-    turnCounter++;
-    if (turnCounter >= 3) {
-        bubbleGridManager->addBubbles();
-        turnCounter = 0;
+    updateTurnCounterAndCheckToAddBubbles();
+}
+
+bool Game::checkGameOver() {
+    if (isGameOver()) {
+        quit();
     }
 }
 
 bool Game::isGameOver() {
-    if (bubbleGridManager->isBubbleArrayCleared()) {
-        win = true;
+    if (bubbleGridManager->isBubbleArrayCleared() || bubbleGridManager->isBubblesReachBottom()) {
         return true;
     } else return false;
 }
 
-void Game::displayYouWinMessage() {
-    youWinMessage->renderCenter(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+void Game::updateTurnCounterAndCheckToAddBubbles() {
+    turnCounter++;
+    if (turnCounter >= TURNS_TO_ADD_BUBBLES) {
+        bubbleGridManager->addBubbles();
+        turnCounter = 0;
+    }
 }
 
 
@@ -145,9 +151,6 @@ void Game::render() {
     clearScreen();
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
-    if (win) {
-        youWinMessage->renderCenter(renderer, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-    }
     SDL_RenderPresent(renderer);
 }
 
