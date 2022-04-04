@@ -2,9 +2,9 @@
 #define BUBBLESHOOTER_BUBBLECOLOR_H
 
 
+#include <vector>
+
 enum BubbleColor {
     RED, YELLOW, BLUE, GREEN, PINK, PURPLE, TOTAL_COLORS, BLANK
 };
-
-
 #endif //BUBBLESHOOTER_BUBBLECOLOR_H

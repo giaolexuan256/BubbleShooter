@@ -62,16 +62,15 @@ public:
 
     void addBubblesToFirstRow();
 
-    BubbleColor getExistingColors();
+    BubbleColor getAnExistingColor();
 
     std::vector<BubbleColor> findExistingColors();
 
 
 private:
 
-    const int startingRows = 4;
+    const int startingRows = 1;
     int rowOffSet;
-
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
                              SDL_Renderer *renderer);
 };

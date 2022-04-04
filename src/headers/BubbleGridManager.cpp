@@ -178,17 +178,26 @@ void BubbleGridManager::addBubblesToFirstRow() {
     }
 
     for (int i = 0; i < columns; i++) {
-        bubbleArray[i][0] = RandomBubbleColorGenerator::generateRandomBubbleColor();
+        bubbleArray[i][0] = getAnExistingColor();
     }
 }
 
-BubbleColor BubbleGridManager::getExistingColors() {
-    BubbleColor color;
+BubbleColor BubbleGridManager::getAnExistingColor() {
     std::vector<BubbleColor> existingColors = findExistingColors();
-    //color = existingColor.at(Math.random(existingColor.length());
-    return color;
+    return existingColors[RandomNumberGenerator::generateRandomInteger(0, (int) existingColors.size() - 1)];
 }
 
 std::vector<BubbleColor> BubbleGridManager::findExistingColors() {
-
+    std::vector<BubbleColor> existingColors;
+    bool colorTable[TOTAL_COLORS] = {false};
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            if (bubbleArray[i][j] == BLANK) continue;
+            int numberOfColor = BubbleTextureHandler::toIntegerValue(bubbleArray[i][j]);
+            if (colorTable[numberOfColor]) continue;
+            colorTable[numberOfColor] = true;
+            existingColors.push_back(bubbleArray[i][j]);
+        }
+    }
+    return existingColors;
 }
