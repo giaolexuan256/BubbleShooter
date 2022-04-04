@@ -42,7 +42,7 @@ void Game::initialize() {
 }
 
 void Game::initializeBubbleTextures() {
-    for (int i = 0; i < BubbleColor::BUBBLE_COLOR_SIZE; i++) {
+    for (int i = 0; i < BubbleColor::TOTAL_COLORS; i++) {
         bubbleTextures.push_back(std::make_shared<TextureAlpha>());
         bubbleTextures.back()->loadFromFile(renderer,
                                             BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
@@ -108,25 +108,13 @@ void Game::updateObjects() {
 }
 
 void Game::snapBubble() {
-    SDL_Point gridPosition = bubbleGridManager->getGridPosition(cannon->getLoadedBubble());
-    if (gridPosition.y >= BubbleGridManager::rows) {
-        quit();
-    }
-    bubbleGridManager->bubbleArray[gridPosition.x][gridPosition.y] = cannon->getLoadedBubble()->getType();
-    bubbleGridManager->findCluster(gridPosition.x, gridPosition.y, cannon->getLoadedBubble()->getType());
-    if (bubbleGridManager->foundCluster.size() >= 3) {
-        for (auto &i: bubbleGridManager->foundCluster) {
-            bubbleGridManager->bubbleArray[i.x][i.y] = BLANK;
-        }
-    }
-    bubbleGridManager->findFloatingCluster();
-    bubbleGridManager->resetSnappingBubbleContainers();
+    bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
     checkGameOver();
     cannon->loadBubble(renderer);
     updateTurnCounterAndCheckToAddBubbles();
 }
 
-bool Game::checkGameOver() {
+void Game::checkGameOver() {
     if (isGameOver()) {
         quit();
     }
@@ -141,7 +129,7 @@ bool Game::isGameOver() {
 void Game::updateTurnCounterAndCheckToAddBubbles() {
     turnCounter++;
     if (turnCounter >= TURNS_TO_ADD_BUBBLES) {
-        bubbleGridManager->addBubbles();
+        bubbleGridManager->addBubblesToFirstRow();
         turnCounter = 0;
     }
 }

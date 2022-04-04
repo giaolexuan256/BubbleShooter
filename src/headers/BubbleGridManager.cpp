@@ -1,12 +1,17 @@
 #include "BubbleGridManager.h"
 
 BubbleGridManager::BubbleGridManager() {
+    initialize();
+}
+
+void BubbleGridManager::initialize() {
     rowOffSet = 0;
     initializeBubbleArray();
     clearToProcessArray();
 }
 
 void BubbleGridManager::initializeBubbleArray() {
+    rowOffSet = 0;
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
             if (j >= startingRows) bubbleArray[i][j] = BLANK;
@@ -29,6 +34,19 @@ void BubbleGridManager::renderBubble(float x, float y, BubbleColor color, std::v
                                      SDL_Renderer *renderer) {
     if (color == BLANK) return;
     bubbleTextures[color]->render(renderer, (int) x, (int) y);
+}
+
+void BubbleGridManager::snapCannonBubble(const std::shared_ptr<Bubble> &cannonBubble) {
+    SDL_Point gridPosition = getGridPosition(cannonBubble);
+    bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
+    findCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
+    if (foundCluster.size() >= 3) {
+        for (auto &i: foundCluster) {
+            bubbleArray[i.x][i.y] = BLANK;
+        }
+    }
+    findFloatingCluster();
+    resetSnappingBubbleContainers();
 }
 
 bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble) {
@@ -151,7 +169,7 @@ void BubbleGridManager::recursivelyFindFloatingCluster(int xGrid, int yGrid) {
     }
 }
 
-void BubbleGridManager::addBubbles() {
+void BubbleGridManager::addBubblesToFirstRow() {
     rowOffSet = (rowOffSet + 1) % 2;
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {

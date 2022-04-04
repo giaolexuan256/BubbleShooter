@@ -126,6 +126,12 @@
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomNumberGenerator.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomNumberGenerator.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/ScreenSizeCarrier.h">
 			<Option target="BubbleShooter"/>
 		</Unit>

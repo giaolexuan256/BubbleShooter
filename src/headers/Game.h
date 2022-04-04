@@ -36,7 +36,7 @@ private:
     std::shared_ptr<TextureAlpha> youWinMessage;
     int turnCounter;
 
-    const int TURNS_TO_ADD_BUBBLES = 1;
+    const int TURNS_TO_ADD_BUBBLES = 10;
 
     void initialize();
 
@@ -52,7 +52,7 @@ private:
 
     void updateObjects();
 
-    bool checkGameOver();
+    void checkGameOver();
 
     bool isGameOver();
 

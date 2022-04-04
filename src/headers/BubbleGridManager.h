@@ -20,7 +20,7 @@ public:
     const static int tileWidth = 40;
     const static int tileHeight = 40;
     const static int columns = 15;
-    const static int rows = 10 ;
+    const static int rows = 10;
     const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
     bool toProcess[columns][rows];
@@ -32,7 +32,13 @@ public:
 
     BubbleGridManager();
 
+    void initialize();
+
     void initializeBubbleArray();
+
+    void snapCannonBubble(const std::shared_ptr<Bubble>& cannonBubble);
+
+    SDL_Point getGridPosition(const std::shared_ptr<Bubble> &bubble);
 
     void renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures);
 
@@ -48,15 +54,13 @@ public:
 
     void clearToProcessArray();
 
-    SDL_Point getGridPosition(const std::shared_ptr<Bubble> &bubble);
-
     void findCluster(int xGrid, int yGrid, BubbleColor type);
 
     void findFloatingCluster();
 
     void recursivelyFindFloatingCluster(int xGrid, int yGrid);
 
-    void addBubbles();
+    void addBubblesToFirstRow();
 
     BubbleColor getExistingColors();
 
@@ -65,7 +69,7 @@ public:
 
 private:
 
-    const int startingRows = 0;
+    const int startingRows = 4;
     int rowOffSet;
 
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,

@@ -4,6 +4,7 @@
 
 #include <random>
 #include "BubbleColor.h"
+#include "RandomNumberGenerator.h"
 
 class RandomBubbleColorGenerator {
 public:
