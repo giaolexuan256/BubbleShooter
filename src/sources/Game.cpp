@@ -151,8 +151,11 @@ bool Game::isGameOver() {
         SDL_Delay(3000);
         return true;
     } else if (bubbleGridManager->isBubblesReachBottom()) {
-        loseMessage->render(renderer, SCREEN_WIDTH / 2 - 30, SCREEN_HEIGHT / 2);
+        SDL_Delay(1000);
+        clearScreen();
+        loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
         SDL_RenderPresent(renderer);
+        SDL_Delay(3000);
         return true;
     } else return false;
 }
