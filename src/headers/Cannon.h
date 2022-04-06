@@ -17,7 +17,7 @@ public:
 
     float getAngle();
 
-    void loadBubble(SDL_Renderer *renderer);
+    void loadBubble(SDL_Renderer *renderer, BubbleColor color);
 
     void render(SDL_Renderer *renderer);
 

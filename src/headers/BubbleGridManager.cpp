@@ -39,7 +39,11 @@ void BubbleGridManager::renderBubble(float x, float y, BubbleColor color, std::v
 void BubbleGridManager::snapCannonBubble(const std::shared_ptr<Bubble> &cannonBubble) {
     SDL_Point gridPosition = getGridPosition(cannonBubble);
     bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
-    findCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
+    destroyCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
+}
+
+void BubbleGridManager::destroyCluster(int xGrid, int yGrid, BubbleColor type) {
+    findCluster(xGrid, yGrid, type);
     if (foundCluster.size() >= 3) {
         for (auto &i: foundCluster) {
             bubbleArray[i.x][i.y] = BLANK;
@@ -65,6 +69,19 @@ bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bub
     return false;
 }
 
+void BubbleGridManager::clearToProcessArray() {
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            toProcess[i][j] = true;
+        }
+    }
+}
+
+void BubbleGridManager::resetSnappingBubbleContainers() {
+    clearToProcessArray();
+    foundCluster.clear();
+}
+
 bool BubbleGridManager::isBubbleArrayCleared() {
     for (int i = 0; i < columns; i++) {
         if (bubbleArray[i][0] != BLANK) return false;
@@ -77,19 +94,6 @@ bool BubbleGridManager::isBubblesReachBottom() {
         if (bubbleArray[i][rows - 1] != BLANK) return true;
     }
     return false;
-}
-
-void BubbleGridManager::resetSnappingBubbleContainers() {
-    clearToProcessArray();
-    foundCluster.clear();
-}
-
-void BubbleGridManager::clearToProcessArray() {
-    for (int i = 0; i < columns; i++) {
-        for (int j = 0; j < rows; j++) {
-            toProcess[i][j] = true;
-        }
-    }
 }
 
 SDL_Point BubbleGridManager::getGridPosition(const std::shared_ptr<Bubble> &bubble) {

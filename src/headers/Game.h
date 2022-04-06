@@ -32,19 +32,24 @@ private:
     Cannon *cannon;
     SDL_Point mousePosition;
     std::shared_ptr<BubbleGridManager> bubbleGridManager;
-    TTF_Font *font;
-    std::shared_ptr<TextureAlpha> youWinMessage;
+    TTF_Font *gameTextFont;
     int turnCounter;
+    std::shared_ptr<TextureAlpha> winMessage;
+    std::shared_ptr<TextureAlpha> loseMessage;
 
-    const int TURNS_TO_ADD_BUBBLES = 10;
+    const int TURNS_TO_ADD_BUBBLES = 15;
 
     void initialize();
 
-    void initializeBubbleTextures();
+    static bool initializeSDLSubsystemsSuccessfully();
 
-    void initializeYouWinMessage();
+    bool initializeWindowSuccessfully();
 
     void initializeTTFFont();
+
+    void initializeBubbleTextures();
+
+    void initializeWinMessage();
 
     void gameLoop(double delta);
 

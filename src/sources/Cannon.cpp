@@ -2,11 +2,11 @@
 
 Cannon::Cannon(SDL_Renderer *renderer) {
     arrow = new Arrow(Point((float) SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20), 200, 90);
-    loadBubble(renderer);
+    loadBubble(renderer, RandomBubbleColorGenerator::generateRandomBubbleColor());
 }
 
-void Cannon::loadBubble(SDL_Renderer *renderer) {
-    loadedBubble = std::make_shared<Bubble>(renderer);
+void Cannon::loadBubble(SDL_Renderer *renderer, BubbleColor color) {
+    loadedBubble = std::make_shared<Bubble>(renderer, color);
 }
 
 void Cannon::render(SDL_Renderer *renderer) {

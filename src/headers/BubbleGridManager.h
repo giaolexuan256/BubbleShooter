@@ -54,6 +54,8 @@ public:
 
     void clearToProcessArray();
 
+    void destroyCluster(int xGrid, int yGrid, BubbleColor type);
+
     void findCluster(int xGrid, int yGrid, BubbleColor type);
 
     void findFloatingCluster();

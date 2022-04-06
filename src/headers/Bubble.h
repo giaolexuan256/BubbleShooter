@@ -2,6 +2,7 @@
 #define BUBBLESHOOTER_BUBBLE_H
 
 #include "TextureAlpha.h"
+#include <iostream>
 #include "Utility.h"
 #include "Point.h"
 #include "BubbleColor.h"
@@ -12,7 +13,11 @@
 class Bubble {
 public:
 
+    static const int BUBBLE_SPEED = 600;
+
     explicit Bubble(SDL_Renderer *renderer);
+
+    Bubble(SDL_Renderer* renderer, BubbleColor color);
 
     void loadTexture(SDL_Renderer *renderer, const std::string& fileName) {
         bubbleTexture->loadFromFile(renderer, fileName);
@@ -78,7 +83,7 @@ public:
 
 private:
     float x, y;
-    BubbleColor type;
+    BubbleColor bubbleColor;
     std::shared_ptr<TextureAlpha> bubbleTexture;
     bool moving;
     float speedX, speedY;

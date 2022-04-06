@@ -13,26 +13,9 @@ public:
         setAngle(angle);
     }
 
-    Arrow(Point tail, Point head) : tail(tail), head(head) {
-        length = (float) sqrt(pow(tail.x - head.x, 2) + pow(tail.y - head.y, 2));
-        angle = std::atan((head.y - tail.y) / (float) (head.x - head.x));
-    }
-
-    void render(SDL_Renderer* renderer) {
+    void render(SDL_Renderer *renderer) {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderDrawLine(renderer, (int) getTailPoint().x,
-                           (int) getTailPoint().y,
-                           (int) getHeadPoint().x,
-                           (int) getHeadPoint().y);
-    }
-
-    void setPosition(Point tail, Point head) {
-        Arrow::tail = tail;
-        Arrow::head = head;
-    }
-
-    void setLength(float length) {
-        Arrow::length = length;
+        SDL_RenderDrawLine(renderer, (int) getTailPoint().x, (int) getTailPoint().y, (int) getHeadPoint().x, (int) getHeadPoint().y);
     }
 
     void setAngle(float angle) {
@@ -60,7 +43,7 @@ public:
 
 private:
     Point tail;
-    Point head = Point(0, 0);
+    Point head;
     float length;
     float angle;
 };

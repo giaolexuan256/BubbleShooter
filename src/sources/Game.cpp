@@ -15,31 +15,58 @@ void Game::start() {
 }
 
 void Game::initialize() {
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
-        printf("Error Init Video\n");
-    } else {
-        window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
-                                  SCREEN_HEIGHT,
-                                  SDL_WINDOW_SHOWN);
-        if (window != nullptr) {
+    if (initializeSDLSubsystemsSuccessfully()) {
+        if (initializeWindowSuccessfully()) {
             renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
             cannon = new Cannon(renderer);
             initializeBubbleTextures();
             bubbleGridManager = std::make_shared<BubbleGridManager>();
-            if (TTF_Init() == -1) {
-                printf("SDL_ttf couldn't initialize: TTF_GetError: %s\n", TTF_GetError());
-            } else {
-                font = TTF_OpenFont(R"(C:\Dev\Projects\BubbleShooter\assets\lazy.ttf)", 28);
-                if (font == nullptr) {
-                    printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
-                }
-            }
-            youWinMessage = std::make_shared<TextureAlpha>();
-            youWinMessage->loadFromRenderedText(renderer, font, "You Win!", SDL_Color{255, 255, 255});
+            initializeTTFFont();
+            initializeWinMessage();
             turnCounter = 0;
         }
     }
 }
+
+bool Game::initializeSDLSubsystemsSuccessfully() {
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
+        printf("Error Init Subsystems: %s", SDL_GetError());
+        return false;
+    } else { return true; }
+}
+
+bool Game::initializeWindowSuccessfully() {
+    window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
+                              SCREEN_HEIGHT,
+                              SDL_WINDOW_SHOWN);
+    if (window == nullptr) {
+        printf("Error Init Window: %s", SDL_GetError());
+        return false;
+    } else { return true; }
+}
+
+void Game::initializeTTFFont() {
+    if (TTF_Init() == -1) {
+        printf("SDL_ttf couldn't initialize: TTF_GetError: %s\n", TTF_GetError());
+    } else {
+        gameTextFont = TTF_OpenFont(R"(C:\Dev\Projects\BubbleShooter\assets\VeraMoBd.ttf)", 28);
+        if (gameTextFont == nullptr) {
+            printf("Failed to load lazy gameTextFont! SDL_ttf Error: %s\n", TTF_GetError());
+        }
+    }
+}
+
+void Game::initializeWinMessage() {
+    winMessage = std::make_shared<TextureAlpha>();
+    SDL_Color textColor{255, 255, 0, 255};
+    std::string message = "Winner Winner Chicken Dinner!!!";
+    winMessage->loadFromRenderedText(renderer, gameTextFont, message, textColor);
+
+    loseMessage = std::make_shared<TextureAlpha>();
+    message = "You Lost =)";
+    loseMessage->loadFromRenderedText(renderer, gameTextFont, message, textColor);
+}
+
 
 void Game::initializeBubbleTextures() {
     for (int i = 0; i < BubbleColor::TOTAL_COLORS; i++) {
@@ -47,13 +74,6 @@ void Game::initializeBubbleTextures() {
         bubbleTextures.back()->loadFromFile(renderer,
                                             BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
     }
-}
-
-void Game::initializeYouWinMessage() {
-}
-
-void Game::initializeTTFFont() {
-
 }
 
 void Game::gameLoop(double delta) {
@@ -64,7 +84,7 @@ void Game::gameLoop(double delta) {
 
 void Game::processInput(double delta) {
     SDL_Event event;
-    while (SDL_PollEvent(&event) != 0) {
+    while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
             quit();
         }
@@ -74,8 +94,8 @@ void Game::processInput(double delta) {
                     if (!cannon->getLoadedBubble()->isMoving()) {
                         cannon->getLoadedBubble()->setMoving(true);
                         cannon->getLoadedBubble()->setSpeed(
-                                -500 * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
-                                500 * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
+                                -Bubble::BUBBLE_SPEED * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
+                                Bubble::BUBBLE_SPEED * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
                     }
             }
         }
@@ -110,7 +130,7 @@ void Game::updateObjects() {
 void Game::snapBubble() {
     bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
     checkGameOver();
-    cannon->loadBubble(renderer);
+    cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
     updateTurnCounterAndCheckToAddBubbles();
 }
 
@@ -134,7 +154,6 @@ void Game::updateTurnCounterAndCheckToAddBubbles() {
     }
 }
 
-
 void Game::render() {
     clearScreen();
     cannon->render(renderer);
@@ -154,6 +173,8 @@ void Game::quit() {
     SDL_DestroyWindow(window);
     window = nullptr;
     SDL_Quit();
+    TTF_CloseFont(gameTextFont);
+    TTF_Quit();
 }
 
 
