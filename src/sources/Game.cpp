@@ -18,12 +18,13 @@ void Game::initialize() {
     if (initializeSDLSubsystemsSuccessfully()) {
         if (initializeWindowSuccessfully()) {
             renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-            cannon = new Cannon(renderer);
+            cannon = std::make_shared<Cannon>(renderer);
             initializeBubbleTextures();
             bubbleGridManager = std::make_shared<BubbleGridManager>();
             initializeTTFFont();
             initializeWinMessage();
             turnCounter = 0;
+            win = false;
         }
     }
 }
@@ -130,8 +131,10 @@ void Game::updateObjects() {
 void Game::snapBubble() {
     bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
     checkGameOver();
-    cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
-    updateTurnCounterAndCheckToAddBubbles();
+    if (running) {
+        cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
+        updateTurnCounterAndCheckToAddBubbles();
+    }
 }
 
 void Game::checkGameOver() {
@@ -141,7 +144,15 @@ void Game::checkGameOver() {
 }
 
 bool Game::isGameOver() {
-    if (bubbleGridManager->isBubbleArrayCleared() || bubbleGridManager->isBubblesReachBottom()) {
+    if (bubbleGridManager->isBubbleArrayCleared()) {
+        clearScreen();
+        winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(3000);
+        return true;
+    } else if (bubbleGridManager->isBubblesReachBottom()) {
+        loseMessage->render(renderer, SCREEN_WIDTH / 2 - 30, SCREEN_HEIGHT / 2);
+        SDL_RenderPresent(renderer);
         return true;
     } else return false;
 }

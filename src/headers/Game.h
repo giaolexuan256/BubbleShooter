@@ -24,18 +24,21 @@
 class Game {
 public:
     std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures;
+
     void start();
+
 private:
     bool running;
     SDL_Window *window;
     SDL_Renderer *renderer;
-    Cannon *cannon;
+    std::shared_ptr<Cannon> cannon;
     SDL_Point mousePosition;
     std::shared_ptr<BubbleGridManager> bubbleGridManager;
     TTF_Font *gameTextFont;
     int turnCounter;
     std::shared_ptr<TextureAlpha> winMessage;
     std::shared_ptr<TextureAlpha> loseMessage;
+    bool win;
 
     const int TURNS_TO_ADD_BUBBLES = 15;
 
