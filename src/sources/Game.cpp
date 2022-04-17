@@ -172,6 +172,9 @@ void Game::render() {
     clearScreen();
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    int bottomOfTheLevelPosition = (bubbleGridManager->rows - 1) * bubbleGridManager->tileWidth;
+    SDL_RenderDrawLine(renderer, 0, bottomOfTheLevelPosition, SCREEN_WIDTH, bottomOfTheLevelPosition);
     SDL_RenderPresent(renderer);
 }
 

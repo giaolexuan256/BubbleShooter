@@ -13,7 +13,6 @@ Bubble::Bubble(SDL_Renderer *renderer) {
 Bubble::Bubble(SDL_Renderer *renderer, BubbleColor color) {
     bubbleTexture = std::make_shared<TextureAlpha>();
     bubbleColor = color;
-    std::cout << BubbleTextureHandler::toString(color) << std::endl;
     loadTexture(renderer, BubbleTextureHandler::getBubbleTexturePath(bubbleColor));
     setCenterPosition((float) SCREEN_WIDTH / 2,
                       SCREEN_HEIGHT - bubbleTexture->getHeight() / 2);

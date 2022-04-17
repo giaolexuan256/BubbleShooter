@@ -40,7 +40,7 @@ private:
     std::shared_ptr<TextureAlpha> loseMessage;
     bool win;
 
-    const int TURNS_TO_ADD_BUBBLES = 15;
+    const int TURNS_TO_ADD_BUBBLES = 12;
 
     void initialize();
 
