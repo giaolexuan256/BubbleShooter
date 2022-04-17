@@ -50,7 +50,7 @@ void Game::initializeTTFFont() {
     if (TTF_Init() == -1) {
         printf("SDL_ttf couldn't initialize: TTF_GetError: %s\n", TTF_GetError());
     } else {
-        gameTextFont = TTF_OpenFont(R"(C:\Dev\Projects\BubbleShooter\assets\VeraMoBd.ttf)", 28);
+        gameTextFont = TTF_OpenFont(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\VeraMoBd.ttf)", 28);
         if (gameTextFont == nullptr) {
             printf("Failed to load lazy gameTextFont! SDL_ttf Error: %s\n", TTF_GetError());
         }

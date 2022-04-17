@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Dev/Projects/BubbleShooter/cmake-build-debug"/>
+				<Option working_dir="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Dev/Projects/BubbleShooter/cmake-build-debug"/>
+				<Option working_dir="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BubbleShooter">
-				<Option output="C:/Dev/Projects/BubbleShooter/cmake-build-debug/BubbleShooter.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Dev/Projects/BubbleShooter/cmake-build-debug"/>
+				<Option output="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/BubbleShooter.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -37,25 +37,25 @@
 					<Add directory="C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include"/>
 					<Add directory="C:/Dev/Cpp/SDL2_image-2.0.5/include"/>
 					<Add directory="C:/Dev/Cpp/SDL2_ttf-devel-2.0.12-VC/SDL2_ttf-2.0.12/include"/>
-					<Add directory="C:/Dev/Projects/BubbleShooter/BubbleShooter/src/headers"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/Dev/Projects/CLion/BubbleShooter/BubbleShooter/src/headers"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 BubbleShooter"/>
-					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 BubbleShooter"/>
+					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BubbleShooter/fast">
-				<Option output="C:/Dev/Projects/BubbleShooter/cmake-build-debug/BubbleShooter.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Dev/Projects/BubbleShooter/cmake-build-debug"/>
+				<Option output="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/BubbleShooter.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,115 +63,115 @@
 					<Add directory="C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include"/>
 					<Add directory="C:/Dev/Cpp/SDL2_image-2.0.5/include"/>
 					<Add directory="C:/Dev/Cpp/SDL2_ttf-devel-2.0.12-VC/SDL2_ttf-2.0.12/include"/>
-					<Add directory="C:/Dev/Projects/BubbleShooter/BubbleShooter/src/headers"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/Dev/Projects/CLion/BubbleShooter/BubbleShooter/src/headers"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 BubbleShooter/fast"/>
-					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 BubbleShooter/fast"/>
+					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Dev/Projects/BubbleShooter/cmake-build-debug"/>
+				<Option working_dir="C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Arrow.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Arrow.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Bubble.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Bubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleColor.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColor.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleGridManager.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleTextureHandler.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleTextureHandler.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/BubbleTextureHandler.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleTextureHandler.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Cannon.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Cannon.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Game.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Game.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Point.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Point.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomBubbleColorGenerator.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomBubbleColorGenerator.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomNumberGenerator.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomNumberGenerator.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/RandomNumberGenerator.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomNumberGenerator.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/ScreenSizeCarrier.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/ScreenSizeCarrier.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/TextureAlpha.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/TextureAlpha.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Timer.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Timer.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Timer.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Timer.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/headers/Utility.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Utility.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Arrow.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Arrow.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Bubble.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Bubble.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Cannon.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Cannon.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Game.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Game.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Point.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Point.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/TextureAlpha.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/TextureAlpha.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/Utility.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Utility.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/src/sources/main.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/main.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/BubbleShooter/CMakeLists.txt">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

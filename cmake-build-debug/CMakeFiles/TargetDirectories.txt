@@ -1,3 +1,3 @@
-C:/Dev/Projects/BubbleShooter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Dev/Projects/BubbleShooter/cmake-build-debug/CMakeFiles/BubbleShooter.dir
-C:/Dev/Projects/BubbleShooter/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/CMakeFiles/BubbleShooter.dir
+C:/Dev/Projects/CLion/BubbleShooter/cmake-build-debug/CMakeFiles/edit_cache.dir
