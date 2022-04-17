@@ -40,7 +40,7 @@ private:
     std::shared_ptr<TextureAlpha> loseMessage;
     bool win;
 
-    const int TURNS_TO_ADD_BUBBLES = 12;
+    const int TURNS_TO_ADD_BUBBLES = 10;
 
     void initialize();
 
@@ -58,6 +58,8 @@ private:
 
     void processInput(double delta);
 
+    void shootCannonBubble(float delta);
+
     void updateObjects();
 
     void checkGameOver();
@@ -71,6 +73,8 @@ private:
     void render();
 
     void clearScreen();
+
+    void drawBottomOfLevelLine();
 
     void quit();
 

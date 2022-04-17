@@ -89,20 +89,21 @@ void Game::processInput(double delta) {
         if (event.type == SDL_QUIT) {
             quit();
         }
-        if (event.type == SDL_KEYDOWN) {
-            switch (event.key.keysym.sym) {
-                case SDLK_SPACE:
-                    if (!cannon->getLoadedBubble()->isMoving()) {
-                        cannon->getLoadedBubble()->setMoving(true);
-                        cannon->getLoadedBubble()->setSpeed(
-                                -Bubble::BUBBLE_SPEED * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
-                                Bubble::BUBBLE_SPEED * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
-                    }
-            }
+        if (event.key.keysym.sym == SDLK_SPACE || event.button.button == SDL_BUTTON_LEFT) {
+            shootCannonBubble((float) delta);
         }
         if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
             SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
         }
+    }
+}
+
+void Game::shootCannonBubble(float delta) {
+    if (!cannon->getLoadedBubble()->isMoving()) {
+        cannon->getLoadedBubble()->setMoving(true);
+        cannon->getLoadedBubble()->setSpeed(
+                -Bubble::BUBBLE_SPEED * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
+                Bubble::BUBBLE_SPEED * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
     }
 }
 
@@ -172,10 +173,14 @@ void Game::render() {
     clearScreen();
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
+    drawBottomOfLevelLine();
+    SDL_RenderPresent(renderer);
+}
+
+void Game::drawBottomOfLevelLine() {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     int bottomOfTheLevelPosition = (bubbleGridManager->rows - 1) * bubbleGridManager->tileWidth;
     SDL_RenderDrawLine(renderer, 0, bottomOfTheLevelPosition, SCREEN_WIDTH, bottomOfTheLevelPosition);
-    SDL_RenderPresent(renderer);
 }
 
 void Game::clearScreen() {
