@@ -99,16 +99,16 @@
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColor.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColorConverter.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColorConverter.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.h">
-			<Option target="BubbleShooter"/>
-		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleTextureHandler.cpp">
-			<Option target="BubbleShooter"/>
-		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleTextureHandler.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Cannon.h">

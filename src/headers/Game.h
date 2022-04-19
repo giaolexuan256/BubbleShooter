@@ -14,7 +14,7 @@
 #include "Timer.h"
 #include "BubbleColor.h"
 #include "RandomBubbleColorGenerator.h"
-#include "BubbleTextureHandler.h"
+#include "BubbleColorConverter.h"
 #include "BubbleGridManager.h"
 #include <vector>
 #include <algorithm>
@@ -42,17 +42,27 @@ private:
 
     const int TURNS_TO_ADD_BUBBLES = 10;
 
+    int playerScore;
+
     void initialize();
+
+    bool initializeSDLPropertiesSuccessfully();
 
     static bool initializeSDLSubsystemsSuccessfully();
 
     bool initializeWindowSuccessfully();
 
+    void initializeGameProperties();
+
     void initializeTTFFont();
 
     void initializeBubbleTextures();
 
+    void initializeEndGameMessage();
+
     void initializeWinMessage();
+
+    void initializeLoseMessage();
 
     void gameLoop(double delta);
 

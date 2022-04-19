@@ -4,7 +4,7 @@
 Bubble::Bubble(SDL_Renderer *renderer) {
     bubbleColor = RandomBubbleColorGenerator::generateRandomBubbleColor();
     bubbleTexture = std::make_shared<TextureAlpha>();
-    loadTexture(renderer, BubbleTextureHandler::getBubbleTexturePath(bubbleColor));
+    loadTexture(renderer, BubbleColorConverter::getBubbleTexturePath(bubbleColor));
     setCenterPosition((float) SCREEN_WIDTH / 2,
                       SCREEN_HEIGHT - bubbleTexture->getHeight() / 2);
     setMoving(false);
@@ -13,7 +13,7 @@ Bubble::Bubble(SDL_Renderer *renderer) {
 Bubble::Bubble(SDL_Renderer *renderer, BubbleColor color) {
     bubbleTexture = std::make_shared<TextureAlpha>();
     bubbleColor = color;
-    loadTexture(renderer, BubbleTextureHandler::getBubbleTexturePath(bubbleColor));
+    loadTexture(renderer, BubbleColorConverter::getBubbleTexturePath(bubbleColor));
     setCenterPosition((float) SCREEN_WIDTH / 2,
                       SCREEN_HEIGHT - bubbleTexture->getHeight() / 2);
     setMoving(false);

@@ -15,18 +15,30 @@ void Game::start() {
 }
 
 void Game::initialize() {
+    if (initializeSDLPropertiesSuccessfully()) {
+        initializeGameProperties();
+    }
+}
+
+bool Game::initializeSDLPropertiesSuccessfully() {
     if (initializeSDLSubsystemsSuccessfully()) {
         if (initializeWindowSuccessfully()) {
-            renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-            cannon = std::make_shared<Cannon>(renderer);
-            initializeBubbleTextures();
-            bubbleGridManager = std::make_shared<BubbleGridManager>();
-            initializeTTFFont();
-            initializeWinMessage();
-            turnCounter = 0;
-            win = false;
+            return true;
         }
     }
+    return false;
+}
+
+void Game::initializeGameProperties() {
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    cannon = std::make_shared<Cannon>(renderer);
+    initializeBubbleTextures();
+    bubbleGridManager = std::make_shared<BubbleGridManager>();
+    initializeTTFFont();
+    initializeEndGameMessage();
+    turnCounter = 0;
+    win = false;
+    playerScore = 0;
 }
 
 bool Game::initializeSDLSubsystemsSuccessfully() {
@@ -57,15 +69,19 @@ void Game::initializeTTFFont() {
     }
 }
 
+void Game::initializeEndGameMessage() {
+    initializeWinMessage();
+    initializeLoseMessage();
+}
+
 void Game::initializeWinMessage() {
     winMessage = std::make_shared<TextureAlpha>();
-    SDL_Color textColor{255, 255, 0, 255};
-    std::string message = "Winner Winner Chicken Dinner!!!";
-    winMessage->loadFromRenderedText(renderer, gameTextFont, message, textColor);
+    winMessage->loadFromRenderedText(renderer, gameTextFont, "Winner Winner Chicken Dinner!!!", SDL_Color{255, 255, 0, 255});
+}
 
+void Game::initializeLoseMessage() {
     loseMessage = std::make_shared<TextureAlpha>();
-    message = "You Lost =)";
-    loseMessage->loadFromRenderedText(renderer, gameTextFont, message, textColor);
+    loseMessage->loadFromRenderedText(renderer, gameTextFont, "You Lost =(", SDL_Color{255, 255, 0, 255});
 }
 
 
@@ -73,7 +89,7 @@ void Game::initializeBubbleTextures() {
     for (int i = 0; i < BubbleColor::TOTAL_COLORS; i++) {
         bubbleTextures.push_back(std::make_shared<TextureAlpha>());
         bubbleTextures.back()->loadFromFile(renderer,
-                                            BubbleTextureHandler::getBubbleTexturePath(static_cast<BubbleColor>(i)));
+                                            BubbleColorConverter::getBubbleTexturePath(static_cast<BubbleColor>(i)));
     }
 }
 
@@ -89,7 +105,7 @@ void Game::processInput(double delta) {
         if (event.type == SDL_QUIT) {
             quit();
         }
-        if (event.key.keysym.sym == SDLK_SPACE || event.button.button == SDL_BUTTON_LEFT) {
+        if (event.button.button == SDL_BUTTON_LEFT) {
             shootCannonBubble((float) delta);
         }
         if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {

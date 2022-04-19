@@ -1,10 +1,10 @@
-#include "BubbleTextureHandler.h"
+#include "BubbleColorConverter.h"
 
-std::string BubbleTextureHandler::getBubbleTexturePath(BubbleColor bubbleColor) {
+std::string BubbleColorConverter::getBubbleTexturePath(BubbleColor bubbleColor) {
     return R"(C:\Dev\Projects\CLion\BubbleShooter\assets\)" + toString(bubbleColor) + "Bubble.jpg";
 }
 
-std::string BubbleTextureHandler::toString(BubbleColor color) {
+std::string BubbleColorConverter::toString(BubbleColor color) {
     std::string result;
     switch (color) {
         case RED:
@@ -31,7 +31,7 @@ std::string BubbleTextureHandler::toString(BubbleColor color) {
     return result;
 }
 
-int BubbleTextureHandler::toIntegerValue(BubbleColor color) {
+int BubbleColorConverter::toIntegerValue(BubbleColor color) {
     int result;
     switch (color) {
         case RED:

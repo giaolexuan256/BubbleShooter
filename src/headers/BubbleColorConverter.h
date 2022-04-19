@@ -1,10 +1,10 @@
-#ifndef BUBBLESHOOTER_BUBBLETEXTUREHANDLER_H
-#define BUBBLESHOOTER_BUBBLETEXTUREHANDLER_H
+#ifndef BUBBLESHOOTER_BUBBLECOLORCONVERTER_H
+#define BUBBLESHOOTER_BUBBLECOLORCONVERTER_H
 
 #include "BubbleColor.h"
 #include <string>
 
-class BubbleTextureHandler {
+class BubbleColorConverter {
 public:
     static std::string getBubbleTexturePath(BubbleColor bubbleColor);
 
@@ -14,4 +14,4 @@ public:
 };
 
 
-#endif //BUBBLESHOOTER_BUBBLETEXTUREHANDLER_H
+#endif //BUBBLESHOOTER_BUBBLECOLORCONVERTER_H

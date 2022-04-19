@@ -7,7 +7,7 @@
 #include "Point.h"
 #include "BubbleColor.h"
 #include "RandomBubbleColorGenerator.h"
-#include "BubbleTextureHandler.h"
+#include "BubbleColorConverter.h"
 #include <memory>
 
 class Bubble {

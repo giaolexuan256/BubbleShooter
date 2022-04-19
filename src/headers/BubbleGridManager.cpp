@@ -197,7 +197,7 @@ std::vector<BubbleColor> BubbleGridManager::findExistingColors() {
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
             if (bubbleArray[i][j] == BLANK) continue;
-            int numberOfColor = BubbleTextureHandler::toIntegerValue(bubbleArray[i][j]);
+            int numberOfColor = BubbleColorConverter::toIntegerValue(bubbleArray[i][j]);
             if (colorTable[numberOfColor]) continue;
             colorTable[numberOfColor] = true;
             existingColors.push_back(bubbleArray[i][j]);
