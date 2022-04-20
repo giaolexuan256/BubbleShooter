@@ -8,6 +8,7 @@ void BubbleGridManager::initialize() {
     rowOffSet = 0;
     initializeBubbleArray();
     clearToProcessArray();
+    numberOfBubblesDestroyedInATurn = 0;
 }
 
 void BubbleGridManager::initializeBubbleArray() {
@@ -36,23 +37,6 @@ void BubbleGridManager::renderBubble(float x, float y, BubbleColor color, std::v
     bubbleTextures[color]->render(renderer, (int) x, (int) y);
 }
 
-void BubbleGridManager::snapCannonBubble(const std::shared_ptr<Bubble> &cannonBubble) {
-    SDL_Point gridPosition = getGridPosition(cannonBubble);
-    bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
-    destroyCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
-}
-
-void BubbleGridManager::destroyCluster(int xGrid, int yGrid, BubbleColor type) {
-    findCluster(xGrid, yGrid, type);
-    if (foundCluster.size() >= 3) {
-        for (auto &i: foundCluster) {
-            bubbleArray[i.x][i.y] = BLANK;
-        }
-    }
-    findFloatingCluster();
-    resetSnappingBubbleContainers();
-}
-
 bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble) {
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
@@ -69,6 +53,29 @@ bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bub
     return false;
 }
 
+void BubbleGridManager::snapCannonBubble(const std::shared_ptr<Bubble> &cannonBubble) {
+    numberOfBubblesDestroyedInATurn = 0;
+    SDL_Point gridPosition = getGridPosition(cannonBubble);
+    bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
+    findAndDestroyBubbleCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
+}
+
+void BubbleGridManager::findAndDestroyBubbleCluster(int xGrid, int yGrid, BubbleColor type) {
+    clearSnappingBubbleContainers();
+    findBubbleCluster(xGrid, yGrid, type);
+    if (foundCluster.size() >= 3) {
+        destroyAllBubblesInCluster();
+        findAndDestroyFloatingCluster();
+    }
+}
+
+void BubbleGridManager::destroyAllBubblesInCluster() {
+    for (auto &i: foundCluster) {
+        bubbleArray[i.x][i.y] = BLANK;
+    }
+    numberOfBubblesDestroyedInATurn += foundCluster.size();
+}
+
 void BubbleGridManager::clearToProcessArray() {
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
@@ -77,7 +84,17 @@ void BubbleGridManager::clearToProcessArray() {
     }
 }
 
-void BubbleGridManager::resetSnappingBubbleContainers() {
+void BubbleGridManager::findAndDestroyFloatingCluster() {
+    clearSnappingBubbleContainers();
+    findFloatingClusterRecursivelyFromFirstRow();
+    std::vector<std::vector<bool>> isFloating(columns, std::vector<bool>(rows, true));
+    for (auto &i: foundCluster) {
+        isFloating[i.x][i.y] = false;
+    }
+    destroyAllFloatingBubbles(isFloating);
+}
+
+void BubbleGridManager::clearSnappingBubbleContainers() {
     clearToProcessArray();
     foundCluster.clear();
 }
@@ -109,7 +126,7 @@ SDL_Point BubbleGridManager::getGridPosition(const std::shared_ptr<Bubble> &bubb
     return {xGrid, yGrid};
 }
 
-Point BubbleGridManager::getBubbleCoordinate(int column, int row) {
+Point BubbleGridManager::getBubbleCoordinate(int column, int row) const {
     int x = column * tileWidth;
     if ((row + rowOffSet) % 2 == 1) {
         x += tileWidth / 2;
@@ -118,7 +135,7 @@ Point BubbleGridManager::getBubbleCoordinate(int column, int row) {
     return {(float) x, (float) y};
 }
 
-void BubbleGridManager::findCluster(int xGrid, int yGrid, BubbleColor type) {
+void BubbleGridManager::findBubbleCluster(int xGrid, int yGrid, BubbleColor type) {
     if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
     BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
     if (!toProcess[xGrid][yGrid] || targetBubble != type || targetBubble == BLANK) {
@@ -128,35 +145,19 @@ void BubbleGridManager::findCluster(int xGrid, int yGrid, BubbleColor type) {
         toProcess[xGrid][yGrid] = false;
         int tileRow = (yGrid + rowOffSet) % 2;
         for (int i = 0; i < 6; i++) {
-            findCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y,
-                        type);
+            findBubbleCluster(xGrid + neighborsOffsets[tileRow][i].x, yGrid + neighborsOffsets[tileRow][i].y,
+                              type);
         }
     }
 }
 
-void BubbleGridManager::findFloatingCluster() {
-    resetSnappingBubbleContainers();
+void BubbleGridManager::findFloatingClusterRecursivelyFromFirstRow() {
     for (int i = 0; i < columns; i++) {
-        recursivelyFindFloatingCluster(i, 0);
-    }
-    bool isFloating[columns][rows];
-    for (int i = 0; i < columns; i++) {
-        for (int j = 0; j < rows; j++) {
-            isFloating[i][j] = true;
-        }
-    }
-    for (auto &i: foundCluster) {
-        isFloating[i.x][i.y] = false;
-    }
-    for (int i = 0; i < columns; i++) {
-        for (int j = 0; j < rows; j++) {
-            if (bubbleArray[i][j] == BLANK) continue;
-            else if (isFloating[i][j]) bubbleArray[i][j] = BLANK;
-        }
+        findFloatingClusterRecursively(i, 0);
     }
 }
 
-void BubbleGridManager::recursivelyFindFloatingCluster(int xGrid, int yGrid) {
+void BubbleGridManager::findFloatingClusterRecursively(int xGrid, int yGrid) {
     if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
     BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
 
@@ -167,8 +168,20 @@ void BubbleGridManager::recursivelyFindFloatingCluster(int xGrid, int yGrid) {
         toProcess[xGrid][yGrid] = false;
         int tileRow = (yGrid + rowOffSet) % 2;
         for (int i = 0; i < 6; i++) {
-            recursivelyFindFloatingCluster(xGrid + neighborsOffsets[tileRow][i].x,
+            findFloatingClusterRecursively(xGrid + neighborsOffsets[tileRow][i].x,
                                            yGrid + neighborsOffsets[tileRow][i].y);
+        }
+    }
+}
+
+void BubbleGridManager::destroyAllFloatingBubbles(std::vector<std::vector<bool>> &isFloating) {
+    for (int i = 0; i < columns; i++) {
+        for (int j = 0; j < rows; j++) {
+            if (bubbleArray[i][j] == BLANK) continue;
+            else if (isFloating[i][j]) {
+                bubbleArray[i][j] = BLANK;
+                numberOfBubblesDestroyedInATurn++;
+            }
         }
     }
 }
@@ -180,7 +193,6 @@ void BubbleGridManager::addBubblesToFirstRow() {
             bubbleArray[i][rows - 1 - j] = bubbleArray[i][rows - 1 - j - 1];
         }
     }
-
     for (int i = 0; i < columns; i++) {
         bubbleArray[i][0] = getAnExistingColor();
     }

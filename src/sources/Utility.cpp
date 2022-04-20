@@ -20,5 +20,4 @@ bool Utility::circleIntersection(Point center1, float radius1, Point center2, fl
     float dy = center1.y - center2.y;
     float len = std::sqrt(dx * dx + dy * dy);
     return len < radius1 + radius2;
-
 }

@@ -30,6 +30,8 @@ public:
             {{1, 0}, {1, 1}, {0,  1}, {-1, 0},  {0, -1}, {1,  -1}}
     };
 
+    unsigned int numberOfBubblesDestroyedInATurn;
+
     BubbleGridManager();
 
     void initialize();
@@ -42,7 +44,7 @@ public:
 
     void renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures);
 
-    Point getBubbleCoordinate(int column, int row);
+    Point getBubbleCoordinate(int column, int row) const;
 
     bool isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble);
 
@@ -50,17 +52,23 @@ public:
 
     bool isBubblesReachBottom();
 
-    void resetSnappingBubbleContainers();
+    void clearSnappingBubbleContainers();
 
     void clearToProcessArray();
 
-    void destroyCluster(int xGrid, int yGrid, BubbleColor type);
+    void findAndDestroyBubbleCluster(int xGrid, int yGrid, BubbleColor type);
 
-    void findCluster(int xGrid, int yGrid, BubbleColor type);
+    void findBubbleCluster(int xGrid, int yGrid, BubbleColor type);
 
-    void findFloatingCluster();
+    void destroyAllBubblesInCluster();
 
-    void recursivelyFindFloatingCluster(int xGrid, int yGrid);
+    void findAndDestroyFloatingCluster();
+
+    void findFloatingClusterRecursivelyFromFirstRow();
+
+    void findFloatingClusterRecursively(int xGrid, int yGrid);
+
+    void destroyAllFloatingBubbles(std::vector<std::vector<bool>> &isFloating);
 
     void addBubblesToFirstRow();
 

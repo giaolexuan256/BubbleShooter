@@ -64,7 +64,7 @@ void Game::initializeTTFFont() {
     } else {
         gameTextFont = TTF_OpenFont(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\VeraMoBd.ttf)", 28);
         if (gameTextFont == nullptr) {
-            printf("Failed to load lazy gameTextFont! SDL_ttf Error: %s\n", TTF_GetError());
+            printf("Failed to load gameTextFont! SDL_ttf Error: %s\n", TTF_GetError());
         }
     }
 }
@@ -99,27 +99,39 @@ void Game::gameLoop(double delta) {
     render();
 }
 
-void Game::processInput(double delta) {
+void Game::processInput(double deltaTime) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
-        if (event.type == SDL_QUIT) {
-            quit();
-        }
-        if (event.button.button == SDL_BUTTON_LEFT) {
-            shootCannonBubble((float) delta);
-        }
-        if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
-            SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
-        }
+        checkToQuit(event);
+        checkToShootBubble(event, (float) deltaTime);
+        updateMousePosition(event);
     }
 }
 
-void Game::shootCannonBubble(float delta) {
+void Game::checkToQuit(SDL_Event event) {
+    if (event.type == SDL_QUIT) {
+        quit();
+    }
+}
+
+void Game::checkToShootBubble(SDL_Event event, float deltaTime) {
+    if (event.key.keysym.sym == SDLK_SPACE) {
+        shootCannonBubble((float) deltaTime);
+    }
+}
+
+void Game::updateMousePosition(SDL_Event event) {
+    if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
+        SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
+    }
+}
+
+void Game::shootCannonBubble(float deltaTime) {
     if (!cannon->getLoadedBubble()->isMoving()) {
         cannon->getLoadedBubble()->setMoving(true);
         cannon->getLoadedBubble()->setSpeed(
-                -Bubble::BUBBLE_SPEED * delta * std::cos(Utility::degreesToRadians(cannon->getAngle())),
-                Bubble::BUBBLE_SPEED * delta * std::sin(Utility::degreesToRadians(cannon->getAngle())));
+                -Bubble::BUBBLE_SPEED * deltaTime * std::cos(Utility::degreesToRadians(cannon->getAngle())),
+                Bubble::BUBBLE_SPEED * deltaTime * std::sin(Utility::degreesToRadians(cannon->getAngle())));
     }
 }
 
@@ -139,7 +151,6 @@ void Game::updateObjects() {
         cannonBubble->setX(cannonBubble->getX() - cannonBubble->getSpeedX());
         cannonBubble->setY(cannonBubble->getY() - cannonBubble->getSpeedY());
     }
-
     if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
         snapBubble();
     }
@@ -147,6 +158,7 @@ void Game::updateObjects() {
 
 void Game::snapBubble() {
     bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
+    playerScore += bubbleGridManager->numberOfBubblesDestroyedInATurn;
     checkGameOver();
     if (running) {
         cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
@@ -168,7 +180,7 @@ bool Game::isGameOver() {
         SDL_Delay(3000);
         return true;
     } else if (bubbleGridManager->isBubblesReachBottom()) {
-        SDL_Delay(1000);
+        SDL_Delay(300);
         clearScreen();
         loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
         SDL_RenderPresent(renderer);
@@ -181,27 +193,42 @@ void Game::updateTurnCounterAndCheckToAddBubbles() {
     turnCounter++;
     if (turnCounter >= TURNS_TO_ADD_BUBBLES) {
         bubbleGridManager->addBubblesToFirstRow();
-        turnCounter = 0;
+        resetTurnCounter();
     }
+}
+
+void Game::resetTurnCounter() {
+    turnCounter = 0;
 }
 
 void Game::render() {
     clearScreen();
+    renderObjects();
+    SDL_RenderPresent(renderer);
+}
+
+void Game::clearScreen() {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
+}
+
+void Game::renderObjects() {
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
     drawBottomOfLevelLine();
-    SDL_RenderPresent(renderer);
+    renderPlayerScore();
+}
+
+void Game::renderPlayerScore() {
+    std::unique_ptr<TextureAlpha> playerScoreTexture = std::make_unique<TextureAlpha>();
+    playerScoreTexture->loadFromRenderedText(renderer, gameTextFont, "Score: " + std::to_string(playerScore), SDL_Color{255, 255, 0, 255});
+    playerScoreTexture->render(renderer, SCREEN_WIDTH / 8 * 5, SCREEN_HEIGHT / 8 * 7);
 }
 
 void Game::drawBottomOfLevelLine() {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     int bottomOfTheLevelPosition = (bubbleGridManager->rows - 1) * bubbleGridManager->tileWidth;
     SDL_RenderDrawLine(renderer, 0, bottomOfTheLevelPosition, SCREEN_WIDTH, bottomOfTheLevelPosition);
-}
-
-void Game::clearScreen() {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
 }
 
 void Game::quit() {

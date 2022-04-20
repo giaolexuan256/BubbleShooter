@@ -64,7 +64,7 @@ void TextureAlpha::loadFromRenderedText(SDL_Renderer *renderer, TTF_Font *font, 
 
     //Render text surface
     SDL_Surface *textSurface = TTF_RenderText_Solid(font, textureText.c_str(), textColor);
-    if (textSurface == NULL) {
+    if (textSurface == nullptr) {
         printf("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
     } else {
         //Create texture from surface pixels
