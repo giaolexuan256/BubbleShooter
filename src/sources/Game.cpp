@@ -37,7 +37,6 @@ void Game::initializeGameProperties() {
     initializeTTFFont();
     initializeEndGameMessage();
     turnCounter = 0;
-    win = false;
     playerScore = 0;
 }
 
