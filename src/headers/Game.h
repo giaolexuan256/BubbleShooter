@@ -11,7 +11,6 @@
 #include <list>
 #include <cmath>
 #include <memory>
-#include "Timer.h"
 #include "BubbleColor.h"
 #include "RandomBubbleColorGenerator.h"
 #include "BubbleColorConverter.h"
