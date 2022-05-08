@@ -3,7 +3,7 @@
 //
 
 #include <SDL_ttf.h>
-#include "../headers/TextureAlpha.h"
+#include "TextureAlpha.h"
 
 void TextureAlpha::loadFromFile(SDL_Renderer *renderer, const std::string &fileName) {
     free();

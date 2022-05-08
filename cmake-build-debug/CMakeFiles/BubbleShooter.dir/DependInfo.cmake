@@ -8,18 +8,18 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColorConverter.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleColorConverter.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleColorConverter.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/BubbleGridManager.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/RandomBubbleColorGenerator.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomNumberGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/headers/RandomNumberGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/headers/RandomNumberGenerator.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/Arrow.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Arrow.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/Bubble.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Bubble.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/Cannon.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Cannon.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/Game.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Game.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/Point.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Point.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Point.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/TextureAlpha.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/TextureAlpha.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/Utility.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/Utility.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/Utility.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/sources/main.cpp" "CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/sources/main.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/Arrow.cpp" "CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/Bubble.cpp" "CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/BubbleColorConverter.cpp" "CMakeFiles/BubbleShooter.dir/src/BubbleColorConverter.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/BubbleColorConverter.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/BubbleGridManager.cpp" "CMakeFiles/BubbleShooter.dir/src/BubbleGridManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/BubbleGridManager.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/Cannon.cpp" "CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/Game.cpp" "CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/Point.cpp" "CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/RandomBubbleColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/RandomNumberGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/TextureAlpha.cpp" "CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/Utility.cpp" "CMakeFiles/BubbleShooter.dir/src/Utility.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Utility.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/main.cpp" "CMakeFiles/BubbleShooter.dir/src/main.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links.

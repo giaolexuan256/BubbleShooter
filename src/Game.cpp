@@ -1,4 +1,4 @@
-#include "../headers/Game.h"
+#include "Game.h"
 
 void Game::start() {
     running = true;
@@ -29,17 +29,6 @@ bool Game::initializeSDLPropertiesSuccessfully() {
     return false;
 }
 
-void Game::initializeGameProperties() {
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    cannon = std::make_shared<Cannon>(renderer);
-    initializeBubbleTextures();
-    bubbleGridManager = std::make_shared<BubbleGridManager>();
-    initializeTTFFont();
-    initializeEndGameMessage();
-    turnCounter = 0;
-    playerScore = 0;
-}
-
 bool Game::initializeSDLSubsystemsSuccessfully() {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
         printf("Error Init Subsystems: %s", SDL_GetError());
@@ -55,6 +44,19 @@ bool Game::initializeWindowSuccessfully() {
         printf("Error Init Window: %s", SDL_GetError());
         return false;
     } else { return true; }
+}
+
+void Game::initializeGameProperties() {
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    cannon = std::make_shared<Cannon>(renderer);
+    initializeBubbleTextures();
+    bubbleGridManager = std::make_shared<BubbleGridManager>();
+    initializeTTFFont();
+    initializeEndGameMessage();
+    background = std::make_unique<TextureAlpha>();
+    background->loadFromFile(renderer, R"(C:\Dev\Projects\CLion\BubbleShooter\assets\background.jpg)");
+    turnCounter = 0;
+    playerScore = 0;
 }
 
 void Game::initializeTTFFont() {
@@ -209,6 +211,7 @@ void Game::render() {
 void Game::clearScreen() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+    background->render(renderer, 0, 0);
 }
 
 void Game::renderObjects() {

@@ -1,5 +1,5 @@
-#include "../headers/Bubble.h"
-#include "../headers/ScreenSizeCarrier.h"
+#include "Bubble.h"
+#include "ScreenSizeCarrier.h"
 
 Bubble::Bubble(SDL_Renderer *renderer) {
     bubbleColor = RandomBubbleColorGenerator::generateRandomBubbleColor();

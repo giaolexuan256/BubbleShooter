@@ -1,4 +1,4 @@
-#include "../headers/Utility.h"
+#include "Utility.h"
 
 float Utility::degreesToRadians(float angleDegree) {
     return angleDegree / 180 * PI;

@@ -90,79 +90,79 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Arrow.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Arrow.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Bubble.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Arrow.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColor.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Bubble.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColorConverter.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Bubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleColorConverter.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/BubbleColor.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/BubbleColorConverter.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/BubbleGridManager.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/BubbleColorConverter.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Cannon.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/BubbleGridManager.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Game.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/BubbleGridManager.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Point.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Cannon.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomBubbleColorGenerator.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Cannon.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomBubbleColorGenerator.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Game.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomNumberGenerator.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Game.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/RandomNumberGenerator.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Point.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/ScreenSizeCarrier.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Point.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/TextureAlpha.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/RandomBubbleColorGenerator.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/headers/Utility.h">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/RandomBubbleColorGenerator.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Arrow.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/RandomNumberGenerator.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Bubble.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/RandomNumberGenerator.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Cannon.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/ScreenSizeCarrier.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Game.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/TextureAlpha.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Point.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/TextureAlpha.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/TextureAlpha.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Utility.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/Utility.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Utility.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/sources/main.cpp">
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/main.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/CMakeLists.txt">

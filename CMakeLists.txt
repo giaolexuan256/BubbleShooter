@@ -15,7 +15,7 @@ link_directories(C:/Dev/Cpp/SDL2_ttf-devel-2.0.12-VC/SDL2_ttf-2.0.12/lib/x64)
 include_directories(C:/Dev/Cpp/SDL2_mixer-devel-2.0.4-VC/SDL2_mixer-2.0.4/include)
 link_directories(C:/Dev/Cpp/SDL2_mixer-devel-2.0.4-VC/SDL2_mixer-2.0.4/lib/x64)
 
-add_executable(${PROJECT_NAME} src/sources/main.cpp src/sources/TextureAlpha.cpp src/headers/TextureAlpha.h src/sources/Bubble.cpp src/headers/Bubble.h src/sources/Game.cpp src/headers/Game.h src/sources/Arrow.cpp src/headers/Arrow.h src/sources/Point.cpp src/headers/Point.h src/sources/Utility.cpp src/headers/Utility.h src/sources/Cannon.cpp src/headers/Cannon.h src/headers/ScreenSizeCarrier.h src/headers/BubbleColor.h src/headers/RandomBubbleColorGenerator.cpp src/headers/RandomBubbleColorGenerator.h src/headers/BubbleColorConverter.cpp src/headers/BubbleColorConverter.h src/headers/BubbleGridManager.cpp src/headers/BubbleGridManager.h src/headers/RandomNumberGenerator.cpp src/headers/RandomNumberGenerator.h)
+add_executable(${PROJECT_NAME} src/main.cpp src/TextureAlpha.cpp src/TextureAlpha.h src/Bubble.cpp src/Bubble.h src/Game.cpp src/Game.h src/Arrow.cpp src/Arrow.h src/Point.cpp src/Point.h src/Utility.cpp src/Utility.h src/Cannon.cpp src/Cannon.h src/ScreenSizeCarrier.h src/BubbleColor.h src/RandomBubbleColorGenerator.cpp src/RandomBubbleColorGenerator.h src/BubbleColorConverter.cpp src/BubbleColorConverter.h src/BubbleGridManager.cpp src/BubbleGridManager.h src/RandomNumberGenerator.cpp src/RandomNumberGenerator.h)
 
 target_link_libraries(${PROJECT_NAME} -lSDL2main -lSDL2)
 target_link_libraries(${PROJECT_NAME} -lSDL2_image)

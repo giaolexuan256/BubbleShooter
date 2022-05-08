@@ -37,6 +37,7 @@ private:
     int turnCounter;
     std::shared_ptr<TextureAlpha> winMessage;
     std::shared_ptr<TextureAlpha> loseMessage;
+    std::unique_ptr<TextureAlpha> background;
 
     const int TURNS_TO_ADD_BUBBLES = 7;
 

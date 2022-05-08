@@ -1,4 +1,4 @@
-#include "../headers/Cannon.h"
+#include "Cannon.h"
 
 Cannon::Cannon(SDL_Renderer *renderer) {
     arrow = new Arrow(Point((float) SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20), 200, 90);
