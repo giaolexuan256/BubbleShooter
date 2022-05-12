@@ -18,6 +18,7 @@
 #include <vector>
 #include <algorithm>
 #include <SDL_ttf.h>
+#include "TimeHandler.h"
 
 
 class Game {
@@ -30,6 +31,7 @@ private:
     bool running;
     SDL_Window *window;
     SDL_Renderer *renderer;
+    std::unique_ptr<TimeHandler> timeHandler;
     std::shared_ptr<Cannon> cannon;
     SDL_Point mousePosition;
     std::shared_ptr<BubbleGridManager> bubbleGridManager;

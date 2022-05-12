@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Dev/Projects/CLion/BubbleShooter/src/RandomBubbleColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/RandomNumberGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/TextureAlpha.cpp" "CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/TimeHandler.cpp" "CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/Utility.cpp" "CMakeFiles/BubbleShooter.dir/src/Utility.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Utility.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/main.cpp" "CMakeFiles/BubbleShooter.dir/src/main.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/main.cpp.obj.d"
   )

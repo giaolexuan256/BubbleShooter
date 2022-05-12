@@ -22,6 +22,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.obj.d"
+  "CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj"
+  "CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/Utility.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/Utility.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/main.cpp.obj"

@@ -368,6 +368,30 @@ src/TextureAlpha.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TextureAlpha.cpp.s
 .PHONY : src/TextureAlpha.cpp.s
 
+src/TimeHandler.obj: src/TimeHandler.cpp.obj
+.PHONY : src/TimeHandler.obj
+
+# target to build an object file
+src/TimeHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj
+.PHONY : src/TimeHandler.cpp.obj
+
+src/TimeHandler.i: src/TimeHandler.cpp.i
+.PHONY : src/TimeHandler.i
+
+# target to preprocess a source file
+src/TimeHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.i
+.PHONY : src/TimeHandler.cpp.i
+
+src/TimeHandler.s: src/TimeHandler.cpp.s
+.PHONY : src/TimeHandler.s
+
+# target to generate assembly for a file
+src/TimeHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.s
+.PHONY : src/TimeHandler.cpp.s
+
 src/Utility.obj: src/Utility.cpp.obj
 .PHONY : src/Utility.obj
 
@@ -455,6 +479,9 @@ help:
 	@echo ... src/TextureAlpha.obj
 	@echo ... src/TextureAlpha.i
 	@echo ... src/TextureAlpha.s
+	@echo ... src/TimeHandler.obj
+	@echo ... src/TimeHandler.i
+	@echo ... src/TimeHandler.s
 	@echo ... src/Utility.obj
 	@echo ... src/Utility.i
 	@echo ... src/Utility.s

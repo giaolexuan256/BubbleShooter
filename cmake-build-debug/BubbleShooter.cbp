@@ -156,6 +156,12 @@
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/TextureAlpha.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/TimeHandler.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/TimeHandler.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Utility.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>

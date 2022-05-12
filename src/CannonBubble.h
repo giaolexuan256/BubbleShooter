@@ -29,12 +29,7 @@ public:
         return moving;
     }
 
-    void setMoving(bool moving) {
-        CannonBubble::moving = moving;
-        if(!moving) {
-            speedX = speedY = 0;
-        }
-    }
+    void setMoving(bool moving);
 
 
 

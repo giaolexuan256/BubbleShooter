@@ -2,14 +2,10 @@
 
 void Game::start() {
     initialize();
-    Uint32 currentTime = SDL_GetTicks();
-    Uint32 lastTime = currentTime;
-    Uint32 millisecondsPerFrame;
+    timeHandler->startTimer();
     while (running) {
-        currentTime = SDL_GetTicks();
-        millisecondsPerFrame = currentTime - lastTime;
-        gameLoop((float) (millisecondsPerFrame / 1.0E3));
-        lastTime = currentTime;
+        timeHandler->calculateDeltaTime();
+        gameLoop((float) (timeHandler->getDeltaTime()));
     }
 }
 
@@ -48,6 +44,7 @@ bool Game::initializeWindowSuccessfully() {
 
 void Game::initializeGameProperties() {
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    timeHandler = std::make_unique<TimeHandler>();
     cannon = std::make_shared<Cannon>(renderer);
     initializeBubbleTextures();
     bubbleGridManager = std::make_shared<BubbleGridManager>();
@@ -141,8 +138,9 @@ void Game::updateMousePosition(SDL_Event event) {
 void Game::updateObjects(float deltaTime) {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<CannonBubble> cannonBubble = cannon->getLoadedBubble();
-    if (cannonBubble->position.x <0 ||
-                                  cannonBubble->position.x > (float) SCREEN_WIDTH - cannonBubble->getWidth()) {
+    if (cannonBubble->position.x<0 ||
+                                 cannonBubble->position.x>(float)
+        SCREEN_WIDTH - cannonBubble->getWidth()) {
         cannonBubble->setSpeedX(-cannonBubble->getSpeedX());
     }
     if (cannonBubble->position.y < 0) {
@@ -177,7 +175,7 @@ void Game::checkGameOver() {
 }
 
 bool Game::isGameOver() {
-    if(timePassedFromLastShoot >= 10) {
+    if (timePassedFromLastShoot >= 10) {
         displayLoseMessage();
         return true;
     }
