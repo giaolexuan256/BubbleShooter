@@ -37,7 +37,7 @@ void BubbleGridManager::renderBubble(float x, float y, BubbleColor color, std::v
     bubbleTextures[color]->render(renderer, (int) x, (int) y);
 }
 
-bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble) {
+bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<CannonBubble> &cannonBubble) {
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
             if (bubbleArray[i][j] == BLANK) continue;
@@ -53,7 +53,7 @@ bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bub
     return false;
 }
 
-void BubbleGridManager::snapCannonBubble(const std::shared_ptr<Bubble> &cannonBubble) {
+void BubbleGridManager::snapCannonBubble(const std::shared_ptr<CannonBubble> &cannonBubble) {
     numberOfBubblesDestroyedInATurn = 0;
     SDL_Point gridPosition = getGridPosition(cannonBubble);
     bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
@@ -113,7 +113,7 @@ bool BubbleGridManager::isBubblesReachBottom() {
     return false;
 }
 
-SDL_Point BubbleGridManager::getGridPosition(const std::shared_ptr<Bubble> &bubble) {
+SDL_Point BubbleGridManager::getGridPosition(const std::shared_ptr<CannonBubble> &bubble) {
     float x = bubble->position.x;
     float y = bubble->position.y;
     int yGrid = (int) std::round((y / tileHeight));

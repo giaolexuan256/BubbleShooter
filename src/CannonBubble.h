@@ -1,5 +1,5 @@
-#ifndef BUBBLESHOOTER_BUBBLE_H
-#define BUBBLESHOOTER_BUBBLE_H
+#ifndef BUBBLESHOOTER_CANNONBUBBLE_H
+#define BUBBLESHOOTER_CANNONBUBBLE_H
 
 #include "TextureAlpha.h"
 #include <iostream>
@@ -10,16 +10,16 @@
 #include "BubbleColorConverter.h"
 #include <memory>
 
-class Bubble {
+class CannonBubble {
 public:
 
     static const int BUBBLE_SPEED = 600;
 
     Point position;
 
-    explicit Bubble(SDL_Renderer *renderer);
+    explicit CannonBubble(SDL_Renderer *renderer);
 
-    Bubble(SDL_Renderer* renderer, BubbleColor color);
+    CannonBubble(SDL_Renderer* renderer, BubbleColor color);
 
     void loadTexture(SDL_Renderer *renderer, const std::string& fileName) {
         bubbleTexture->loadFromFile(renderer, fileName);
@@ -30,7 +30,7 @@ public:
     }
 
     void setMoving(bool moving) {
-        Bubble::moving = moving;
+        CannonBubble::moving = moving;
         if(!moving) {
             speedX = speedY = 0;
         }
@@ -78,4 +78,4 @@ private:
 };
 
 
-#endif //BUBBLESHOOTER_BUBBLE_H
+#endif //BUBBLESHOOTER_CANNONBUBBLE_H

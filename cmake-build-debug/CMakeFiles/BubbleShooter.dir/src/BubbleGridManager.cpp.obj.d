@@ -276,7 +276,7 @@ CMakeFiles/BubbleShooter.dir/src/BubbleGridManager.cpp.obj: \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bit \
  C:\Dev\Projects\CLion\BubbleShooter\src\RandomNumberGenerator.h \
  C:\Dev\Projects\CLion\BubbleShooter\src\Utility.h \
- C:\Dev\Projects\CLion\BubbleShooter\src\Bubble.h \
+ C:\Dev\Projects\CLion\BubbleShooter\src\CannonBubble.h \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \

@@ -3,7 +3,7 @@
 
 
 #include "Arrow.h"
-#include "Bubble.h"
+#include "CannonBubble.h"
 #include "ScreenSizeCarrier.h"
 #include <memory>
 
@@ -11,7 +11,7 @@ class Cannon {
 public:
     Cannon(SDL_Renderer *renderer);
 
-    std::shared_ptr<Bubble> getLoadedBubble();
+    std::shared_ptr<CannonBubble> getLoadedBubble();
 
     void setAngle(float angleDegree);
 
@@ -25,7 +25,7 @@ public:
 
 private:
     Arrow *arrow;
-    std::shared_ptr<Bubble> loadedBubble;
+    std::shared_ptr<CannonBubble> loadedBubble;
     const float ANGLE_UPPER_BOUND = 170;
     const float ANGLE_LOWER_BOUND = 10;
 };

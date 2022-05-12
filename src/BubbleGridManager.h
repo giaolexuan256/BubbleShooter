@@ -6,7 +6,7 @@
 #include "Point.h"
 #include "RandomBubbleColorGenerator.h"
 #include "Utility.h"
-#include "Bubble.h"
+#include "CannonBubble.h"
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
@@ -38,15 +38,15 @@ public:
 
     void initializeBubbleArray();
 
-    void snapCannonBubble(const std::shared_ptr<Bubble>& cannonBubble);
+    void snapCannonBubble(const std::shared_ptr<CannonBubble>& cannonBubble);
 
-    SDL_Point getGridPosition(const std::shared_ptr<Bubble> &bubble);
+    SDL_Point getGridPosition(const std::shared_ptr<CannonBubble> &bubble);
 
     void renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures);
 
     Point getBubbleCoordinate(int column, int row) const;
 
-    bool isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Bubble> &cannonBubble);
+    bool isCannonBubbleCollideWithBubbleArray(std::shared_ptr<CannonBubble> &cannonBubble);
 
     bool isBubbleArrayCleared();
 

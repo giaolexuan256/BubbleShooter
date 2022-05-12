@@ -37,7 +37,7 @@ bool Game::initializeSDLSubsystemsSuccessfully() {
 }
 
 bool Game::initializeWindowSuccessfully() {
-    window = SDL_CreateWindow("Bubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
+    window = SDL_CreateWindow("CannonBubble Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
                               SCREEN_HEIGHT,
                               SDL_WINDOW_SHOWN);
     if (window == nullptr) {
@@ -127,8 +127,8 @@ void Game::shootCannonBubble(float deltaTime) {
     if (!cannon->getLoadedBubble()->isMoving()) {
         cannon->getLoadedBubble()->setMoving(true);
         cannon->getLoadedBubble()->setSpeed(
-                -Bubble::BUBBLE_SPEED * deltaTime * std::cos(Utility::degreesToRadians(cannon->getAngle())),
-                Bubble::BUBBLE_SPEED * deltaTime * std::sin(Utility::degreesToRadians(cannon->getAngle())));
+                -CannonBubble::BUBBLE_SPEED * deltaTime * std::cos(Utility::degreesToRadians(cannon->getAngle())),
+                CannonBubble::BUBBLE_SPEED * deltaTime * std::sin(Utility::degreesToRadians(cannon->getAngle())));
     }
 }
 
@@ -140,7 +140,7 @@ void Game::updateMousePosition(SDL_Event event) {
 
 void Game::updateObjects(float deltaTime) {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
-    std::shared_ptr<Bubble> cannonBubble = cannon->getLoadedBubble();
+    std::shared_ptr<CannonBubble> cannonBubble = cannon->getLoadedBubble();
     if (cannonBubble->position.x <0 ||
                                   cannonBubble->position.x > (float) SCREEN_WIDTH - cannonBubble->getWidth()) {
         cannonBubble->setSpeedX(-cannonBubble->getSpeedX());

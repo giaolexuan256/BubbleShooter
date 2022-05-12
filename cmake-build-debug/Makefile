@@ -152,30 +152,6 @@ src/Arrow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.s
 .PHONY : src/Arrow.cpp.s
 
-src/Bubble.obj: src/Bubble.cpp.obj
-.PHONY : src/Bubble.obj
-
-# target to build an object file
-src/Bubble.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj
-.PHONY : src/Bubble.cpp.obj
-
-src/Bubble.i: src/Bubble.cpp.i
-.PHONY : src/Bubble.i
-
-# target to preprocess a source file
-src/Bubble.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.i
-.PHONY : src/Bubble.cpp.i
-
-src/Bubble.s: src/Bubble.cpp.s
-.PHONY : src/Bubble.s
-
-# target to generate assembly for a file
-src/Bubble.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.s
-.PHONY : src/Bubble.cpp.s
-
 src/BubbleColorConverter.obj: src/BubbleColorConverter.cpp.obj
 .PHONY : src/BubbleColorConverter.obj
 
@@ -247,6 +223,30 @@ src/Cannon.s: src/Cannon.cpp.s
 src/Cannon.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.s
 .PHONY : src/Cannon.cpp.s
+
+src/CannonBubble.obj: src/CannonBubble.cpp.obj
+.PHONY : src/CannonBubble.obj
+
+# target to build an object file
+src/CannonBubble.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/CannonBubble.cpp.obj
+.PHONY : src/CannonBubble.cpp.obj
+
+src/CannonBubble.i: src/CannonBubble.cpp.i
+.PHONY : src/CannonBubble.i
+
+# target to preprocess a source file
+src/CannonBubble.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/CannonBubble.cpp.i
+.PHONY : src/CannonBubble.cpp.i
+
+src/CannonBubble.s: src/CannonBubble.cpp.s
+.PHONY : src/CannonBubble.s
+
+# target to generate assembly for a file
+src/CannonBubble.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/CannonBubble.cpp.s
+.PHONY : src/CannonBubble.cpp.s
 
 src/Game.obj: src/Game.cpp.obj
 .PHONY : src/Game.obj
@@ -428,9 +428,6 @@ help:
 	@echo ... src/Arrow.obj
 	@echo ... src/Arrow.i
 	@echo ... src/Arrow.s
-	@echo ... src/Bubble.obj
-	@echo ... src/Bubble.i
-	@echo ... src/Bubble.s
 	@echo ... src/BubbleColorConverter.obj
 	@echo ... src/BubbleColorConverter.i
 	@echo ... src/BubbleColorConverter.s
@@ -440,6 +437,9 @@ help:
 	@echo ... src/Cannon.obj
 	@echo ... src/Cannon.i
 	@echo ... src/Cannon.s
+	@echo ... src/CannonBubble.obj
+	@echo ... src/CannonBubble.i
+	@echo ... src/CannonBubble.s
 	@echo ... src/Game.obj
 	@echo ... src/Game.i
 	@echo ... src/Game.s

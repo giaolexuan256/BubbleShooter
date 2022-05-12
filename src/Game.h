@@ -3,7 +3,7 @@
 
 #include <SDL.h>
 #include <iostream>
-#include "Bubble.h"
+#include "CannonBubble.h"
 #include "Arrow.h"
 #include "TextureAlpha.h"
 #include "Cannon.h"

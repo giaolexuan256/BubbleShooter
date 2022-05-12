@@ -1,7 +1,7 @@
-#include "Bubble.h"
+#include "CannonBubble.h"
 #include "ScreenSizeCarrier.h"
 
-Bubble::Bubble(SDL_Renderer *renderer) {
+CannonBubble::CannonBubble(SDL_Renderer *renderer) {
     bubbleColor = RandomBubbleColorGenerator::generateRandomBubbleColor();
     bubbleTexture = std::make_shared<TextureAlpha>();
     loadTexture(renderer, BubbleColorConverter::getBubbleTexturePath(bubbleColor));
@@ -10,7 +10,7 @@ Bubble::Bubble(SDL_Renderer *renderer) {
     setMoving(false);
 }
 
-Bubble::Bubble(SDL_Renderer *renderer, BubbleColor color) {
+CannonBubble::CannonBubble(SDL_Renderer *renderer, BubbleColor color) {
     bubbleTexture = std::make_shared<TextureAlpha>();
     bubbleColor = color;
     loadTexture(renderer, BubbleColorConverter::getBubbleTexturePath(bubbleColor));
@@ -19,45 +19,45 @@ Bubble::Bubble(SDL_Renderer *renderer, BubbleColor color) {
     setMoving(false);
 }
 
-void Bubble::render(SDL_Renderer *renderer) {
+void CannonBubble::render(SDL_Renderer *renderer) {
     bubbleTexture->render(renderer, (int) position.x, (int) position.y, nullptr);
 }
 
 
-void Bubble::setCenterPosition(float xCenter, float yCenter) {
+void CannonBubble::setCenterPosition(float xCenter, float yCenter) {
     position.x = xCenter - bubbleTexture->getWidth() / 2;
     position.y = yCenter - bubbleTexture->getHeight() / 2;
 }
 
-Point Bubble::getCenterPosition() {
+Point CannonBubble::getCenterPosition() {
     return {position.x + bubbleTexture->getWidth() / 2, position.y + bubbleTexture->getHeight() / 2};
 }
 
-float Bubble::getWidth() {
-    return Bubble::getBubbleTexture()->getWidth();
+float CannonBubble::getWidth() {
+    return CannonBubble::getBubbleTexture()->getWidth();
 }
 
-float Bubble::getSpeedX() {
+float CannonBubble::getSpeedX() {
     return speedX;
 }
 
-float Bubble::getSpeedY() {
+float CannonBubble::getSpeedY() {
     return speedY;
 }
 
-void Bubble::setSpeedX(float speedX) {
-    Bubble::speedX = speedX;
+void CannonBubble::setSpeedX(float speedX) {
+    CannonBubble::speedX = speedX;
 }
 
-void Bubble::setSpeedY(float speedY) {
-    Bubble::speedY = speedY;
+void CannonBubble::setSpeedY(float speedY) {
+    CannonBubble::speedY = speedY;
 }
 
-void Bubble::setSpeed(float speedX, float speedY) {
+void CannonBubble::setSpeed(float speedX, float speedY) {
     setSpeedX(speedX);
     setSpeedY(speedY);
 }
 
-BubbleColor Bubble::getType() const {
+BubbleColor CannonBubble::getType() const {
     return bubbleColor;
 }

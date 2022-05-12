@@ -6,7 +6,7 @@ Cannon::Cannon(SDL_Renderer *renderer) {
 }
 
 void Cannon::loadBubble(SDL_Renderer *renderer, BubbleColor color) {
-    loadedBubble = std::make_shared<Bubble>(renderer, color);
+    loadedBubble = std::make_shared<CannonBubble>(renderer, color);
 }
 
 void Cannon::render(SDL_Renderer *renderer) {
@@ -15,7 +15,7 @@ void Cannon::render(SDL_Renderer *renderer) {
 
 }
 
-std::shared_ptr<Bubble> Cannon::getLoadedBubble() {
+std::shared_ptr<CannonBubble> Cannon::getLoadedBubble() {
     return loadedBubble;
 }
 

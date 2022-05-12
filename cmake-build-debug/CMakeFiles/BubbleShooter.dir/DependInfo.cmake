@@ -9,10 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Dev/Projects/CLion/BubbleShooter/src/Arrow.cpp" "CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Arrow.cpp.obj.d"
-  "C:/Dev/Projects/CLion/BubbleShooter/src/Bubble.cpp" "CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Bubble.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/BubbleColorConverter.cpp" "CMakeFiles/BubbleShooter.dir/src/BubbleColorConverter.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/BubbleColorConverter.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/BubbleGridManager.cpp" "CMakeFiles/BubbleShooter.dir/src/BubbleGridManager.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/BubbleGridManager.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/Cannon.cpp" "CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Cannon.cpp.obj.d"
+  "C:/Dev/Projects/CLion/BubbleShooter/src/CannonBubble.cpp" "CMakeFiles/BubbleShooter.dir/src/CannonBubble.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/CannonBubble.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/Game.cpp" "CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/Point.cpp" "CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj.d"
   "C:/Dev/Projects/CLion/BubbleShooter/src/RandomBubbleColorGenerator.cpp" "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj" "gcc" "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj.d"

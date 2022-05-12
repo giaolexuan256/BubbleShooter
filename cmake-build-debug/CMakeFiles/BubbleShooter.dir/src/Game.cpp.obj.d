@@ -277,7 +277,7 @@ CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj: \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/Users/giaol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:\Dev\Projects\CLion\BubbleShooter\src\Bubble.h \
+ C:\Dev\Projects\CLion\BubbleShooter\src\CannonBubble.h \
  C:\Dev\Projects\CLion\BubbleShooter\src\TextureAlpha.h \
  C:/Dev/Cpp/SDL2_image-2.0.5/include/SDL_image.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_version.h \

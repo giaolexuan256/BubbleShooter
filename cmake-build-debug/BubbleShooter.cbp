@@ -96,12 +96,6 @@
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Arrow.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Bubble.cpp">
-			<Option target="BubbleShooter"/>
-		</Unit>
-		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Bubble.h">
-			<Option target="BubbleShooter"/>
-		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/BubbleColor.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
@@ -121,6 +115,12 @@
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Cannon.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/CannonBubble.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/CannonBubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Game.cpp">

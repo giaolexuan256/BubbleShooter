@@ -277,7 +277,7 @@ CMakeFiles/BubbleShooter.dir/src/main.cpp.obj: \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_version.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_locale.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_misc.h \
- C:\Dev\Projects\CLion\BubbleShooter\src\Bubble.h \
+ C:\Dev\Projects\CLion\BubbleShooter\src\CannonBubble.h \
  C:\Dev\Projects\CLion\BubbleShooter\src\TextureAlpha.h \
  C:/Dev/Cpp/SDL2_image-2.0.5/include/SDL_image.h \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_version.h \
