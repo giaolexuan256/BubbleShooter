@@ -114,8 +114,8 @@ bool BubbleGridManager::isBubblesReachBottom() {
 }
 
 SDL_Point BubbleGridManager::getGridPosition(const std::shared_ptr<Bubble> &bubble) {
-    float x = bubble->getX();
-    float y = bubble->getY();
+    float x = bubble->position.x;
+    float y = bubble->position.y;
     int yGrid = (int) std::round((y / tileHeight));
     int xOffset = 0;
     if ((yGrid + rowOffSet) % 2 == 1) {

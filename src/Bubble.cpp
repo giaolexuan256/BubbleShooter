@@ -20,25 +20,21 @@ Bubble::Bubble(SDL_Renderer *renderer, BubbleColor color) {
 }
 
 void Bubble::render(SDL_Renderer *renderer) {
-    bubbleTexture->render(renderer, (int) x, (int) y, nullptr);
+    bubbleTexture->render(renderer, (int) position.x, (int) position.y, nullptr);
 }
 
 
 void Bubble::setCenterPosition(float xCenter, float yCenter) {
-    x = xCenter - bubbleTexture->getWidth() / 2;
-    y = yCenter - bubbleTexture->getHeight() / 2;
+    position.x = xCenter - bubbleTexture->getWidth() / 2;
+    position.y = yCenter - bubbleTexture->getHeight() / 2;
 }
 
 Point Bubble::getCenterPosition() {
-    return {x + bubbleTexture->getWidth() / 2, y + bubbleTexture->getHeight() / 2};
+    return {position.x + bubbleTexture->getWidth() / 2, position.y + bubbleTexture->getHeight() / 2};
 }
 
 float Bubble::getWidth() {
     return Bubble::getBubbleTexture()->getWidth();
-}
-
-float Bubble::getHeight() {
-    return Bubble::getBubbleTexture()->getHeight();
 }
 
 float Bubble::getSpeedX() {

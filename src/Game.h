@@ -65,7 +65,7 @@ private:
 
     void initializeLoseMessage();
 
-    void gameLoop(double deltaTime);
+    void gameLoop(float deltaTime);
 
     void processInput(double deltaTime);
 
@@ -82,6 +82,10 @@ private:
     void checkGameOver();
 
     bool isGameOver();
+
+    void displayLoseMessage();
+
+    void displayWinMessage();
 
     void updateTurnCounterAndCheckToAddBubbles();
 

@@ -8,7 +8,7 @@ void Game::start() {
     while (running) {
         currentTime = SDL_GetTicks();
         millisecondsPerFrame = currentTime - lastTime;
-        gameLoop(millisecondsPerFrame / 1.0E3);
+        gameLoop((float) (millisecondsPerFrame / 1.0E3));
         lastTime = currentTime;
     }
 }
@@ -95,7 +95,7 @@ void Game::initializeBubbleTextures() {
     }
 }
 
-void Game::gameLoop(double deltaTime) {
+void Game::gameLoop(float deltaTime) {
     processInput(deltaTime);
     updateObjects(deltaTime);
     render();
@@ -141,24 +141,23 @@ void Game::updateMousePosition(SDL_Event event) {
 void Game::updateObjects(float deltaTime) {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<Bubble> cannonBubble = cannon->getLoadedBubble();
-    if (cannonBubble->getX() < 0 ||
-        cannonBubble->getX() > (float) SCREEN_WIDTH - cannonBubble->getWidth()) {
+    if (cannonBubble->position.x <0 ||
+                                  cannonBubble->position.x > (float) SCREEN_WIDTH - cannonBubble->getWidth()) {
         cannonBubble->setSpeedX(-cannonBubble->getSpeedX());
     }
-    if (cannonBubble->getY() < 0) {
+    if (cannonBubble->position.y < 0) {
         cannonBubble->setMoving(false);
         snapBubble();
         return;
     }
     if (cannonBubble->isMoving()) {
-        cannonBubble->setX(cannonBubble->getX() - cannonBubble->getSpeedX());
-        cannonBubble->setY(cannonBubble->getY() - cannonBubble->getSpeedY());
+        cannonBubble->setX(cannonBubble->position.x - cannonBubble->getSpeedX());
+        cannonBubble->setY(cannonBubble->position.y - cannonBubble->getSpeedY());
     }
     if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
         snapBubble();
     }
     timePassedFromLastShoot += deltaTime;
-    std::cout << timePassedFromLastShoot << std::endl;
     checkGameOver();
 }
 
@@ -179,22 +178,32 @@ void Game::checkGameOver() {
 
 bool Game::isGameOver() {
     if(timePassedFromLastShoot >= 10) {
+        displayLoseMessage();
         return true;
     }
     if (bubbleGridManager->isBubbleArrayCleared()) {
-        clearScreen();
-        winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
-        SDL_RenderPresent(renderer);
-        SDL_Delay(3000);
+        displayWinMessage();
         return true;
     } else if (bubbleGridManager->isBubblesReachBottom()) {
-        SDL_Delay(300);
-        clearScreen();
-        loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
-        SDL_RenderPresent(renderer);
-        SDL_Delay(3000);
+        displayLoseMessage();
         return true;
-    } else return false;
+    }
+    return false;
+}
+
+void Game::displayLoseMessage() {
+    SDL_Delay(300);
+    clearScreen();
+    loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
+    SDL_RenderPresent(renderer);
+    SDL_Delay(3000);
+}
+
+void Game::displayWinMessage() {
+    clearScreen();
+    winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
+    SDL_RenderPresent(renderer);
+    SDL_Delay(3000);
 }
 
 void Game::updateTurnCounterAndCheckToAddBubbles() {

@@ -15,6 +15,8 @@ public:
 
     static const int BUBBLE_SPEED = 600;
 
+    Point position;
+
     explicit Bubble(SDL_Renderer *renderer);
 
     Bubble(SDL_Renderer* renderer, BubbleColor color);
@@ -34,10 +36,7 @@ public:
         }
     }
 
-    void setPosition(float x, float y) {
-        this->x = x;
-        this->y = y;
-    }
+
 
     void render(SDL_Renderer *renderer);
 
@@ -49,8 +48,6 @@ public:
 
     float getWidth();
 
-    float getHeight();
-
     float getSpeedX();
 
     float getSpeedY();
@@ -61,28 +58,19 @@ public:
 
     void setSpeed(float speedX, float speedY);
 
-    float getX() {
-        return x;
-    }
-
-    float getY() {
-        return y;
-    }
-
     std::shared_ptr<TextureAlpha> getBubbleTexture() {
         return bubbleTexture;
     }
 
     void setX(float x) {
-        this->x = x;
+        position.x = x;
     }
 
     void setY(float y) {
-        this->y = y;
+        position.y = y;
     }
 
 private:
-    float x, y;
     BubbleColor bubbleColor;
     std::shared_ptr<TextureAlpha> bubbleTexture;
     bool moving;
