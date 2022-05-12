@@ -1,7 +1,3 @@
-//
-// Created by giaol on 3/16/2022.
-//
-
 #include <SDL_ttf.h>
 #include "TextureAlpha.h"
 
@@ -35,9 +31,6 @@ void TextureAlpha::renderCenter(SDL_Renderer *renderer, int x, int y, SDL_Rect *
 
 void TextureAlpha::renderExtra(SDL_Renderer *renderer, SDL_Rect *clip, SDL_Rect renderQuad, double angle, SDL_Point *center,
                                SDL_RendererFlip flip) {
-    //Set rendering space and render to screen
-    //Set clip rendering dimensions
-    //Render to screen
     SDL_RenderCopyEx(renderer, texture, clip, &renderQuad, angle, center, flip);
 }
 

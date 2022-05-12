@@ -1,7 +1,6 @@
 #include "Game.h"
 
 void Game::start() {
-    running = true;
     initialize();
     Uint32 currentTime = SDL_GetTicks();
     Uint32 lastTime = currentTime;
@@ -15,6 +14,7 @@ void Game::start() {
 }
 
 void Game::initialize() {
+    running = true;
     if (initializeSDLPropertiesSuccessfully()) {
         initializeGameProperties();
     }
@@ -77,7 +77,8 @@ void Game::initializeEndGameMessage() {
 
 void Game::initializeWinMessage() {
     winMessage = std::make_shared<TextureAlpha>();
-    winMessage->loadFromRenderedText(renderer, gameTextFont, "Winner Winner Chicken Dinner!!!", SDL_Color{255, 255, 0, 255});
+    winMessage->loadFromRenderedText(renderer, gameTextFont, "Winner Winner Chicken Dinner!!!",
+                                     SDL_Color{255, 255, 0, 255});
 }
 
 void Game::initializeLoseMessage() {
@@ -94,9 +95,9 @@ void Game::initializeBubbleTextures() {
     }
 }
 
-void Game::gameLoop(double delta) {
-    processInput(delta);
-    updateObjects();
+void Game::gameLoop(double deltaTime) {
+    processInput(deltaTime);
+    updateObjects(deltaTime);
     render();
 }
 
@@ -121,13 +122,8 @@ void Game::checkToShootBubble(SDL_Event event, float deltaTime) {
     }
 }
 
-void Game::updateMousePosition(SDL_Event event) {
-    if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
-        SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
-    }
-}
-
 void Game::shootCannonBubble(float deltaTime) {
+    timePassedFromLastShoot = 0;
     if (!cannon->getLoadedBubble()->isMoving()) {
         cannon->getLoadedBubble()->setMoving(true);
         cannon->getLoadedBubble()->setSpeed(
@@ -136,7 +132,13 @@ void Game::shootCannonBubble(float deltaTime) {
     }
 }
 
-void Game::updateObjects() {
+void Game::updateMousePosition(SDL_Event event) {
+    if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
+        SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
+    }
+}
+
+void Game::updateObjects(float deltaTime) {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<Bubble> cannonBubble = cannon->getLoadedBubble();
     if (cannonBubble->getX() < 0 ||
@@ -155,12 +157,14 @@ void Game::updateObjects() {
     if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
         snapBubble();
     }
+    timePassedFromLastShoot += deltaTime;
+    std::cout << timePassedFromLastShoot << std::endl;
+    checkGameOver();
 }
 
 void Game::snapBubble() {
     bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
     playerScore += bubbleGridManager->numberOfBubblesDestroyedInATurn;
-    checkGameOver();
     if (running) {
         cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
         updateTurnCounterAndCheckToAddBubbles();
@@ -174,6 +178,9 @@ void Game::checkGameOver() {
 }
 
 bool Game::isGameOver() {
+    if(timePassedFromLastShoot >= 10) {
+        return true;
+    }
     if (bubbleGridManager->isBubbleArrayCleared()) {
         clearScreen();
         winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
@@ -223,7 +230,8 @@ void Game::renderObjects() {
 
 void Game::renderPlayerScore() {
     std::unique_ptr<TextureAlpha> playerScoreTexture = std::make_unique<TextureAlpha>();
-    playerScoreTexture->loadFromRenderedText(renderer, gameTextFont, "Score: " + std::to_string(playerScore), SDL_Color{255, 255, 0, 255});
+    playerScoreTexture->loadFromRenderedText(renderer, gameTextFont, "Score: " + std::to_string(playerScore),
+                                             SDL_Color{255, 255, 0, 255});
     playerScoreTexture->render(renderer, SCREEN_WIDTH / 8 * 5, SCREEN_HEIGHT / 8 * 7);
 }
 

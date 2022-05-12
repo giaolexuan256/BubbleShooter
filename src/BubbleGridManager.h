@@ -78,7 +78,6 @@ public:
 
 
 private:
-
     const int startingRows = 1;
     int rowOffSet;
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,

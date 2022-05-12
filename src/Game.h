@@ -41,6 +41,8 @@ private:
 
     const int TURNS_TO_ADD_BUBBLES = 7;
 
+    float timePassedFromLastShoot = 0;
+
     unsigned int playerScore;
 
     void initialize();
@@ -63,7 +65,7 @@ private:
 
     void initializeLoseMessage();
 
-    void gameLoop(double delta);
+    void gameLoop(double deltaTime);
 
     void processInput(double deltaTime);
 
@@ -75,7 +77,7 @@ private:
 
     void shootCannonBubble(float deltaTime);
 
-    void updateObjects();
+    void updateObjects(float deltaTime);
 
     void checkGameOver();
 
