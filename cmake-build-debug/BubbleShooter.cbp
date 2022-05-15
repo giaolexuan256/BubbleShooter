@@ -129,6 +129,12 @@
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Game.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/GameTextureHandler.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/GameTextureHandler.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Point.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>

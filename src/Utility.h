@@ -4,7 +4,7 @@
 #include <cmath>
 #include "Point.h"
 
-#define PI 3.14159265359f
+#define PI 3.141592f
 
 class Utility {
 public:
@@ -12,7 +12,7 @@ public:
 
     static float radiansToDegrees(float angleRadian);
 
-    static float clamp(float var, float minValue, float maxValue);
+    static float clamp(float &var, float minValue, float maxValue);
 
     static bool circleIntersection(Point center1, float radius1, Point center2, float radius2);
 };

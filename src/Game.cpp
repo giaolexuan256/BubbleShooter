@@ -5,7 +5,7 @@ void Game::start() {
     timeHandler->startTimer();
     while (running) {
         timeHandler->calculateDeltaTime();
-        gameLoop((float) (timeHandler->getDeltaTime()));
+        gameLoop(timeHandler->getDeltaTime());
     }
 }
 
@@ -49,11 +49,9 @@ void Game::initializeGameProperties() {
     initializeBubbleTextures();
     bubbleGridManager = std::make_shared<BubbleGridManager>();
     initializeTTFFont();
-    initializeEndGameMessage();
-    background = std::make_unique<TextureAlpha>();
-    background->loadFromFile(renderer, R"(C:\Dev\Projects\CLion\BubbleShooter\assets\background.jpg)");
     turnCounter = 0;
     playerScore = 0;
+    gameTextureHandler = std::make_unique<GameTextureHandler>(renderer, gameTextFont);
 }
 
 void Game::initializeTTFFont() {
@@ -66,23 +64,6 @@ void Game::initializeTTFFont() {
         }
     }
 }
-
-void Game::initializeEndGameMessage() {
-    initializeWinMessage();
-    initializeLoseMessage();
-}
-
-void Game::initializeWinMessage() {
-    winMessage = std::make_shared<TextureAlpha>();
-    winMessage->loadFromRenderedText(renderer, gameTextFont, "Winner Winner Chicken Dinner!!!",
-                                     SDL_Color{255, 255, 0, 255});
-}
-
-void Game::initializeLoseMessage() {
-    loseMessage = std::make_shared<TextureAlpha>();
-    loseMessage->loadFromRenderedText(renderer, gameTextFont, "You Lost =(", SDL_Color{255, 255, 0, 255});
-}
-
 
 void Game::initializeBubbleTextures() {
     for (int i = 0; i < BubbleColor::TOTAL_COLORS; i++) {
@@ -138,6 +119,15 @@ void Game::updateMousePosition(SDL_Event event) {
 void Game::updateObjects(float deltaTime) {
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<CannonBubble> cannonBubble = cannon->getLoadedBubble();
+    clampCannonBubblePosition(cannonBubble);
+    if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
+        snapBubble();
+    }
+    timePassedFromLastShoot += deltaTime;
+    checkGameOver();
+}
+
+void Game::clampCannonBubblePosition(const std::shared_ptr<CannonBubble>& cannonBubble) {
     if (cannonBubble->position.x<0 ||
                                  cannonBubble->position.x>(float)
         SCREEN_WIDTH - cannonBubble->getWidth()) {
@@ -152,11 +142,6 @@ void Game::updateObjects(float deltaTime) {
         cannonBubble->setX(cannonBubble->position.x - cannonBubble->getSpeedX());
         cannonBubble->setY(cannonBubble->position.y - cannonBubble->getSpeedY());
     }
-    if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
-        snapBubble();
-    }
-    timePassedFromLastShoot += deltaTime;
-    checkGameOver();
 }
 
 void Game::snapBubble() {
@@ -192,14 +177,14 @@ bool Game::isGameOver() {
 void Game::displayLoseMessage() {
     SDL_Delay(300);
     clearScreen();
-    loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
+    gameTextureHandler->loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
     SDL_RenderPresent(renderer);
     SDL_Delay(3000);
 }
 
 void Game::displayWinMessage() {
     clearScreen();
-    winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
+    gameTextureHandler->winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
     SDL_RenderPresent(renderer);
     SDL_Delay(3000);
 }
@@ -218,6 +203,7 @@ void Game::resetTurnCounter() {
 
 void Game::render() {
     clearScreen();
+    gameTextureHandler->background->render(renderer, 0, 0);
     renderObjects();
     SDL_RenderPresent(renderer);
 }
@@ -225,7 +211,6 @@ void Game::render() {
 void Game::clearScreen() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    background->render(renderer, 0, 0);
 }
 
 void Game::renderObjects() {

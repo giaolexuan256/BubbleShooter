@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <SDL_ttf.h>
 #include "TimeHandler.h"
+#include "GameTextureHandler.h"
 
 
 class Game {
@@ -37,9 +38,8 @@ private:
     std::shared_ptr<BubbleGridManager> bubbleGridManager;
     TTF_Font *gameTextFont;
     int turnCounter;
-    std::shared_ptr<TextureAlpha> winMessage;
-    std::shared_ptr<TextureAlpha> loseMessage;
-    std::unique_ptr<TextureAlpha> background;
+
+    std::unique_ptr<GameTextureHandler> gameTextureHandler;
 
     const int TURNS_TO_ADD_BUBBLES = 7;
 
@@ -61,12 +61,6 @@ private:
 
     void initializeBubbleTextures();
 
-    void initializeEndGameMessage();
-
-    void initializeWinMessage();
-
-    void initializeLoseMessage();
-
     void gameLoop(float deltaTime);
 
     void processInput(double deltaTime);
@@ -80,6 +74,8 @@ private:
     void shootCannonBubble(float deltaTime);
 
     void updateObjects(float deltaTime);
+
+    void clampCannonBubblePosition(const std::shared_ptr<CannonBubble>& cannonBubble);
 
     void checkGameOver();
 

@@ -7,7 +7,9 @@
 class TimeHandler {
 public:
     void startTimer();
+
     void calculateDeltaTime();
+
     float getDeltaTime() const;
 
 private:

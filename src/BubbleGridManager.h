@@ -20,7 +20,7 @@ public:
     const static int tileWidth = 40;
     const static int tileHeight = 40;
     const static int columns = 15;
-    const static int rows = 14;
+    const static int rows = 10;
     const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
     bool toProcess[columns][rows];
@@ -72,13 +72,17 @@ public:
 
     void addBubblesToFirstRow();
 
+    void moveAllBubblesDownALine();
+
+    void generateBubblesOnFirstRow();
+
     BubbleColor getAnExistingColor();
 
     std::vector<BubbleColor> findExistingColors();
 
 
 private:
-    const int startingRows = 1;
+    const int startingRows = 6;
     int rowOffSet;
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
                              SDL_Renderer *renderer);

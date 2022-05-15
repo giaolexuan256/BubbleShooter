@@ -8,11 +8,10 @@ float Utility::radiansToDegrees(float angleRadian) {
     return angleRadian / PI * 180;
 }
 
-float Utility::clamp(float var, float minValue, float maxValue) {
-    float result = var;
-    if (var < minValue) result = minValue;
-    else if (var > maxValue) result = maxValue;
-    return result;
+float Utility::clamp(float &var, float minValue, float maxValue) {
+    if (var < minValue) var = minValue;
+    else if (var > maxValue) var = maxValue;
+    return var;
 }
 
 bool Utility::circleIntersection(Point center1, float radius1, Point center2, float radius2) {

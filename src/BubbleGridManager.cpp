@@ -21,7 +21,8 @@ void BubbleGridManager::initializeBubbleArray() {
     }
 }
 
-void BubbleGridManager::renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures) {
+void
+BubbleGridManager::renderAllBubbles(SDL_Renderer *renderer, std::vector<std::shared_ptr<TextureAlpha>> bubbleTextures) {
     for (int j = 0; j < rows; j++) {
         for (int i = 0; i < columns; i++) {
             Point bubbleCoordinate = getBubbleCoordinate(i, j);
@@ -31,7 +32,8 @@ void BubbleGridManager::renderAllBubbles(SDL_Renderer *renderer, std::vector<std
     }
 }
 
-void BubbleGridManager::renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
+void BubbleGridManager::renderBubble(float x, float y, BubbleColor color,
+                                     std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
                                      SDL_Renderer *renderer) {
     if (color == BLANK) return;
     bubbleTextures[color]->render(renderer, (int) x, (int) y);
@@ -188,11 +190,19 @@ void BubbleGridManager::destroyAllFloatingBubbles(std::vector<std::vector<bool>>
 
 void BubbleGridManager::addBubblesToFirstRow() {
     rowOffSet = (rowOffSet + 1) % 2;
+    moveAllBubblesDownALine();
+    generateBubblesOnFirstRow();
+}
+
+void BubbleGridManager::moveAllBubblesDownALine() {
     for (int i = 0; i < columns; i++) {
         for (int j = 0; j < rows; j++) {
             bubbleArray[i][rows - 1 - j] = bubbleArray[i][rows - 1 - j - 1];
         }
     }
+}
+
+void BubbleGridManager::generateBubblesOnFirstRow() {
     for (int i = 0; i < columns; i++) {
         bubbleArray[i][0] = getAnExistingColor();
     }
