@@ -24,9 +24,9 @@ public:
     const static int rows = 14;
     const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
-    bool toProcess[columns][rows];
+    bool bubblesToProcess[columns][rows];
     std::vector<SDL_Point> foundCluster;
-    std::vector<SDL_Point> bubblesToBeDestroyed;
+    std::vector<SDL_Point> bubblesToDestroy;
     SDL_Point neighborsOffsets[2][6] = {
             {{1, 0}, {0, 1}, {-1, 1}, {-1, -1}, {0, -1}, {-1, 0}},
             {{1, 0}, {1, 1}, {0,  1}, {-1, 0},  {0, -1}, {1,  -1}}
@@ -36,7 +36,7 @@ public:
 
     void initializeBubbleArray();
 
-    void snapCannonBubble(const std::shared_ptr<CannonBubble>& cannonBubble);
+    void snapCannonBubble(const std::shared_ptr<CannonBubble> &cannonBubble);
 
     SDL_Point getGridPosition(const std::shared_ptr<CannonBubble> &bubble);
 
@@ -76,15 +76,18 @@ public:
 
     BubbleColor getAnExistingColor();
 
-    std::vector<BubbleColor> findExistingColors();
-
 
 private:
     const int startingRows = 6;
     int rowOffSet;
-    static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
-                             SDL_Renderer *renderer);
-    bool findInBubblesToBeDestroyed(int x, int y);
+
+    static void
+    renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
+                 SDL_Renderer *renderer);
+
+    bool foundInBubblesToDestroyList(int x, int y);
+
+    std::vector<BubbleColor> findExistingColors();
 
 };
 

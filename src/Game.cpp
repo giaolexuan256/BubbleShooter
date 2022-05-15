@@ -57,6 +57,7 @@ void Game::initializeGameProperties() {
     backgroundMusic = Mix_LoadMUS(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\backgroundMusic.flac)");
     Mix_PlayMusic(backgroundMusic, -1);
     bubbleShootingSound = Mix_LoadWAV(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\bubbleShootingSound.wav)");
+    bubblePopSound = Mix_LoadWAV(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\bubblePop.wav)");
     inputHandler = std::make_unique<InputHandler>();
     timeCounter = 0;
 }
@@ -117,7 +118,7 @@ void Game::updateObjects(float deltaTime) {
     std::shared_ptr<CannonBubble> cannonBubble = cannon->getLoadedBubble();
     clampCannonBubblePosition(cannonBubble);
     if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
-        snapBubble();
+        processSnappedBubble();
     }
     checkGameOver();
 }
@@ -130,7 +131,7 @@ void Game::clampCannonBubblePosition(const std::shared_ptr<CannonBubble> &cannon
     }
     if (cannonBubble->position.y < 0) {
         cannonBubble->setMoving(false);
-        snapBubble();
+        processSnappedBubble();
         return;
     }
     if (cannonBubble->isMoving()) {
@@ -139,13 +140,17 @@ void Game::clampCannonBubblePosition(const std::shared_ptr<CannonBubble> &cannon
     }
 }
 
-void Game::snapBubble() {
+void Game::processSnappedBubble() {
     bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
-    playerScore += bubbleGridManager->bubblesToBeDestroyed.size();
-    if (running) {
-        cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
-        updateTurnCounterAndCheckToAddBubbles();
+    playerScore += bubbleGridManager->bubblesToDestroy.size();
+    cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
+    for (SDL_Point &bubblePosition: bubbleGridManager->bubblesToDestroy) {
+        bubbleGridManager->bubbleArray[bubblePosition.x][bubblePosition.y] = BLANK;
+        render();
+        Mix_PlayChannel(-1, bubblePopSound, 0);
+        SDL_Delay(100);
     }
+    bubbleGridManager->bubblesToDestroy.clear();
 }
 
 void Game::checkGameOver() {
@@ -168,6 +173,7 @@ bool Game::isGameOver() {
 void Game::displayLoseMessage() {
     SDL_Delay(300);
     clearScreen();
+    gameTextureHandler->renderTotalScore(renderer, gameTextFont, playerScore);
     gameTextureHandler->loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
     SDL_RenderPresent(renderer);
     SDL_Delay(3000);
@@ -178,9 +184,6 @@ void Game::displayWinMessage() {
     gameTextureHandler->winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
     SDL_RenderPresent(renderer);
     SDL_Delay(3000);
-}
-
-void Game::updateTurnCounterAndCheckToAddBubbles() {
 }
 
 void Game::render() {

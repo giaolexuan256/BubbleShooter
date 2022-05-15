@@ -41,6 +41,7 @@ private:
     TTF_Font *gameTextFont;
     Mix_Music *backgroundMusic;
     Mix_Chunk* bubbleShootingSound;
+    Mix_Chunk* bubblePopSound;
     std::unique_ptr<GameTextureHandler> gameTextureHandler;
     unsigned int playerScore;
     std::unique_ptr<InputHandler> inputHandler;
@@ -79,9 +80,7 @@ private:
 
     void displayWinMessage();
 
-    void updateTurnCounterAndCheckToAddBubbles();
-
-    void snapBubble();
+    void processSnappedBubble();
 
     void render();
 
