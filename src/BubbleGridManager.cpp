@@ -1,14 +1,9 @@
 #include "BubbleGridManager.h"
 
 BubbleGridManager::BubbleGridManager() {
-    initialize();
-}
-
-void BubbleGridManager::initialize() {
     rowOffSet = 0;
     initializeBubbleArray();
     clearToProcessArray();
-    numberOfBubblesDestroyedInATurn = 0;
 }
 
 void BubbleGridManager::initializeBubbleArray() {
@@ -56,10 +51,13 @@ bool BubbleGridManager::isCannonBubbleCollideWithBubbleArray(std::shared_ptr<Can
 }
 
 void BubbleGridManager::snapCannonBubble(const std::shared_ptr<CannonBubble> &cannonBubble) {
-    numberOfBubblesDestroyedInATurn = 0;
+    bubblesToBeDestroyed.clear();
     SDL_Point gridPosition = getGridPosition(cannonBubble);
     bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
     findAndDestroyBubbleCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
+    for(SDL_Point &i : bubblesToBeDestroyed) {
+        bubbleArray[i.x][i.y] = BLANK;
+    }
 }
 
 void BubbleGridManager::findAndDestroyBubbleCluster(int xGrid, int yGrid, BubbleColor type) {
@@ -73,9 +71,8 @@ void BubbleGridManager::findAndDestroyBubbleCluster(int xGrid, int yGrid, Bubble
 
 void BubbleGridManager::destroyAllBubblesInCluster() {
     for (auto &i: foundCluster) {
-        bubbleArray[i.x][i.y] = BLANK;
+        bubblesToBeDestroyed.push_back(i);
     }
-    numberOfBubblesDestroyedInATurn += foundCluster.size();
 }
 
 void BubbleGridManager::clearToProcessArray() {
@@ -181,8 +178,7 @@ void BubbleGridManager::destroyAllFloatingBubbles(std::vector<std::vector<bool>>
         for (int j = 0; j < rows; j++) {
             if (bubbleArray[i][j] == BLANK) continue;
             else if (isFloating[i][j]) {
-                bubbleArray[i][j] = BLANK;
-                numberOfBubblesDestroyedInATurn++;
+                bubblesToBeDestroyed.push_back({i, j});
             }
         }
     }

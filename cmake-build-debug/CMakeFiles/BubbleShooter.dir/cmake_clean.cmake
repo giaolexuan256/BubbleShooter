@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BubbleShooter.dir/src/Game.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/GameTextureHandler.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/GameTextureHandler.cpp.obj.d"
+  "CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.obj"
+  "CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj"
   "CMakeFiles/BubbleShooter.dir/src/Point.cpp.obj.d"
   "CMakeFiles/BubbleShooter.dir/src/RandomBubbleColorGenerator.cpp.obj"

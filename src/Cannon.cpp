@@ -1,7 +1,7 @@
 #include "Cannon.h"
 
 Cannon::Cannon(SDL_Renderer *renderer) {
-    arrow = new Arrow(Point((float) SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20), 200, 90);
+    arrow = new Arrow(Point((float) SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20), 100, 90);
     loadBubble(renderer, RandomBubbleColorGenerator::generateRandomBubbleColor());
 }
 

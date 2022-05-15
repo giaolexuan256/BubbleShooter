@@ -26,7 +26,7 @@ bool Game::initializeSDLPropertiesSuccessfully() {
 }
 
 bool Game::initializeSDLSubsystemsSuccessfully() {
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_AUDIO) < 0) {
         printf("Error Init Subsystems: %s", SDL_GetError());
         return false;
     } else { return true; }
@@ -49,9 +49,16 @@ void Game::initializeGameProperties() {
     initializeBubbleTextures();
     bubbleGridManager = std::make_shared<BubbleGridManager>();
     initializeTTFFont();
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+        printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
+    }
     turnCounter = 0;
     playerScore = 0;
     gameTextureHandler = std::make_unique<GameTextureHandler>(renderer, gameTextFont);
+    backgroundMusic = Mix_LoadMUS(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\backgroundMusic.flac)");
+    Mix_PlayMusic(backgroundMusic, -1);
+    bubbleShootingSound = Mix_LoadWAV(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\bubbleShootingSound.wav)");
+    inputHandler = std::make_unique<InputHandler>();
 }
 
 void Game::initializeTTFFont() {
@@ -79,40 +86,25 @@ void Game::gameLoop(float deltaTime) {
     render();
 }
 
-void Game::processInput(double deltaTime) {
-    SDL_Event event;
-    while (SDL_PollEvent(&event)) {
-        checkToQuit(event);
-        checkToShootBubble(event, (float) deltaTime);
-        updateMousePosition(event);
-    }
-}
-
-void Game::checkToQuit(SDL_Event event) {
-    if (event.type == SDL_QUIT) {
+void Game::processInput(float deltaTime) {
+    inputHandler->poll();
+    if(inputHandler->unhandledEvent.type == SDL_QUIT) {
         quit();
     }
-}
-
-void Game::checkToShootBubble(SDL_Event event, float deltaTime) {
-    if (event.key.keysym.sym == SDLK_SPACE) {
-        shootCannonBubble((float) deltaTime);
+    if(inputHandler->keyDownOnce(SDLK_SPACE)) {
+        shootCannonBubble(deltaTime);
     }
+    mousePosition = inputHandler->getMousePosition();
 }
 
 void Game::shootCannonBubble(float deltaTime) {
+    Mix_PlayChannel(-1, bubbleShootingSound, 0);
     timePassedFromLastShoot = 0;
     if (!cannon->getLoadedBubble()->isMoving()) {
         cannon->getLoadedBubble()->setMoving(true);
         cannon->getLoadedBubble()->setSpeed(
                 -CannonBubble::BUBBLE_SPEED * deltaTime * std::cos(Utility::degreesToRadians(cannon->getAngle())),
                 CannonBubble::BUBBLE_SPEED * deltaTime * std::sin(Utility::degreesToRadians(cannon->getAngle())));
-    }
-}
-
-void Game::updateMousePosition(SDL_Event event) {
-    if (event.type == SDL_MOUSEMOTION || event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP) {
-        SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
     }
 }
 
@@ -127,7 +119,7 @@ void Game::updateObjects(float deltaTime) {
     checkGameOver();
 }
 
-void Game::clampCannonBubblePosition(const std::shared_ptr<CannonBubble>& cannonBubble) {
+void Game::clampCannonBubblePosition(const std::shared_ptr<CannonBubble> &cannonBubble) {
     if (cannonBubble->position.x<0 ||
                                  cannonBubble->position.x>(float)
         SCREEN_WIDTH - cannonBubble->getWidth()) {
@@ -146,7 +138,7 @@ void Game::clampCannonBubblePosition(const std::shared_ptr<CannonBubble>& cannon
 
 void Game::snapBubble() {
     bubbleGridManager->snapCannonBubble(cannon->getLoadedBubble());
-    playerScore += bubbleGridManager->numberOfBubblesDestroyedInATurn;
+    playerScore += bubbleGridManager->bubblesToBeDestroyed.size();
     if (running) {
         cannon->loadBubble(renderer, bubbleGridManager->getAnExistingColor());
         updateTurnCounterAndCheckToAddBubbles();
@@ -216,7 +208,7 @@ void Game::clearScreen() {
 void Game::renderObjects() {
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
-    drawBottomOfLevelLine();
+    renderBottomLevelLine();
     renderPlayerScore();
 }
 
@@ -227,7 +219,7 @@ void Game::renderPlayerScore() {
     playerScoreTexture->render(renderer, SCREEN_WIDTH / 8 * 5, SCREEN_HEIGHT / 8 * 7);
 }
 
-void Game::drawBottomOfLevelLine() {
+void Game::renderBottomLevelLine() {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     int bottomOfTheLevelPosition = (bubbleGridManager->rows - 1) * bubbleGridManager->tileWidth;
     SDL_RenderDrawLine(renderer, 0, bottomOfTheLevelPosition, SCREEN_WIDTH, bottomOfTheLevelPosition);
@@ -239,9 +231,12 @@ void Game::quit() {
     renderer = nullptr;
     SDL_DestroyWindow(window);
     window = nullptr;
-    SDL_Quit();
+    Mix_FreeChunk(bubbleShootingSound);
+    Mix_FreeMusic(backgroundMusic);
     TTF_CloseFont(gameTextFont);
+    Mix_Quit();
     TTF_Quit();
+    SDL_Quit();
 }
 
 

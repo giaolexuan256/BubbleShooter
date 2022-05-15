@@ -18,8 +18,10 @@
 #include <vector>
 #include <algorithm>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include "TimeHandler.h"
 #include "GameTextureHandler.h"
+#include "InputHandler.h"
 
 
 class Game {
@@ -37,15 +39,14 @@ private:
     SDL_Point mousePosition;
     std::shared_ptr<BubbleGridManager> bubbleGridManager;
     TTF_Font *gameTextFont;
+    Mix_Music *backgroundMusic;
+    Mix_Chunk* bubbleShootingSound;
     int turnCounter;
-
     std::unique_ptr<GameTextureHandler> gameTextureHandler;
-
     const int TURNS_TO_ADD_BUBBLES = 7;
-
     float timePassedFromLastShoot = 0;
-
     unsigned int playerScore;
+    std::unique_ptr<InputHandler> inputHandler;
 
     void initialize();
 
@@ -63,19 +64,13 @@ private:
 
     void gameLoop(float deltaTime);
 
-    void processInput(double deltaTime);
-
-    void checkToQuit(SDL_Event event);
-
-    void checkToShootBubble(SDL_Event event, float deltaTime);
-
-    void updateMousePosition(SDL_Event event);
+    void processInput(float deltaTime);
 
     void shootCannonBubble(float deltaTime);
 
     void updateObjects(float deltaTime);
 
-    void clampCannonBubblePosition(const std::shared_ptr<CannonBubble>& cannonBubble);
+    void clampCannonBubblePosition(const std::shared_ptr<CannonBubble> &cannonBubble);
 
     void checkGameOver();
 
@@ -99,7 +94,7 @@ private:
 
     void renderPlayerScore();
 
-    void drawBottomOfLevelLine();
+    void renderBottomLevelLine();
 
     void quit();
 

@@ -296,6 +296,30 @@ src/GameTextureHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/GameTextureHandler.cpp.s
 .PHONY : src/GameTextureHandler.cpp.s
 
+src/InputHandler.obj: src/InputHandler.cpp.obj
+.PHONY : src/InputHandler.obj
+
+# target to build an object file
+src/InputHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.obj
+.PHONY : src/InputHandler.cpp.obj
+
+src/InputHandler.i: src/InputHandler.cpp.i
+.PHONY : src/InputHandler.i
+
+# target to preprocess a source file
+src/InputHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.i
+.PHONY : src/InputHandler.cpp.i
+
+src/InputHandler.s: src/InputHandler.cpp.s
+.PHONY : src/InputHandler.s
+
+# target to generate assembly for a file
+src/InputHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.s
+.PHONY : src/InputHandler.cpp.s
+
 src/Point.obj: src/Point.cpp.obj
 .PHONY : src/Point.obj
 
@@ -494,6 +518,9 @@ help:
 	@echo ... src/GameTextureHandler.obj
 	@echo ... src/GameTextureHandler.i
 	@echo ... src/GameTextureHandler.s
+	@echo ... src/InputHandler.obj
+	@echo ... src/InputHandler.i
+	@echo ... src/InputHandler.s
 	@echo ... src/Point.obj
 	@echo ... src/Point.i
 	@echo ... src/Point.s

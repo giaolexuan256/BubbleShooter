@@ -14,27 +14,25 @@
 #include <memory>
 #include <cmath>
 #include <iostream>
+#include <SDL_mixer.h>
 
 class BubbleGridManager {
 public:
     const static int tileWidth = 40;
     const static int tileHeight = 40;
     const static int columns = 15;
-    const static int rows = 10;
+    const static int rows = 14;
     const float radius = 20.0f;
     BubbleColor bubbleArray[columns][rows];
     bool toProcess[columns][rows];
     std::vector<SDL_Point> foundCluster;
+    std::vector<SDL_Point> bubblesToBeDestroyed;
     SDL_Point neighborsOffsets[2][6] = {
             {{1, 0}, {0, 1}, {-1, 1}, {-1, -1}, {0, -1}, {-1, 0}},
             {{1, 0}, {1, 1}, {0,  1}, {-1, 0},  {0, -1}, {1,  -1}}
     };
 
-    unsigned int numberOfBubblesDestroyedInATurn;
-
     BubbleGridManager();
-
-    void initialize();
 
     void initializeBubbleArray();
 
