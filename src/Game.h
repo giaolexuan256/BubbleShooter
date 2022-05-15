@@ -41,12 +41,11 @@ private:
     TTF_Font *gameTextFont;
     Mix_Music *backgroundMusic;
     Mix_Chunk* bubbleShootingSound;
-    int turnCounter;
     std::unique_ptr<GameTextureHandler> gameTextureHandler;
-    const int TURNS_TO_ADD_BUBBLES = 7;
-    float timePassedFromLastShoot = 0;
     unsigned int playerScore;
     std::unique_ptr<InputHandler> inputHandler;
+    float timeCounter;
+    const float amountOfTimeToAddABubbleRow = 10;
 
     void initialize();
 
@@ -81,8 +80,6 @@ private:
     void displayWinMessage();
 
     void updateTurnCounterAndCheckToAddBubbles();
-
-    void resetTurnCounter();
 
     void snapBubble();
 

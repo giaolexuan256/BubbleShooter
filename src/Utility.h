@@ -15,6 +15,7 @@ public:
     static float clamp(float &var, float minValue, float maxValue);
 
     static bool circleIntersection(Point center1, float radius1, Point center2, float radius2);
+
 };
 
 

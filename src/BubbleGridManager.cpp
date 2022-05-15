@@ -55,9 +55,6 @@ void BubbleGridManager::snapCannonBubble(const std::shared_ptr<CannonBubble> &ca
     SDL_Point gridPosition = getGridPosition(cannonBubble);
     bubbleArray[gridPosition.x][gridPosition.y] = cannonBubble->getType();
     findAndDestroyBubbleCluster(gridPosition.x, gridPosition.y, cannonBubble->getType());
-    for(SDL_Point &i : bubblesToBeDestroyed) {
-        bubbleArray[i.x][i.y] = BLANK;
-    }
 }
 
 void BubbleGridManager::findAndDestroyBubbleCluster(int xGrid, int yGrid, BubbleColor type) {
@@ -159,8 +156,7 @@ void BubbleGridManager::findFloatingClusterRecursivelyFromFirstRow() {
 void BubbleGridManager::findFloatingClusterRecursively(int xGrid, int yGrid) {
     if (xGrid < 0 || xGrid >= columns || yGrid >= rows || yGrid < 0) return;
     BubbleColor targetBubble = bubbleArray[xGrid][yGrid];
-
-    if (!toProcess[xGrid][yGrid] || targetBubble == BLANK) {
+    if (!toProcess[xGrid][yGrid] || targetBubble == BLANK || findInBubblesToBeDestroyed(xGrid, yGrid)) {
         return;
     } else {
         foundCluster.push_back({xGrid, yGrid});
@@ -223,3 +219,13 @@ std::vector<BubbleColor> BubbleGridManager::findExistingColors() {
     }
     return existingColors;
 }
+
+bool BubbleGridManager::findInBubblesToBeDestroyed(int x, int y) {
+    for(SDL_Point &i : bubblesToBeDestroyed) {
+        if(i.x == x && i.y == y) {
+            return true;
+        }
+    }
+    return false;
+}
+

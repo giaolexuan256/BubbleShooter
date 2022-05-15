@@ -84,6 +84,8 @@ private:
     int rowOffSet;
     static void renderBubble(float x, float y, BubbleColor color, std::vector<std::shared_ptr<TextureAlpha>> &bubbleTextures,
                              SDL_Renderer *renderer);
+    bool findInBubblesToBeDestroyed(int x, int y);
+
 };
 
 

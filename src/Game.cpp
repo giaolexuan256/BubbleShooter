@@ -52,13 +52,13 @@ void Game::initializeGameProperties() {
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
         printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
     }
-    turnCounter = 0;
     playerScore = 0;
     gameTextureHandler = std::make_unique<GameTextureHandler>(renderer, gameTextFont);
     backgroundMusic = Mix_LoadMUS(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\backgroundMusic.flac)");
     Mix_PlayMusic(backgroundMusic, -1);
     bubbleShootingSound = Mix_LoadWAV(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\bubbleShootingSound.wav)");
     inputHandler = std::make_unique<InputHandler>();
+    timeCounter = 0;
 }
 
 void Game::initializeTTFFont() {
@@ -88,10 +88,10 @@ void Game::gameLoop(float deltaTime) {
 
 void Game::processInput(float deltaTime) {
     inputHandler->poll();
-    if(inputHandler->unhandledEvent.type == SDL_QUIT) {
+    if (inputHandler->unhandledEvent.type == SDL_QUIT) {
         quit();
     }
-    if(inputHandler->keyDownOnce(SDLK_SPACE)) {
+    if (inputHandler->keyDownOnce(SDLK_SPACE)) {
         shootCannonBubble(deltaTime);
     }
     mousePosition = inputHandler->getMousePosition();
@@ -99,7 +99,6 @@ void Game::processInput(float deltaTime) {
 
 void Game::shootCannonBubble(float deltaTime) {
     Mix_PlayChannel(-1, bubbleShootingSound, 0);
-    timePassedFromLastShoot = 0;
     if (!cannon->getLoadedBubble()->isMoving()) {
         cannon->getLoadedBubble()->setMoving(true);
         cannon->getLoadedBubble()->setSpeed(
@@ -109,13 +108,17 @@ void Game::shootCannonBubble(float deltaTime) {
 }
 
 void Game::updateObjects(float deltaTime) {
+    timeCounter += deltaTime;
+    if (timeCounter >= amountOfTimeToAddABubbleRow) {
+        bubbleGridManager->addBubblesToFirstRow();
+        timeCounter = 0;
+    }
     cannon->setAngleToMousePosition(Point((float) mousePosition.x, (float) mousePosition.y));
     std::shared_ptr<CannonBubble> cannonBubble = cannon->getLoadedBubble();
     clampCannonBubblePosition(cannonBubble);
     if (bubbleGridManager->isCannonBubbleCollideWithBubbleArray(cannonBubble)) {
         snapBubble();
     }
-    timePassedFromLastShoot += deltaTime;
     checkGameOver();
 }
 
@@ -152,10 +155,6 @@ void Game::checkGameOver() {
 }
 
 bool Game::isGameOver() {
-    if (timePassedFromLastShoot >= 10) {
-        displayLoseMessage();
-        return true;
-    }
     if (bubbleGridManager->isBubbleArrayCleared()) {
         displayWinMessage();
         return true;
@@ -182,15 +181,6 @@ void Game::displayWinMessage() {
 }
 
 void Game::updateTurnCounterAndCheckToAddBubbles() {
-    turnCounter++;
-    if (turnCounter >= TURNS_TO_ADD_BUBBLES) {
-        bubbleGridManager->addBubblesToFirstRow();
-        resetTurnCounter();
-    }
-}
-
-void Game::resetTurnCounter() {
-    turnCounter = 0;
 }
 
 void Game::render() {
@@ -220,7 +210,7 @@ void Game::renderPlayerScore() {
 }
 
 void Game::renderBottomLevelLine() {
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     int bottomOfTheLevelPosition = (bubbleGridManager->rows - 1) * bubbleGridManager->tileWidth;
     SDL_RenderDrawLine(renderer, 0, bottomOfTheLevelPosition, SCREEN_WIDTH, bottomOfTheLevelPosition);
 }
