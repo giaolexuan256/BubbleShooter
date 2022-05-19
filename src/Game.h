@@ -22,6 +22,8 @@
 #include "TimeHandler.h"
 #include "GameTextureHandler.h"
 #include "InputHandler.h"
+#include "ScreenClearer.h"
+#include "Color.h"
 
 
 class Game {
@@ -38,7 +40,6 @@ private:
     std::shared_ptr<Cannon> cannon;
     SDL_Point mousePosition;
     std::shared_ptr<BubbleGridManager> bubbleGridManager;
-    TTF_Font *gameTextFont;
     Mix_Music *backgroundMusic;
     Mix_Chunk* bubbleShootingSound;
     Mix_Chunk* bubblePopSound;
@@ -58,8 +59,6 @@ private:
 
     void initializeGameProperties();
 
-    void initializeTTFFont();
-
     void initializeBubbleTextures();
 
     void gameLoop(float deltaTime);
@@ -76,19 +75,11 @@ private:
 
     bool isGameOver();
 
-    void displayLoseMessage();
-
-    void displayWinMessage();
-
     void processSnappedBubble();
 
     void render();
 
-    void clearScreen();
-
     void renderObjects();
-
-    void renderPlayerScore();
 
     void renderBottomLevelLine();
 

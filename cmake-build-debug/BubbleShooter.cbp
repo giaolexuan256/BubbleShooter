@@ -123,6 +123,12 @@
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/CannonBubble.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Color.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Color.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/Game.cpp">
 			<Option target="BubbleShooter"/>
 		</Unit>
@@ -157,6 +163,12 @@
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/RandomNumberGenerator.h">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/ScreenClearer.cpp">
+			<Option target="BubbleShooter"/>
+		</Unit>
+		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/ScreenClearer.h">
 			<Option target="BubbleShooter"/>
 		</Unit>
 		<Unit filename="C:/Dev/Projects/CLion/BubbleShooter/src/ScreenSizeCarrier.h">

@@ -248,6 +248,30 @@ src/CannonBubble.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/CannonBubble.cpp.s
 .PHONY : src/CannonBubble.cpp.s
 
+src/Color.obj: src/Color.cpp.obj
+.PHONY : src/Color.obj
+
+# target to build an object file
+src/Color.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj
+.PHONY : src/Color.cpp.obj
+
+src/Color.i: src/Color.cpp.i
+.PHONY : src/Color.i
+
+# target to preprocess a source file
+src/Color.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Color.cpp.i
+.PHONY : src/Color.cpp.i
+
+src/Color.s: src/Color.cpp.s
+.PHONY : src/Color.s
+
+# target to generate assembly for a file
+src/Color.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/Color.cpp.s
+.PHONY : src/Color.cpp.s
+
 src/Game.obj: src/Game.cpp.obj
 .PHONY : src/Game.obj
 
@@ -392,6 +416,30 @@ src/RandomNumberGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.s
 .PHONY : src/RandomNumberGenerator.cpp.s
 
+src/ScreenClearer.obj: src/ScreenClearer.cpp.obj
+.PHONY : src/ScreenClearer.obj
+
+# target to build an object file
+src/ScreenClearer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj
+.PHONY : src/ScreenClearer.cpp.obj
+
+src/ScreenClearer.i: src/ScreenClearer.cpp.i
+.PHONY : src/ScreenClearer.i
+
+# target to preprocess a source file
+src/ScreenClearer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.i
+.PHONY : src/ScreenClearer.cpp.i
+
+src/ScreenClearer.s: src/ScreenClearer.cpp.s
+.PHONY : src/ScreenClearer.s
+
+# target to generate assembly for a file
+src/ScreenClearer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BubbleShooter.dir\build.make CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.s
+.PHONY : src/ScreenClearer.cpp.s
+
 src/TextureAlpha.obj: src/TextureAlpha.cpp.obj
 .PHONY : src/TextureAlpha.obj
 
@@ -512,6 +560,9 @@ help:
 	@echo ... src/CannonBubble.obj
 	@echo ... src/CannonBubble.i
 	@echo ... src/CannonBubble.s
+	@echo ... src/Color.obj
+	@echo ... src/Color.i
+	@echo ... src/Color.s
 	@echo ... src/Game.obj
 	@echo ... src/Game.i
 	@echo ... src/Game.s
@@ -530,6 +581,9 @@ help:
 	@echo ... src/RandomNumberGenerator.obj
 	@echo ... src/RandomNumberGenerator.i
 	@echo ... src/RandomNumberGenerator.s
+	@echo ... src/ScreenClearer.obj
+	@echo ... src/ScreenClearer.i
+	@echo ... src/ScreenClearer.s
 	@echo ... src/TextureAlpha.obj
 	@echo ... src/TextureAlpha.i
 	@echo ... src/TextureAlpha.s

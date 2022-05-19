@@ -345,4 +345,6 @@ CMakeFiles/BubbleShooter.dir/src/main.cpp.obj: \
  C:/Dev/Cpp/SDL2-devel-2.0.20-VC/SDL2-2.0.20/include/SDL_endian.h \
  C:\Dev\Projects\CLion\BubbleShooter\src\TimeHandler.h \
  C:\Dev\Projects\CLion\BubbleShooter\src\GameTextureHandler.h \
+ C:\Dev\Projects\CLion\BubbleShooter\src\ScreenClearer.h \
+ C:\Dev\Projects\CLion\BubbleShooter\src\Color.h \
  C:\Dev\Projects\CLion\BubbleShooter\src\InputHandler.h

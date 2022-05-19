@@ -48,29 +48,18 @@ void Game::initializeGameProperties() {
     cannon = std::make_shared<Cannon>(renderer);
     initializeBubbleTextures();
     bubbleGridManager = std::make_shared<BubbleGridManager>();
-    initializeTTFFont();
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
         printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
     }
     playerScore = 0;
-    gameTextureHandler = std::make_unique<GameTextureHandler>(renderer, gameTextFont);
+    gameTextureHandler = std::make_unique<GameTextureHandler>(renderer);
     backgroundMusic = Mix_LoadMUS("assets/backgroundMusic.flac");
     Mix_PlayMusic(backgroundMusic, -1);
     bubbleShootingSound = Mix_LoadWAV("assets/bubbleShootingSound.wav");
     bubblePopSound = Mix_LoadWAV("assets/bubblePop.wav");
     inputHandler = std::make_unique<InputHandler>();
+    std::make_unique<ScreenClearer>();
     timeCounter = 0;
-}
-
-void Game::initializeTTFFont() {
-    if (TTF_Init() == -1) {
-        printf("SDL_ttf couldn't initialize: TTF_GetError: %s\n", TTF_GetError());
-    } else {
-        gameTextFont = TTF_OpenFont("assets/VeraMoBd.ttf", 28);
-        if (gameTextFont == nullptr) {
-            printf("Failed to load gameTextFont! SDL_ttf Error: %s\n", TTF_GetError());
-        }
-    }
 }
 
 void Game::initializeBubbleTextures() {
@@ -161,59 +150,30 @@ void Game::checkGameOver() {
 
 bool Game::isGameOver() {
     if (bubbleGridManager->isBubbleArrayCleared()) {
-        displayWinMessage();
+        gameTextureHandler->displayWinMessage();
         return true;
     } else if (bubbleGridManager->isBubblesReachBottom()) {
-        displayLoseMessage();
+        gameTextureHandler->displayLoseMessage();
         return true;
     }
     return false;
 }
 
-void Game::displayLoseMessage() {
-    SDL_Delay(300);
-    clearScreen();
-    gameTextureHandler->renderTotalScore(renderer, gameTextFont, playerScore);
-    gameTextureHandler->loseMessage->render(renderer, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2);
-    SDL_RenderPresent(renderer);
-    SDL_Delay(3000);
-}
-
-void Game::displayWinMessage() {
-    clearScreen();
-    gameTextureHandler->winMessage->render(renderer, SCREEN_WIDTH / 2 - 250, SCREEN_HEIGHT / 2);
-    SDL_RenderPresent(renderer);
-    SDL_Delay(3000);
-}
-
 void Game::render() {
-    clearScreen();
-    gameTextureHandler->background->render(renderer, 0, 0);
+    ScreenClearer::clearScreen(renderer, COLOR_BLACK);
     renderObjects();
     SDL_RenderPresent(renderer);
-}
-
-void Game::clearScreen() {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
 }
 
 void Game::renderObjects() {
     cannon->render(renderer);
     bubbleGridManager->renderAllBubbles(renderer, bubbleTextures);
     renderBottomLevelLine();
-    renderPlayerScore();
-}
-
-void Game::renderPlayerScore() {
-    std::unique_ptr<TextureAlpha> playerScoreTexture = std::make_unique<TextureAlpha>();
-    playerScoreTexture->loadFromRenderedText(renderer, gameTextFont, "Score: " + std::to_string(playerScore),
-                                             SDL_Color{255, 255, 0, 255});
-    playerScoreTexture->render(renderer, SCREEN_WIDTH / 8 * 5, SCREEN_HEIGHT / 8 * 7);
+    gameTextureHandler->displayPlayerScore(playerScore);
 }
 
 void Game::renderBottomLevelLine() {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, COLOR_WHITE.r, COLOR_WHITE.g, COLOR_WHITE.b, COLOR_WHITE.a);
     int bottomOfTheLevelPosition = (bubbleGridManager->rows - 1) * bubbleGridManager->tileWidth;
     SDL_RenderDrawLine(renderer, 0, bottomOfTheLevelPosition, SCREEN_WIDTH, bottomOfTheLevelPosition);
 }
@@ -226,7 +186,6 @@ void Game::quit() {
     window = nullptr;
     Mix_FreeChunk(bubbleShootingSound);
     Mix_FreeMusic(backgroundMusic);
-    TTF_CloseFont(gameTextFont);
     Mix_Quit();
     TTF_Quit();
     SDL_Quit();

@@ -293,6 +293,36 @@ CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.s"
 	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\CLion\BubbleShooter\src\InputHandler.cpp -o CMakeFiles\BubbleShooter.dir\src\InputHandler.cpp.s
 
+CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj: ../src/ScreenClearer.cpp
+CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\CLion\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\ScreenClearer.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\ScreenClearer.cpp.obj -c C:\Dev\Projects\CLion\BubbleShooter\src\ScreenClearer.cpp
+
+CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\CLion\BubbleShooter\src\ScreenClearer.cpp > CMakeFiles\BubbleShooter.dir\src\ScreenClearer.cpp.i
+
+CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\CLion\BubbleShooter\src\ScreenClearer.cpp -o CMakeFiles\BubbleShooter.dir\src\ScreenClearer.cpp.s
+
+CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj: CMakeFiles/BubbleShooter.dir/flags.make
+CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj: CMakeFiles/BubbleShooter.dir/includes_CXX.rsp
+CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj: ../src/Color.cpp
+CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj: CMakeFiles/BubbleShooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Dev\Projects\CLion\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj -MF CMakeFiles\BubbleShooter.dir\src\Color.cpp.obj.d -o CMakeFiles\BubbleShooter.dir\src\Color.cpp.obj -c C:\Dev\Projects\CLion\BubbleShooter\src\Color.cpp
+
+CMakeFiles/BubbleShooter.dir/src/Color.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BubbleShooter.dir/src/Color.cpp.i"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Dev\Projects\CLion\BubbleShooter\src\Color.cpp > CMakeFiles\BubbleShooter.dir\src\Color.cpp.i
+
+CMakeFiles/BubbleShooter.dir/src/Color.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BubbleShooter.dir/src/Color.cpp.s"
+	C:\Users\giaol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Dev\Projects\CLion\BubbleShooter\src\Color.cpp -o CMakeFiles\BubbleShooter.dir\src\Color.cpp.s
+
 # Object files for target BubbleShooter
 BubbleShooter_OBJECTS = \
 "CMakeFiles/BubbleShooter.dir/src/main.cpp.obj" \
@@ -309,7 +339,9 @@ BubbleShooter_OBJECTS = \
 "CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj" \
 "CMakeFiles/BubbleShooter.dir/src/GameTextureHandler.cpp.obj" \
-"CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.obj"
+"CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj" \
+"CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj"
 
 # External object files for target BubbleShooter
 BubbleShooter_EXTERNAL_OBJECTS =
@@ -329,11 +361,13 @@ BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/RandomNumberGenerator.cpp.ob
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/TimeHandler.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/GameTextureHandler.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/InputHandler.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/ScreenClearer.cpp.obj
+BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/src/Color.cpp.obj
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/build.make
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/linklibs.rsp
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/objects1.rsp
 BubbleShooter.exe: CMakeFiles/BubbleShooter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Dev\Projects\CLion\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable BubbleShooter.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Dev\Projects\CLion\BubbleShooter\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable BubbleShooter.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\BubbleShooter.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
