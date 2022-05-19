@@ -54,10 +54,10 @@ void Game::initializeGameProperties() {
     }
     playerScore = 0;
     gameTextureHandler = std::make_unique<GameTextureHandler>(renderer, gameTextFont);
-    backgroundMusic = Mix_LoadMUS(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\backgroundMusic.flac)");
+    backgroundMusic = Mix_LoadMUS("assets/backgroundMusic.flac");
     Mix_PlayMusic(backgroundMusic, -1);
-    bubbleShootingSound = Mix_LoadWAV(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\bubbleShootingSound.wav)");
-    bubblePopSound = Mix_LoadWAV(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\bubblePop.wav)");
+    bubbleShootingSound = Mix_LoadWAV("assets/bubbleShootingSound.wav");
+    bubblePopSound = Mix_LoadWAV("assets/bubblePop.wav");
     inputHandler = std::make_unique<InputHandler>();
     timeCounter = 0;
 }
@@ -66,7 +66,7 @@ void Game::initializeTTFFont() {
     if (TTF_Init() == -1) {
         printf("SDL_ttf couldn't initialize: TTF_GetError: %s\n", TTF_GetError());
     } else {
-        gameTextFont = TTF_OpenFont(R"(C:\Dev\Projects\CLion\BubbleShooter\assets\VeraMoBd.ttf)", 28);
+        gameTextFont = TTF_OpenFont("assets/VeraMoBd.ttf", 28);
         if (gameTextFont == nullptr) {
             printf("Failed to load gameTextFont! SDL_ttf Error: %s\n", TTF_GetError());
         }

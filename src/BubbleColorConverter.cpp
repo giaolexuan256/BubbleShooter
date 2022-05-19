@@ -1,7 +1,7 @@
 #include "BubbleColorConverter.h"
 
 std::string BubbleColorConverter::getBubbleTexturePath(BubbleColor bubbleColor) {
-    return R"(C:\Dev\Projects\CLion\BubbleShooter\assets\)" + toString(bubbleColor) + "Bubble.jpg";
+    return "assets/" + toString(bubbleColor) + "Bubble.jpg";
 }
 
 std::string BubbleColorConverter::toString(BubbleColor color) {
